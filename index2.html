@@ -124,7 +124,17 @@
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
+.navbar-nav .nav-link {
+  font-size: 1rem;         /* slightly smaller text */
+  padding: 8px 14px;       /* reduce padding */
+  white-space: nowrap;     /* prevent text breaking into two lines */
+  line-height: 1.2;        /* compact height */
+}
 
+/* Keep navbar aligned properly */
+.navbar {
+  min-height: 65px;   /* uniform height */
+}
 .nav-link::after {
   content: "";
   position: absolute;
@@ -180,13 +190,14 @@
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
+         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2 bg-dark text-light border-0" type="search" placeholder="Search">
-        <form class="d-flex" role="search">
-  <input class="form-control me-2 bg-dark text-light border-0" type="search" placeholder="Search">
-  <button class="btn btn-gradient" type="submit">Search</button>
+        
+
+  <button class="btn btn-gradient" type="submit">Login</button>
 </form>
       </form>
     </div>
@@ -246,21 +257,7 @@
     </button>
   </div>
 
-  <section class="py-5 bg-dark text-light">
-    <div class="container text-center">
-      <h2 class="text-warning fw-bold mb-3">Welcome to MyMovies 🎬</h2>
-      <p class="lead">
-        MyMovies is your one-stop destination for the best movies and TV shows from across the globe.  
-        Explore a wide range of genres – from thrilling action and heartwarming dramas to rib-tickling comedies  
-        and spine-chilling horrors. Stay updated with trending titles, top-rated picks, and exclusive recommendations.  
-      </p>
-      <p>
-        Whether you’re looking for the latest blockbuster, an award-winning classic, or something family-friendly,  
-        we’ve got it all covered. Start exploring and never miss out on your next favorite film.
-      </p>
-      <a href="movies.html" class="btn btn-warning btn-lg mt-3">Browse Movies</a>
-    </div>
-  </section>
+ 
 
   <!-- Hero Section -->
   <section class="hero text-white">
