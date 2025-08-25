@@ -180,6 +180,81 @@
   color: #fff !important;
 }
 
+/* Transparent navbar */
+.custom-navbar {
+  background: transparent !important;   /* fully see-through */
+  border: none;                         /* remove border line */
+  box-shadow: none;                     /* remove shadow if any */
+  position: absolute;                   /* float on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;                          /* ensure it's above video */
+}
+
+
+
+
+/* video properties start */
+ .video-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+    }
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+ .video-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 1000%;
+    }
+
+    .video-overlay h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+      background-clip: text;              
+      -webkit-background-clip: text;      
+      color: transparent;                 
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .video-overlay p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .video-overlay .btn-watch {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+      border: none;
+      color: #fff;
+      transition: all 0.4s ease;
+    }
+    .video-overlay .btn-watch:hover {
+      background: linear-gradient(90deg, #9b4dff, #ff4ecb);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 78, 203, 0.8);
+    }
+    /* video css end */
 
   </style>
 </head>
@@ -229,11 +304,20 @@
   </div>
 </nav>
 
+ <div class="video-container">
+    <video src="video/pop1 (2).mp4" autoplay muted loop></video>
 
+    <!-- Overlay Text -->
+    <div class="video-overlay">
+      <h1>All Top Rated Movies</h1>
+      <p>Streamora brings you the best handpicked top-rated movies of all time. Watch anytime, anywhere.</p>
+      <button class="btn-watch">▶ Start Watching</button>
+    </div>
+  </div>
 
 
   <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <!-- <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
@@ -280,7 +364,7 @@
       <span class="carousel-control-next-icon"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div> -->
 
  
 
