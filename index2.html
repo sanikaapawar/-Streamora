@@ -7,11 +7,21 @@
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
+    /* body {
       background-color: #0b0b0b;
       color: #fff;
       font-family: "Poppins", sans-serif;
-    }
+    } */
+    body {
+  background: url("images/pink4.jpg") no-repeat center center fixed;
+  background-size: cover;  /* makes the image cover the entire screen */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+
     .hero {
       background-image: url("images/main.jpg");
       background-size: cover;
@@ -124,7 +134,17 @@
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
+.navbar-nav .nav-link {
+  font-size: 1rem;         /* slightly smaller text */
+  padding: 8px 14px;       /* reduce padding */
+  white-space: nowrap;     /* prevent text breaking into two lines */
+  line-height: 1.2;        /* compact height */
+}
 
+/* Keep navbar aligned properly */
+.navbar {
+  min-height: 65px;   /* uniform height */
+}
 .nav-link::after {
   content: "";
   position: absolute;
@@ -144,7 +164,21 @@
   width: 100%; /* underline animation */
 }
 
+/* Transparent navbar with background image */
+.custom-navbar {
+  background: url("images/navbar-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px); /* glass effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  background-color: rgba(0, 0, 0, 0.5); /* fallback: semi-transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+}
 
 
   </style>
@@ -155,7 +189,8 @@
         <!-- Google Font for modern style -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
+
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
       <img src="images/logo.jpg" alt="Streamora Logo" class="logo-img">
@@ -180,13 +215,14 @@
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
+         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2 bg-dark text-light border-0" type="search" placeholder="Search">
-        <form class="d-flex" role="search">
-  <input class="form-control me-2 bg-dark text-light border-0" type="search" placeholder="Search">
-  <button class="btn btn-gradient" type="submit">Search</button>
+        
+
+  <button class="btn btn-gradient" type="submit">Login</button>
 </form>
       </form>
     </div>
@@ -246,21 +282,7 @@
     </button>
   </div>
 
-  <section class="py-5 bg-dark text-light">
-    <div class="container text-center">
-      <h2 class="text-warning fw-bold mb-3">Welcome to MyMovies 🎬</h2>
-      <p class="lead">
-        MyMovies is your one-stop destination for the best movies and TV shows from across the globe.  
-        Explore a wide range of genres – from thrilling action and heartwarming dramas to rib-tickling comedies  
-        and spine-chilling horrors. Stay updated with trending titles, top-rated picks, and exclusive recommendations.  
-      </p>
-      <p>
-        Whether you’re looking for the latest blockbuster, an award-winning classic, or something family-friendly,  
-        we’ve got it all covered. Start exploring and never miss out on your next favorite film.
-      </p>
-      <a href="movies.html" class="btn btn-warning btn-lg mt-3">Browse Movies</a>
-    </div>
-  </section>
+ 
 
   <!-- Hero Section -->
   <section class="hero text-white">
