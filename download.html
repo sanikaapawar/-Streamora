@@ -1,11 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filmstrip with Frames</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- FontAwesome (needed for arrow icons in cards) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+     
+      background-size: cover;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar-brand img {
+  height: 60px;
+  margin-right: 12px;
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  -webkit-background-clip: text;   /* Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* Chrome, Safari */
+  background-clip: text;           /* Firefox (new versions) */
+  color: transparent;              /* fallback */
+}
+
+    .custom-navbar { background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+
+    /* Carousel */
+    .carousel-item iframe, 
+    .carousel-item video, 
+    .carousel-item img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .carousel-item { position: relative; }
+    .carousel-item .overlay-text {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px;
+      background: linear-gradient(to right, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
+    }
+    .btn-watch {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: linear-gradient(to right, #3b82f6, #a855f7);
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      width: 190px;
+    }
+
+    /* Cards */
+    .newsCard { position: relative; height: 300px; overflow: hidden; border-radius: 6px; }
+    .newsCard img { width: 100%; height: 100%; object-fit: cover; }
+    .overlay { position: absolute; bottom: 0; height: 200px; width: 100%; background: linear-gradient(0deg, rgba(40,26,54,1), transparent); }
+    .newsCaption { position: absolute; bottom: 0; padding: 15px; transform: translateY(80%); transition: 0.4s; }
+    .newsCard:hover .newsCaption { transform: translateY(0); }
+    .newsCaption-title { font-size: 1rem; }
+
+    /* Filmstrip */
+    .film-strip-container { position: relative; overflow: hidden; background: #000; padding: 40px 0; }
+    .film-strip { display: flex; animation: scroll-strip 20s linear infinite; }
+    @keyframes scroll-strip { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+    .frame { border: 4px solid gray; border-radius: 6px; margin: 0 15px; flex-shrink: 0; }
+    .frame img { height: 180px; border-radius: 4px; }
+
+    /* Top Picks slider */
+    .film-item { width: 200px; height: 250px; position: relative; overflow: hidden; border-radius: 10px; }
+    .film-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+    .film-item:hover img { transform: scale(1.1); opacity: 0.6; }
+    .film-item .overlay-text { position: absolute; bottom: 10px; left: 10px; opacity: 0; transition: opacity 0.3s; }
+    .film-item:hover .overlay-text { opacity: 1; }
+    .arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 24px; color: #fff; background: rgba(0,0,0,0.6); border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; }
+    .arrow.left { left: 0; }
+    .arrow.right { right: 0; }
+  </style>
 </head>
 <body>
-    <h1>all download are store here</h1>
+
+<!-- Navbar -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
+
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
+      <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
+      <span class="brand-text">Streamora</span>
+    </a> 
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Genres</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="action.html">Action</a></li>
+            <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
+            <li><a class="dropdown-item" href="#">Drama</a></li>
+            <li><a class="dropdown-item" href="#">Horror</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
+        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
+         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        
+
+  <button class="btn btn-gradient" type="submit">Login</button>
+</form>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Carousel -->
+<div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <iframe src="https://www.youtube.com/embed/3sjKDdf1mE0?autoplay=1&mute=1&loop=1&playlist=3sjKDdf1mE0" allowfullscreen></iframe>
+      <div class="overlay-text">
+        <h6 class="text-info">TV Show</h6>
+        <h1>Tarak Mehta ka oolta chashma</h1>
+        <p>Chhoti Nok-Jhok, Bade Pange! Beloved celebrity couples take on challenges.</p>
+        <p><b>2025</b> • U/A 13+ • Hindi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <iframe src="https://www.youtube.com/embed/5erdyFES00s?autoplay=1&mute=1&loop=1&playlist=5erdyFES00s" allowfullscreen></iframe>
+      <div class="overlay-text">
+        <h6 class="text-info">TV Show</h6>
+        <h1>Big Boss</h1>
+        <p>Off-screen masti and fun moments with celebrities.</p>
+        <p><b>2025</b> • Reality • Marathi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <button class="carousel-control-prev" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" data-bs-target="#mediaCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Cards Section -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <figure class="newsCard">
+        <img src="images/tarak.jpg">
+        <div class="newsCaption">
+          <h5>Tarak Mehta Ka Olta Chashma <i class="fas fa-arrow-alt-circle-right"></i></h5>
+          <p>Lorem ipsum description examples.</p>
+        </div>
+        <span class="overlay"></span>
+      </figure>
+    </div>
+    <!-- more cards ... -->
+  </div>
+</section>
+
+<!-- Filmstrip -->
+<section class="container-fluid">
+  <h1 class="text-center">Movie Film Strip</h1>
+  <div class="film-strip-container">
+    <div class="film-strip">
+      <div class="frame"><img src="images/tt1.jpg"></div>
+      <div class="frame"><img src="images/kk1.jpg"></div>
+      <div class="frame"><img src="images/bigboss.jpg"></div>
+      <!-- more frames... -->
+    </div>
+  </div>
+</section>
+
+<!-- Top Picks -->
+<section class="container py-5">
+  <h3 class="mb-4">Top Picks</h3>
+  <div class="slider-container">
+    <a href="#item1" class="arrow left">&#10094;</a>
+    <a href="#item6" class="arrow right">&#10095;</a>
+    <div class="d-flex gap-3 overflow-auto">
+      <div class="film-item" id="item1">
+        <img src="images/tt1.jpg">
+        <div class="overlay-text">
+          <button class="btn btn-dark"><i class="bi bi-star"></i> Watch now</button>
+        </div>
+      </div>
+      <!-- More film items... -->
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white">Now Playing</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <video width="100%" controls autoplay>
+          <source src="doc/movie1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
