@@ -242,7 +242,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
       font-size: 16px;
       opacity: 0;
       transition: opacity 0.3s ease;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+      /* text-shadow: 2px 2px 5px rgba(0,0,0,0.8); */
     }
     .film-item:hover .overlay-text {
       opacity: 1;
@@ -499,6 +499,175 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
   color: #fff !important;
 }
 
+/* sliding video */
+
+.carousel-item video,
+    .carousel-item iframe,
+    .carousel-item img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .overlay-text h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .btn-watch {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      background: linear-gradient(to right, #3b82f6, #a855f7);
+      border: none;
+      color: white;
+      width: 190px;
+    }
+
+    /* last scrolling */
+
+    /* Filmstrip container */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  background: rgba(255,255,255,0.7);
+  padding: 5px 10px;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s;
+}
+.arrow:hover {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+}
+.arrow.left {
+  left: 10px;
+}
+.arrow.right {
+  right: 10px;
+}
+
+/* Filmstrip row */
+.filmstrip {
+  display: flex;
+  gap: 15px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.filmstrip::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean look */
+}
+
+/* Each film item */
+.film-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 220px;   /* fixed width for movie card */
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
+  transition: transform 0.3s;
+}
+.film-item:hover {
+  transform: scale(1.05);
+}
+
+/* Images */
+.film-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay text/button */
+.overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: bottom;
+}
+.overlay-text button {
+  font-size: 0.7rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* watch button */
+.film-item {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.film-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay hidden by default */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on hover */
+.film-item:hover .overlay {
+  opacity: 1;
+}
+
+.film-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay button {
+  width: 90%;
+  font-weight: bold;
+  border-radius: 8px;
+  
+  
+}
+
 
   </style>
 </head>
@@ -546,6 +715,90 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     </div>
   </div>
 </nav>
+
+<!-- sliding video -->
+ <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+
+    <!-- Slide 1: MP4 Video -->
+    <div class="carousel-item active position-relative">
+  <iframe 
+    width="100%" 
+    height="500" 
+    src="https://www.youtube.com/embed/3sjKDdf1mE0?autoplay=1&mute=1&loop=1&playlist=3sjKDdf1mE0" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- Overlay Text -->
+  <div class="overlay-text position-absolute text-white p-4" 
+       style="top: 20%; left: 10%; z-index: 2;">
+    <h6 class="text-info">Tv Show</h6>
+    <h1>Tarak Mehta ka oolta chashma</h1>
+    <p>Chhoti Nok-Jhok, Bade Pange! Beloved celebrity couples take on challenges.</p>
+    <p><b>2025</b> • U/A 13+ • Hindi</p>
+    <button class="btn btn-danger">▶ Watch Now</button>
+  </div>
+</div>
+
+
+    <!-- Slide 2: YouTube Video -->
+    <div class="carousel-item">
+    <iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/5erdyFES00s?autoplay=1&mute=1&loop=1&playlist=5erdyFES00s" 
+  title="YouTube video player" 
+  frameborder="0" mute=1
+  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+
+       <div class="overlay-text">
+        <h6 class="text-info">TV Show</h6>
+        <h1>Big Boss</h1>
+        <p>Off-screen masti and fun moments with celebrities.</p>
+        <p><b>2025</b> • Reality • Marathi</p>
+        <button class="btn-watch">▶ Watch Now</button>
+      </div>
+    </div>
+
+    <!-- Slide 3: Image -->
+     <div class="carousel-item">
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/yxSWUn-ltCQ?autoplay=1&mute=1&si=SD78UZs-NERD6u1t" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+
+  <div class="overlay-text">
+    <h6 class="text-info">TV Show</h6>
+    <h1>Barbie show</h1>
+    <p>Off-screen masti and fun moments with celebrities.</p>
+    <p><b>2025</b> • Reality • Marathi</p>
+    <button class="btn-watch">▶ Watch Now</button>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 
    <!-- images card -->
   <section>
@@ -705,78 +958,237 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     </div>
   </div>
   </section>
+  <br>
+  <br>
 
   <!-- take pic -->
 <section>
-<div class="container py-5">
-  <h3 class="mb-4">Top Picks</h3>
+<div class="container-fluid py-9">
+  <h3 class="mb-4">Real Lives, Unlimited Drama</h3>
   
   <div class="slider-container">
     <!-- Left Arrow -->
     <a href="#item1" class="arrow left">&#10094;</a>
     <!-- Right Arrow -->
-    <a href="#item6" class="arrow right">&#10095;</a> 
+    <a href="#item9" class="arrow right">&#10095;</a> 
 
     <div class="filmstrip">
       <div class="film-item" id="item1">
         <img src="images/tt1.jpg" alt="Movie 1">
         <!-- Watch Button Overlay -->
-        <div class="overlay-text" style="position: absolute; bottom: 5px; left: 10%;">
-      <button type="button" class="btn btn-dark border border-dark" data-bs-toggle="modal" data-bs-target="#videoModal">
-        <i class="bi bi-star"></i> Watch now..
-      </button>
-    </div>
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
       </div>
-      <div class="film-item" id="item2">
-        <img src="images/kapil.jpg" alt="Movie 2">
-        <div class="overlay-text" style="position: absolute; bottom: 5px; left: 10%;">
-      <button type="button" class="btn btn-dark border border-dark" data-bs-toggle="modal" data-bs-target="#videoModal">
-        <i class="bi bi-star"></i> Watch now..
-      </button>
-    </div>
-      </div>
-      <div class="film-item" id="item3">
-        <img src="images/img3.jpg" alt="Movie 3">
-        <div class="overlay-text">Movie 3</div>
+     <div class="film-item" id="item2">
+  <img src="images/sisterhood.jpg" alt="Movie 2">
+
+<div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+</div>
+
+     <div class="film-item" id="item3">
+        <img src="images/supersing.jpg" alt="Movie 3">
+       <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+
       </div>
       <div class="film-item" id="item4">
-        <img src="images/img4.jpg" alt="Movie 4">
-        <div class="overlay-text">Movie 4</div>
+        <img src="images/khiladi.webp" alt="Movie 4">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
       </div>
       <div class="film-item" id="item5">
-        <img src="images/img5.jpg" alt="Movie 5">
-        <div class="overlay-text">Movie 5</div>
+        <img src="images/s1.avif" alt="Movie 5">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
       </div>
       <div class="film-item" id="item6">
-        <img src="images/img6.jpg" alt="Movie 6">
-        <div class="overlay-text">Movie 6</div>
+        <img src="images/laugh1.jpg" alt="Movie 6">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+
+      <div class="film-item" id="item7">
+        <img src="images/cid.jpg" alt="Movie 7">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item8">
+        <img src="images/kk1.jpg" alt="Movie 8">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item9">
+        <img src="images/chalahava.jpg" alt="Movie 9">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 </section>
 
+<!-- second section with serials -->
 
 <section>
-<!-- Bootstrap Video Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen modal-lg modal-dialog-centered">
-    <div class="modal-content bg-dark">
-      <div class="modal-header border-0">
-        <h5 class="modal-title text-white" id="videoModalLabel">Now Playing</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="container-fluid py-5">
+  <h3 class="mb-4">House Drama</h3>
+  
+  <div class="slider-container">
+    <!-- Left Arrow -->
+    <a href="#item1" class="arrow left">&#10094;</a>
+    <!-- Right Arrow -->
+    <a href="#item9" class="arrow right">&#10095;</a> 
+
+    <div class="filmstrip">
+      <div class="film-item" id="item1">
+        <img src="images/serial1a.jpg" alt="Movie 1">
+        <!-- Watch Button Overlay -->
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
       </div>
-      <div class="modal-body p-0">
-        <!-- Video Player -->
-        <video width="100%" controls autoplay>
-          <source src="doc/movie1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+     <div class="film-item" id="item2">
+  <img src="images/serial2.jpg" alt="Movie 2">
+
+<div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+</div>
+
+     <div class="film-item" id="item3">
+        <img src="images/serial3.jpg" alt="Movie 3">
+       <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+
+      </div>
+      <div class="film-item" id="item4">
+        <img src="images/serial4.jpg" alt="Movie 4">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item5">
+        <img src="images/s" alt="Movie 5">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item6">
+        <img src="images/laugh1.jpg" alt="Movie 6">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+
+      <div class="film-item" id="item7">
+        <img src="images/cid.jpg" alt="Movie 7">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item8">
+        <img src="images/kk1.jpg" alt="Movie 8">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
+      <div class="film-item" id="item9">
+        <img src="images/chalahava.jpg" alt="Movie 9">
+        <div class="overlay" style="position: relative; height: 2%;">
+  <button type="button" class="btn btn-dark border border-dark" 
+          data-bs-toggle="modal" data-bs-target="#videoModal" 
+          style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
+    <i class="bi bi-star"></i> Watch now..
+  </button>
+</div>
+      </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 </section>
+
+
 
 
 
@@ -784,4 +1196,3 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
