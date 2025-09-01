@@ -13,7 +13,7 @@
       font-family: "Poppins", sans-serif;
     } */
     body {
-  /* background: url("images/pink4.jpg") no-repeat center center fixed; */
+   background: url("images/pink1.jpg") no-repeat center center fixed; 
   background-size: cover;  /* makes the image cover the entire screen */
   color: #fff;
   font-family: "Poppins", sans-serif;
@@ -398,6 +398,75 @@ section .container-fluid img {
     width: 550px; /* slight grow on hover */ 
   }
 /* cartoon css end */
+/* flimstrip css start */
+/* Filmstrip Section */
+.film-strip-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  border: 8px solid #333;
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* Film holes */
+.holes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  display: flex;
+  justify-content: space-around;
+  background: transparent;
+}
+.holes.top { top: -6px; }
+.holes.bottom { bottom: -6px; }
+
+.holes::before, .holes::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 30px 0 #000, 60px 0 #000, 90px 0 #000, 120px 0 #000, 150px 0 #000,
+              180px 0 #000, 210px 0 #000, 240px 0 #000, 270px 0 #000;
+}
+
+/* Filmstrip moving */
+.film-strip {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.film-strip-inner {
+  display: inline-flex;
+  animation: scrollFilm 25s linear infinite;
+}
+
+.frame {
+  margin: 0 8px;
+}
+.frame img {
+  width: 180px;
+  height: 120px;
+  border: 4px solid #000;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #222;
+  transition: transform 0.3s;
+}
+.frame img:hover {
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes scrollFilm {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
   </style>
 </head>
@@ -459,6 +528,32 @@ section .container-fluid img {
   </div>
 
 
+<!-- flimstrip images   -->
+ <!-- Filmstrip Section -->
+<section class="film-section">
+  <div class="film-strip-container">
+    <!-- Perforated holes -->
+    <div class="holes top"></div>
+    <div class="holes bottom"></div>
+
+    <!-- Filmstrip -->
+    <div class="film-strip">
+      <div class="film-strip-inner">
+        <!-- Frames -->
+        <div class="frame"><img src="images/tt1.jpg" alt="h1"></div>
+        <div class="frame"><img src="images/kk1.jpg" alt="h2"></div>
+        <div class="frame"><img src="images/bigboss.jpg" alt="h3"></div>
+        <div class="frame"><img src="images/cid.jpg" alt="h4"></div>
+        <div class="frame"><img src="images/balver.jpg" alt="h5"></div>
+        <div class="frame"><img src="images/chalahava.jpg" alt="h6"></div>
+        <div class="frame"><img src="images/supersing.jpg" alt="h7"></div>
+        <div class="frame"><img src="images/sisterhood.jpg" alt="h8"></div>
+        <div class="frame"><img src="images/motupatlu.jpg" alt="h9"></div>
+        <div class="frame"><img src="images/sporta.jpg" alt="h10"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
  
