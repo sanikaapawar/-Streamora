@@ -16,7 +16,7 @@
   <style>
     /* Body & Background */
     body {
-      background: #0b0b0b; /* Deep black for contrast */
+      background: black; /* Deep black for contrast */
       color: #e0e1dd;
       font-family: "Poppins", sans-serif;
     }
@@ -94,7 +94,7 @@
     .btn-gradient:hover {
       background: linear-gradient(90deg, #9b4dff, #ff4ecb);
       transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(255, 78, 203, 0.5);
+      box-shadow: 0px 4px 15px rgba(161, 78, 255, 0.5);
     }
 
     /* Carousel Text Animation */
@@ -187,7 +187,7 @@
 
     /* Footer */
     .footer-jio {
-      background: #040407;
+      background: black;
       color: #c4c5ce;
     }
     .footer-jio a {
@@ -313,6 +313,16 @@
   font-size: 1.05rem;
   margin: 0;
 }
+.about-text {
+  color: #dbe3e7;
+  font-size: 1.5rem;   /* bigger text */
+  line-height: 2;      /* more spacing */
+  font-weight: 500;
+  text-align: center;  /* center text for balance */
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
 </style>
 
   
@@ -333,27 +343,18 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Genres</a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="action.html">Action</a></li>
-              <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
-              <li><a class="dropdown-item" href="#">Drama</a></li>
-              <li><a class="dropdown-item" href="#">Horror</a></li>
-            </ul>
-          </li>
           <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
           <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
         </ul>
-        <button class="btn btn-gradient" type="button">Login</button>
+        <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
       </div>
     </div>
   </nav>
 
   <!-- Banner Section -->
-  <section class="banner container-fluid p-5" style="background: linear-gradient(135deg, #1a1a2e, #162447, #0f3460);">
+  <section class="banner containers p-5" style="background: linear-gradient(135deg, #1a1a2e, #162447, #0f3460);">
     <div id="textCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
       <div class="carousel-inner text-center text-white">
         <div class="carousel-item active">
@@ -373,7 +374,7 @@
   </section>
 <!-- About Streamora Section -->
 <section class="about-streamora py-5 position-relative" style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
-  <div class="container">
+  <div class="container-fluid">
     <!-- Section Title -->
     <h2 class="text-center display-4 fw-bold mb-5 gradient-text">About Streamora</h2>
  <div class="row align-items-center gy-5">
@@ -388,7 +389,7 @@
 
       <!-- Right Text -->
       <div class="col-lg-6">
-        <p class="lead about-text fade-in-left">
+        <h1><p class="lead about-text fade-in-left">
           &nbsp;&nbsp;Streamora is a <span class="highlight">free, ad-free entertainment platform</span> built for movie and TV show lovers.  
           It offers a <span class="highlight">sleek interface, high-quality streaming</span>, and <span class="highlight">personalized content recommendations</span>.  
           Discover your favorite series, explore new genres, and enjoy an optimized experience on desktop, tablet, and mobile devices.
@@ -396,6 +397,7 @@
         <p class="lead about-text fade-in-left delay-1">
           &nbsp;&nbsp;The platform integrates data from <span class="highlight">trusted sources</span> to provide <span class="highlight">authentic information</span> on movies and shows.  
           Streamora is <span class="highlight">community-driven</span>, constantly improving with feedback from real users, making it the ultimate guide for entertainment enthusiasts.
+        </h1>
         </p>
       </div>
     </div>
@@ -449,7 +451,7 @@
 </section>
 
   <!-- Achievements Section -->
-  <section class="trust-section">
+  <section class="trust-section"style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
     <div class="container">
       <h2>Our Achievements</h2>
       <div class="row g-4 text-center">
@@ -483,7 +485,7 @@
 
 
   <!-- Team Section -->
-<section class="team-section">
+<section class="team-section" style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
   <div class="container-fluid">
     <h2>Meet Our Team</h2>
     <div class="row g-4 justify-content-center">
