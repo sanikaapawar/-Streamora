@@ -791,3 +791,132 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     .btn-watch i {
       font-size: 1.2rem;
     }
+
+    /* Footer */
+    .footer-jio {
+      background: #040407;
+      color: #c4c5ce;
+    }
+    .footer-jio a {
+      color: #c4c5ce;
+      text-decoration: none;
+    }
+    .footer-jio a:hover {
+      color: #ff4ecb;
+      text-decoration: underline;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: #c4c5ce;
+    }
+    .footer-social a:hover {
+      color: #ff4ecb;
+    }
+    
+    /*why trust stremora  */
+  /* Gradient Heading */
+  .gradient-text {
+    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Highlight keywords */
+  .highlight {
+    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  /* About Text */
+  .about-text {
+    color: #dbe3e7;
+    font-size: 1.18rem;
+    line-height: 1.8;
+    text-indent: 2rem; /* Add proper indentation at the start */
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeInLeft 1s forwards;
+  }
+  .fade-in-left.delay-1 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Image Hover Animation */
+  .img-hover {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  .img-hover:hover {
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 15px 30px rgba(255, 78, 203, 0.6);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .about-text {
+      text-align: center;
+      text-indent: 0; /* Remove indent on small screens */
+    }
+    .img-wrapper {
+      margin-bottom: 30px;
+    }
+  }/* Slide-in Right Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-in-right {
+  opacity: 0;
+  animation: slideInRight 0.9s ease forwards;
+}
+.slide-in-right.delay-1 { animation-delay: 0.3s; }
+.slide-in-right.delay-2 { animation-delay: 0.7s; }
+.slide-in-right.delay-3 { animation-delay: 1.1s; }
+.slide-in-right.delay-4 { animation-delay: 1.5s; }
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Trust Box */
+.trust-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.trust-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Text Style */
+.trust-section p {
+  color: #dbe3e7;
+  font-size: 1.05rem;
+  margin: 0;
+}
