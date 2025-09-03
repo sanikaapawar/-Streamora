@@ -13,7 +13,7 @@
       font-family: "Poppins", sans-serif;
     } */
     body {
-  background: url("images/pink4.jpg") no-repeat center center fixed;
+   background: url("images/pink1.jpg") no-repeat center center fixed; 
   background-size: cover;  /* makes the image cover the entire screen */
   color: #fff;
   font-family: "Poppins", sans-serif;
@@ -171,7 +171,7 @@
   background-attachment: fixed;
   backdrop-filter: blur(5px); /* glass effect */
   -webkit-backdrop-filter: blur(5px); /* Safari support */
-  background-color: rgba(0, 0, 0, 0.5); /* fallback: semi-transparent */
+  background-color: rgba(163, 74, 74, 0.938); /* fallback: semi-transparent */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -180,6 +180,293 @@
   color: #fff !important;
 }
 
+/* Transparent navbar */
+.custom-navbar {
+  background: transparent !important;   /* fully see-through */
+  border: none;                         /* remove border line */
+  box-shadow: none;                     /* remove shadow if any */
+  position: absolute;                   /* float on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;                          /* ensure it's above video */
+}
+
+
+
+
+/* video properties start */
+ .video-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+    }
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+ .video-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 1000%;
+    }
+
+    .video-overlay h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+      background-clip: text;              
+      -webkit-background-clip: text;      
+      color: transparent;                 
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .video-overlay p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .video-overlay .btn-watch {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+      border: none;
+      color: #fff;
+      transition: all 0.4s ease;
+    }
+    .video-overlay .btn-watch:hover {
+      background: linear-gradient(90deg, #9b4dff, #ff4ecb);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 78, 203, 0.8);
+    }
+    /* video css end */
+/* Modal Animation */
+.modal-animate {
+  animation: fadeSlideIn 0.8s ease;
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Text Glow */
+.glowing-text {
+  color: #fff;
+  text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c, 0 0 30px #ff004c;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c; }
+  to   { text-shadow: 0 0 20px #ff004c, 0 0 40px #ff004c; }
+}
+
+/* Poster Hover */
+.poster-hover {
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.poster-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff004c;
+}
+
+/* Trailer Hover */
+.trailer-hover iframe {
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+.trailer-hover:hover iframe {
+  transform: scale(1.03);
+}
+
+/* Fade & Slide Animations */
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Text Animation */
+.text-animate {
+  animation: fadeIn 2s ease;
+}
+.text-animate-delay {
+  animation: fadeIn 2.5s ease;
+}
+
+/* Button Gradient + Hover */
+.btn-gradient {
+  background: linear-gradient(45deg, #ff004c, #ff6600);
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-hover:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 15px #ff004c;
+}
+
+/* Rating Badge */
+.rating-badge {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+@media (min-width: 992px) {
+  #movieInfoModal2 .modal-dialog {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #movieInfoModal2 .modal-content {
+    height: 100%;
+    border-radius: 0;
+  }
+
+    #movieInfoModal .modal-dialog {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #movieInfoModal .modal-content {
+    height: 100%;
+    border-radius: 0;
+  }
+  #movieInfoModal3 .modal-dialog {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #movieInfoModal3 .modal-content {
+    height: 100%;
+    border-radius: 0;
+  }
+  #movieInfoModal4 .modal-dialog {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #movieInfoModal4 .modal-content {
+    height: 100%;
+    border-radius: 0;
+  }
+}
+/* cartoon images css start here */
+section .container-fluid { 
+  margin: 100px auto; 
+  width: 40%; 
+  height: 400px; 
+  display: flex; 
+  
+  justify-content: center; 
+  gap: 9px; 
+} 
+section .container-fluid img { 
+  width: 200px; /* fixed instead of 200% */ 
+  height: 120%; 
+  object-fit: cover; 
+  border-radius: 10px; 
+  border: 2px solid rgba(255, 78, 203, 0.8);
+   transition: all ease-in-out 0.5s; 
+  } 
+  section .container-fluid img:hover { 
+    width: 550px; /* slight grow on hover */ 
+  }
+/* cartoon css end */
+/* flimstrip css start */
+/* Filmstrip Section */
+.film-strip-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  border: 8px solid #333;
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+/* Film holes */
+.holes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  display: flex;
+  justify-content: space-around;
+  background: transparent;
+}
+.holes.top { top: -6px; }
+.holes.bottom { bottom: -6px; }
+
+.holes::before, .holes::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 30px 0 #000, 60px 0 #000, 90px 0 #000, 120px 0 #000, 150px 0 #000,
+              180px 0 #000, 210px 0 #000, 240px 0 #000, 270px 0 #000;
+}
+
+/* Filmstrip moving */
+.film-strip {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.film-strip-inner {
+  display: inline-flex;
+  animation: scrollFilm 25s linear infinite;
+}
+
+.frame {
+  margin: 0 8px;
+}
+.frame img {
+  width: 180px;
+  height: 120px;
+  border: 4px solid #000;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #222;
+  transition: transform 0.3s;
+}
+.frame img:hover {
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes scrollFilm {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
   </style>
 </head>
@@ -221,71 +508,70 @@
       </ul>
       <form class="d-flex" role="search">
         
-
-  <button class="btn btn-gradient" type="submit">Login</button>
+<a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
 </form>
       </form>
     </div>
   </div>
 </nav>
 
+ <div class="video-container">
+    <video src="video/pop1 (2).mp4" autoplay muted loop></video>
 
-
-
-  <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"></button>
+    <!-- Overlay Text -->
+    <div class="video-overlay">
+      <h1>All Top Rated Movies</h1>
+      <p>Streamora brings you the best handpicked top-rated movies of all time. Watch anytime, anywhere.</p>
+      <button class="btn-watch">▶ Start Watching</button>
     </div>
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="images/pink2.jpg" class="d-block w-100" alt="Slide 1" style="max-height:600px; object-fit:cover;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/pink1.jpg" class="d-block w-100" alt="Slide 2" style="max-height:600px; object-fit:cover;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/welcomenewyork.jpg" class="d-block w-100" alt="Slide 3" style="max-height:600px; object-fit:cover;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="images/slider1 (2).jpg" class="d-block w-100" alt="Slide 4" style="max-height:600px; object-fit:cover;">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Fourth slide label</h5>
-          <p>Some representative placeholder content for the fourth slide.</p>
-        </div>
-      </div>
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 
+
+<!-- flimstrip images   -->
+ <!-- Filmstrip Section -->
+<section class="film-section">
+  <div class="film-strip-container">
+    <!-- Perforated holes -->
+    <div class="holes top"></div>
+    <div class="holes bottom"></div>
+
+    <!-- Filmstrip -->
+    <div class="film-strip">
+      <div class="film-strip-inner">
+        <!-- Frames -->
+        <div class="frame"><img src="images/tt1.jpg" alt="h1"></div>
+        <div class="frame"><img src="images/kk1.jpg" alt="h2"></div>
+        <div class="frame"><img src="images/bigboss.jpg" alt="h3"></div>
+        <div class="frame"><img src="images/cid.jpg" alt="h4"></div>
+        <div class="frame"><img src="images/balver.jpg" alt="h5"></div>
+        <div class="frame"><img src="images/chalahava.jpg" alt="h6"></div>
+        <div class="frame"><img src="images/supersing.jpg" alt="h7"></div>
+        <div class="frame"><img src="images/sisterhood.jpg" alt="h8"></div>
+        <div class="frame"><img src="images/motupatlu.jpg" alt="h9"></div>
+        <div class="frame"><img src="images/sporta.jpg" alt="h10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
  
+<section>
+  <div class="container-fluid">
+    <img src="images/Ashiqui 2.jpg">
+    <img src="images/ae dil hai mushkil.jpg">
+    <img src="images/Brahmastra.jpg">
+    <img src="images/shidhat.jpg">
+    <img src="images/saiyaara2.jpg">
+    
+        <img src="images/lukachupi.jpg">
+         
+
+  </div>
+</section>
 
   <!-- Hero Section -->
-  <section class="hero text-white">
+  <!-- <section class="hero text-white">
     <div class="container">
       <h1 class="display-4 fw-bold">Your Movie Streaming Guide</h1>
       <p class="lead text-light">Find where to stream new, popular & upcoming movies and TV shows.</p>
@@ -294,7 +580,7 @@
         <a href="#" class="btn btn-outline-light btn-lg">Features</a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Featured Movies -->
   <section class="py-5">
@@ -303,47 +589,337 @@
       <div class="row g-4">
         <div class="col-md-3">
           <div class="card bg-dark text-white h-100">
-            <img src="images/movie1.jpg" class="card-img-top" alt="Movie 1">
+            <img src="images/avtar.webp" class="card-img-top" alt="Movie 1">
             <div class="card-body">
               <h5 class="card-title">Avengers: Endgame</h5>
-              <p class="card-text">Earth’s mightiest heroes assemble for the final battle.</p>
-              <a href="#" class="btn btn-warning btn-sm">Watch Now</a>
+              <p class="card-text">Earth's mightiest heroes assemble for the final battle.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal">
+  More Info
+</button>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card bg-dark text-white h-100">
-            <img src="images/movie5.jpg" class="card-img-top" alt="Movie 2">
+            <img src="images/joker.jpg" class="card-img-top" alt="Movie 2">
             <div class="card-body">
               <h5 class="card-title">Joker</h5>
-              <p class="card-text">The origin story of Gotham’s most infamous villain.</p>
-              <a href="#" class="btn btn-warning btn-sm">Watch Now</a>
+              <p class="card-text">The origin story of Gotham's most infamous villain.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal2">
+  More Info
+</button>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card bg-dark text-white h-100">
-            <img src="images/movie3.jpg" class="card-img-top" alt="Movie 3">
+            <img src="images/indor ishq.jpg" class="card-img-top" alt="Movie 3">
             <div class="card-body">
               <h5 class="card-title">Inception</h5>
               <p class="card-text">A mind-bending thriller about dreams within dreams.</p>
-              <a href="#" class="btn btn-warning btn-sm">Watch Now</a>
+               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal3">
+  More Info
+</button>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card bg-dark text-white h-100">
-            <img src="images/movie4.jpg" class="card-img-top" alt="Movie 4">
+            <img src="images/mirzapur.jpg" class="card-img-top" alt="Movie 4">
             <div class="card-body">
               <h5 class="card-title">Interstellar</h5>
               <p class="card-text">A journey through space and time to save humanity.</p>
-              <a href="#" class="btn btn-warning btn-sm">Watch Now</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal4">
+  More Info
+</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- model first -->
+   <!-- Movie Info Modal -->
+<!-- Modal -->
+<div class="modal fade" id="movieInfoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark text-white modal-animate">
+      
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">🎬 Avengers: Endgame</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+            
+            <!-- Movie Poster -->
+            <div class="col-md-4 text-center">
+              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
+                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
+              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
+            </div>
+            
+            <!-- Movie Details -->
+            <div class="col-md-8 animate-slideUp">
+              <h4 class="fw-bold">Overview</h4>
+              <p class="text-animate">
+                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
+                With the help of remaining allies, the Avengers assemble once more to reverse 
+                Thanos' actions and restore balance to the universe.
+              </p>
+              
+              <h5 class="fw-bold mt-3">Cast</h5>
+              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
+
+              <h5 class="fw-bold mt-3">Genre</h5>
+              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
+
+              <h5 class="fw-bold mt-3">Release Year</h5>
+              <p class="text-animate-delay">2019</p>
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <div class="row mt-4 animate-fadeIn">
+            <div class="col-12">
+              <h5 class="fw-bold">Watch Trailer</h5>
+              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
+                <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c" 
+                        title="Avengers Endgame Trailer" 
+                        allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- model first end -->
+
+
+
+<!-- model second -->
+   <!-- Movie Info Modal -->
+<!-- Modal -->
+<div class="modal fade" id="movieInfoModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
+ 
+
+  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
+    <div class="modal-content bg-dark text-white modal-animate">
+      
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+            
+            <!-- Movie Poster -->
+            <div class="col-md-4 text-center">
+              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
+                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
+              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
+            </div>
+            
+            <!-- Movie Details -->
+            <div class="col-md-8 animate-slideUp">
+              <h4 class="fw-bold">Overview</h4>
+              <p class="text-animate">
+                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
+                With the help of remaining allies, the Avengers assemble once more to reverse 
+                Thanos' actions and restore balance to the universe.
+              </p>
+              
+              <h5 class="fw-bold mt-3">Cast</h5>
+              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
+
+              <h5 class="fw-bold mt-3">Genre</h5>
+              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
+
+              <h5 class="fw-bold mt-3">Release Year</h5>
+              <p class="text-animate-delay">2019</p>
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <div class="row mt-4 animate-fadeIn">
+            <div class="col-12">
+              <h5 class="fw-bold">Watch Trailer</h5>
+              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- model second end -->
+
+<!-- model third -->
+   <!-- Movie Info Modal -->
+<!-- Modal -->
+<div class="modal fade" id="movieInfoModal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
+ 
+
+  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
+    <div class="modal-content bg-dark text-white modal-animate">
+      
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+            
+            <!-- Movie Poster -->
+            <div class="col-md-4 text-center">
+              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
+                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
+              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
+            </div>
+            
+            <!-- Movie Details -->
+            <div class="col-md-8 animate-slideUp">
+              <h4 class="fw-bold">Overview</h4>
+              <p class="text-animate">
+                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
+                With the help of remaining allies, the Avengers assemble once more to reverse 
+                Thanos' actions and restore balance to the universe.
+              </p>
+              
+              <h5 class="fw-bold mt-3">Cast</h5>
+              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
+
+              <h5 class="fw-bold mt-3">Genre</h5>
+              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
+
+              <h5 class="fw-bold mt-3">Release Year</h5>
+              <p class="text-animate-delay">2019</p>
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <div class="row mt-4 animate-fadeIn">
+            <div class="col-12">
+              <h5 class="fw-bold">Watch Trailer</h5>
+              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- model third end -->
+
+
+
+<!-- model fourth-->
+   <!-- Movie Info Modal -->
+<!-- Modal -->
+<div class="modal fade" id="movieInfoModal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
+ 
+
+  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
+    <div class="modal-content bg-dark text-white modal-animate">
+      
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row g-4">
+            
+            <!-- Movie Poster -->
+            <div class="col-md-4 text-center">
+              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
+                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
+              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
+            </div>
+            
+            <!-- Movie Details -->
+            <div class="col-md-8 animate-slideUp">
+              <h4 class="fw-bold">Overview</h4>
+              <p class="text-animate">
+                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
+                With the help of remaining allies, the Avengers assemble once more to reverse 
+                Thanos' actions and restore balance to the universe.
+              </p>
+              
+              <h5 class="fw-bold mt-3">Cast</h5>
+              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
+
+              <h5 class="fw-bold mt-3">Genre</h5>
+              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
+
+              <h5 class="fw-bold mt-3">Release Year</h5>
+              <p class="text-animate-delay">2019</p>
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <div class="row mt-4 animate-fadeIn">
+            <div class="col-12">
+              <h5 class="fw-bold">Watch Trailer</h5>
+              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- model fourth end -->
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
