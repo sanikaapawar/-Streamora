@@ -99,40 +99,32 @@
 body{
      touch-action: pan-y;
 }
- .movie {
-     border-radius: 8px;
-     width: 100%;
-     max-width: 300px;
-     height: 450px;
-     position: relative;
-     background: #000;
-     overflow: hidden;
-     box-shadow: 0 1px 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.16), 0 4px 4px rgba(0,0,0,0.20), 0 8px 8px rgba(0,0,0,0.30);
-     margin-bottom: 15px;
-     margin-top: 15px;
-}
- .movie .poster:before {
-     content: '';
-     position: absolute;
-     bottom: -200px;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(0deg, #000 55%, transparent);
-     transition: 0.5s;
-     z-index: 1;
-}
- .movie:hover .poster:before {
-     bottom: 0;
-}
- .movie .poster img {
-     width: 100%;
-     transition: 0.5s;
-}
- .movie:hover .poster img {
-     filter: blur(7px);
-     transform: translateY(-50px);
-}
+ .movie-card {
+      width: 190px;   /* Fixed width */
+      height: 270px;  /* Fixed height */
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* keeps ratio, crops extra */
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .movie-card img:hover {
+      transform: scale(1.05); /* zoom effect */
+    }
+
+    .movie-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
  .details {
      position: absolute;
      padding: 20px;
@@ -262,8 +254,6 @@ body{
   <body>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
@@ -283,767 +273,111 @@ body{
             <li class="nav-item"><a class="nav-link"
                 href="movies.html">Movies</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown">Genres</a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="action.html">Action</a></li>
-                <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
-                <li><a class="dropdown-item" href="#">Drama</a></li>
-                <li><a class="dropdown-item" href="#">Horror</a></li>
-              </ul>
+              
+               <li class="nav-item"><a class="nav-link active"
+               href="Tvshow.html">Tv show</a></li>
             </li>
             <li class="nav-item"><a class="nav-link" href="toprated.html">Top
                 Rated</a></li>
             <li class="nav-item"><a class="nav-link"
                 href="contact.html">Contact</a></li>
           </ul>
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="login">
             <input class="form-control me-2 bg-dark text-light border-0"
-              type="search" placeholder="Search">
+              type="search" placeholder="login">
             <button class="btn btn-outline-warning"
-              type="submit">Search</button>
+              type="submit">login</button>
           </form>
         </div>
       </div>
     </nav>
+
     <!-- Hero Section -->
 
-    <section class="hero">
+    <!-- <section class="hero">
       <h1 class="text-center"> Unlimited Movies </h1>
       <img src="images/pink2.jpg" class="img-fluid" width="1600px"
         height="1000px">
-    </section>
-    
-    <html data-bs-theme="dark">
-      <body>
-        <div class="container">
-          <div
-            class="
-                  d-flex
-                  flex-row flex-md-row flex-column flex-wrap
-                  justify-content-between
-                  align-items-sm-center
-                  align-items-center
-                  ">
-            <div class="movie">
+    </section> -->
 
-              <div class="ribbon up" style="--color: blue;">
-                <div class="content">
-                  <svg width="20px" height="20px" aria-hidden="true"
-                    focusable="false" data-prefix="fas" data-icon="check"
-                    class="svg-inline--fa fa-check fa-w-16" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="currentColor"
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-                  </svg>
-                </div>
-              </div>
-
-              <div class="poster">
-                 
-                <img
-                  src="images/chava.jpg" />
-              </div>
-              <div class="details">
-                
-                <a href class="text-decoration-none">
-                  <h2>
-                    Chava:(2025) <br />
-                    <span>Directeor Laxman Utekar </span>
-                  </h2>
-                </a>
-                <div class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="rating">
-                  <div class="progress" role="progressbar"
-                    aria-label="Example with label" aria-valuenow="85"
-                    aria-valuemin="0" aria-valuemax="100">
-                    <div
-                      class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                      style="width: 85%">
-                      85% Watchable
-                    </div>
-                  </div>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">War</span>
-                </div>
-                <div class="info">
-                  <p>
-                    The film begins with the death of Shivaji Maharaj, triggering fears of the Maratha Empires downfall.Sambhaji courageously..
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <a href>
-                        <img
-                          src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                          title="Actor Name" alt="Actor Name" />
-                      </a>
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/animal.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Animal: (2023) <br /><span> Directeor Sandeep Reddy Vanga</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Drama</span>
-                  <span class="badge rounded-pill text-bg-primary">Emotional</span>
-                </div>
-                <div class="info">
-                  <p>
-                    Focuses on a strained father–son relationship
-                    Explores toxic masculinity, violence, and family loyalty.
-                    Ranbir’s character is portrayed as impulsive, instinct-driven, “animal-lik
-                   
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/Salar.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Salaar: (2023) <br /><span>Directeor Prashanth neel </span>
-                    
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    Became the highest-grossing Telugu film of 2023, third all-time in the language, and among the top Indian films globally
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="ribbon up" style="--color: red;">
-                <div class="content">
-                  <svg width="20px" height="20px" aria-hidden="true"
-                    focusable="false" data-prefix="fas" data-icon="check"
-                    class="svg-inline--fa fa-check fa-w-16" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="currentColor"
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="poster">
-                <img
-                  src="images/munjya.jpg"/>
-              </div>
-              <div class="details">
-                <h2>
-                  Munjya : (2024) <br /><span>Directed Aditya Sarpotdar</span>
-                    </span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Horaror</span>
-                </div>
-                <div class="info">
-                  <p>
-                    Rooted in Konkan folklore, it captures the legend of Munjya — a mischievous spirit born when a young man passes away unmarried after his coming-of-age ritua
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/Saiyaara.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Saiyaara :(2025) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/shidhat.jpg"/>
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/Luka chuppi.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="images/ved.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="https://image.tmdb.org/t/p/original/rxeRwN7dxHSLE0asOEIc1Q5Mcxy.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="ribbon up" style="--color: #57c443;">
-                <div class="content">
-                  <svg width="20px" height="20px" aria-hidden="true"
-                    focusable="false" data-prefix="fas" data-icon="check"
-                    class="svg-inline--fa fa-check fa-w-16" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="currentColor"
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="poster">
-                <img
-                  src="https://image.tmdb.org/t/p/original/3bv6WAp6BSxxYvB5ozKFUYuRA8C.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="https://image.tmdb.org/t/p/original/g6coe4MDgdxhIQgkI5ZIvJ1tH52.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="movie">
-              <div class="poster">
-                <img
-                  src="https://image.tmdb.org/t/p/original/yOCyGz0RN0f2xA6zf3SmJgBHyIr.jpg" />
-              </div>
-              <div class="details">
-                <h2>
-                  Star Wars: Episode V (1980) <br /><span>Directed by Irvin
-                    Kershner</span>
-                </h2>
-                <div class="rating">
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="fas fa-star" aria-hidden="true"></i>
-                  <i class="far fa-star" aria-hidden="true"></i>
-                  <span>4/5</span>
-                </div>
-                <div class="tags">
-                  <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-                  <span
-                    class="badge rounded-pill text-bg-success">Mystery</span>
-                  <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-                </div>
-                <div class="info">
-                  <p>
-                    After the Rebels are brutally overpowered by the Empire on
-                    the
-                    ice planet Hoth, Luke Skywalker begins Jedi training with
-                    Yoda,
-                    while his friends are pursued by Darth Vader...
-                  </p>
-                </div>
-                <div class="cast">
-                  <h4>Cast</h4>
-                  <ul>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg" />
-                    </li>
-                    <li>
-                      <img
-                        src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </body>
-    </html>
+   <!-- Movies Section -->
+  <div class="container mt-5">
+    <h3>Trending Now</h3>
+    <div class="row mt-3">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Aashiqui.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/12Th Fail.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/chava.jpg" class="img-fluid movie-poster" alt="Movie 3" width="260px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/shidhat.jpg" class="img-fluid movie-poster" alt="Movie 4" width="260px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/kalki.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/sita ram.jpg" class="img-fluid movie-poster" alt="Movie 6" width="170px">
+      </div>
+    </div>
+  </div>
+        <!-- movies section 2 -->
+    <div class="container mt-5">
+    <h3>Thriller movies</h3>
+    <div class="row mt-3">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/joker.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Salar.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/bloodyDaady2.jpg" class="img-fluid movie-poster" alt="Movie 3" width="400px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/munjya.jpg" class="img-fluid movie-poster" alt="Movie 4" width="260px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Bhediya.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/stree.jpg" class="img-fluid movie-poster" alt="Movie 6" width="170px">
+      </div>
+    </div>
+  </div>
+      
+        <!-- movie section 3 -->
+  <div class="container mt-5">
+    <h4>Comedy movies</h4>
+    <div class="row mt-3">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/munna bhai mbbs.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Andhadhun.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/jagga jasoos.jpg" class="img-fluid movie-poster" alt="Movie 3" width="400px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/venky.jpg" class="img-fluid movie-poster" alt="Movie 4" width="200px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Dolly ki doli.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+        <img src="images/Phir hera pheri.jpg" class="img-fluid movie-poster" alt="Movie 6" width="180px">
+      </div>
+    </div>
+  </div>
+   
 
     <!-- Footer -->
 
-    <footer class="bg-black text-center text-muted py-3 mt-5">
+    <footer class="bg-dark text-center text-muted py-3 mt-5">
       <p>&copy; 2025 Movies Page | Designed with ❤️ using Bootstrap</p>
     </footer>
 
