@@ -814,6 +814,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     .footer-social a:hover {
       color: #ff4ecb;
     }
+
+    .footer-social a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #fff;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    .footer-social a:hover {
+      color: #1da1f2; /* Twitter blue hover effect */
+    }
     
     /*why trust stremora  */
   /* Gradient Heading */
