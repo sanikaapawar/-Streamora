@@ -151,16 +151,7 @@
   width: 100%; /* underline animation */
 }
 
-/* Transparent navbar with background image */
-.custom-navbar {
-  background: url("images/navbar-bg.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  backdrop-filter: blur(5px); /* glass effect */
-  -webkit-backdrop-filter: blur(5px); /* Safari support */
-  background-color: rgba(0, 0, 0, 0.5); /* fallback: semi-transparent */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 .custom-navbar .nav-link,
 .custom-navbar .navbar-brand {
@@ -190,141 +181,7 @@
   font-weight: 500;
 }
 /* About Us Banner Styling end */
-body {
-    margin: 0;
-    font-family: monospace;
-    background-image: url(https://i.postimg.cc/Dyf3F43m/back-img.jpg);
-}
 
-.slider {
-    width: 100%; /* Full width for better responsiveness */
-    max-width: 1300px; /* Limit max-width */
-    height: 500px; /* Adjust slider height */
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    transition: transform 1s ease;
-    height: 100%;
-    width: 250px; /* Set the width */
-    height: calc(450px / (16/9)); /* Maintain 16:9 aspect ratio */
-    object-fit: cover;
-    margin-top: 100px;
-}
-
-.list .item {
-    flex-shrink: 0; /* Ensure items do not shrink */
-    width: 100%; /* Each item takes the full width of the slider */
-}
-
-.list img {
-    max-height: 100%; /* Ensure the image fits within the height */
-    max-width: 100%;  /* Ensure the image fits within the width */
-    width: auto;      /* Maintain aspect ratio */
-    height: auto;     /* Maintain aspect ratio */
-}
-
-.buttons {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.buttons button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #fff;
-    border: none;
-    font-family: monospace;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.dots {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-.dots li {
-    list-style: none;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    margin: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dots li.active {
-    width: 30px;
-} 
-
-
-
-
-.card-container {   
-    margin-top: 50px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 150px; /* Reduced gap between the cards */
-    justify-content: center; /* Center align the cards */
-
-}
-
-.movie-card {
-    background-color: black;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px yellow;
-    padding: 20px;
-    width: 220px; /* Adjust width to fit more cards */
-    text-align: center;
-    flex: 0 1 220px; /* Allow cards to grow and shrink */
-}
-
-.movie-card h2 {
-    font-size: 1.5em;
-    color: white;
-}
-
-.movie-card ol {
-    color: white;
-    font-size: 1.1em;
-    text-align: left;
-    padding-left: 20px; /* Adds some padding to the left of the list */
-}
-
-.movie-card ol li {
-    margin-bottom: 10px; /* Adds space between list items */
-}
-
-.movie-card strong {
-    color: whitesmoke;
-}
-
-@media screen and (max-width: 768px) {
-    .slider {
-        height: 300px; /* Adjust height for smaller screens */
-    }
-}
 /* after banner section start */
 /* Sticky navbar */
 .custom-navbar {
@@ -337,6 +194,80 @@ body {
 /* sticky navbar end */
 
 /* feedback start */
+/* Team Section<--------------------------------*/
+#team {
+  background: #fff;
+  padding: 60px 0;
+}
+
+#team .member {
+  text-align: center;
+  margin-bottom: 20px;
+  background: #000;
+  position: relative;
+}
+
+#team .member .member-info {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+}
+
+#team .member .member-info-content {
+  margin-top: -50px;
+  transition: margin 0.2s;
+}
+
+#team .member:hover .member-info {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: 0.4s;
+}
+
+#team .member:hover .member-info-content {
+  margin-top: 0;
+  transition: margin 0.4s;
+}
+
+#team .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+#team .member .social {
+  margin-top: 15px;
+}
+
+#team .member .social a {
+  transition: none;
+  color: #fff;
+}
+
+#team .member .social a:hover {
+  color: #18d26e;
+}
+
+#team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
 
 /* footer css */
 .page-wrapper {
@@ -718,12 +649,10 @@ footer .widget ul {
   padding-top: 10px;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 /* About Us Section
 --------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg") center top no-repeat fixed;
+  background: url("/imeges/about-bg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
@@ -788,7 +717,7 @@ footer .widget ul {
 }
 
 #about .about-col:hover i {
-  color: #9b4dff
+  color: #9b4dff;
 }
 
 #about .about-col h2 {
@@ -833,83 +762,306 @@ footer .widget ul {
   padding: 20px;
   height: 100%; /* makes sure column fills height */
 }
-
-/* Team Section
---------------------------------*/
-#team {
-  background: #fff;
-  padding: 60px 0;
+/* meet our team start */
+/* meet our team section start */
+.team {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
 }
 
-#team .member {
+.team h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #171717;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Team member card */
+.team-member {
+  position: relative;
+  width: 240px;     /* smaller width */
+  height: 320px;    /* smaller height */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay effect */
+.team-member .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(106, 13, 173, 0.9); /* purple overlay */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
   text-align: center;
-  margin-bottom: 20px;
-  background: #000;
+  padding: 15px;
+}
+
+.team-member:hover .overlay {
+  opacity: 1;
+}
+
+/* Social icons */
+.social-icons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  font-size: 18px; /* slightly smaller icons */
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.team-member:hover .social-icons a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-icons a:hover {
+  color: palevioletred; /* golden hover */
+}
+/* Team section container */
+.team-grid-container {
+  background-color: #000; /* black background */
+  padding: 50px 20px;     /* add some padding around grid */
+}
+.team {
+  background-color: #000; /* black background */
+  padding: 50px 20px;     /* add some space around the cards */
+  color: #fff;            /* white text for contrast */
+  text-align: center;     /* center the heading */
+}
+
+.team h2 {
+  
+  margin-bottom: 40px;
+  color: #9b4dff; /* Purple color */
+  text-align: center; /* optional: center the heading */
+  font-size: 32px; /* optional: adjust size */
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* meet our team section end */
+/* progress bar */
+#stremora-stats {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: black;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+#stremora-stats h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
   position: relative;
 }
 
-#team .member .member-info {
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: 0.2s;
+#stremora-stats p {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  color: #ccc;
 }
-
-#team .member .member-info-content {
-  margin-top: -50px;
-  transition: margin 0.2s;
+.skill {
+  margin: 20px 0;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-#team .member:hover .member-info {
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 1;
-  transition: 0.4s;
-}
-
-#team .member:hover .member-info-content {
-  margin-top: 0;
-  transition: margin 0.4s;
-}
-
-#team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
-  color: #fff;
-}
-
-#team .member span {
-  font-style: italic;
+.skill-name {
   display: block;
-  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.skill-bar {
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.skill-progress {
+  height: 30px;
+  line-height: 30px;
   color: #fff;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+  border-radius: 5px;
 }
+.skill-progress:nth-child(1) { background-color: #9b4dff; }
+.skill-progress:nth-child(2) { background-color: #3498db; }
+.skill-progress:nth-child(3) { background-color: #f1c40f; }
+.skill-progress:nth-child(4) { background-color: #e74c3c; }
 
-#team .member .social {
-  margin-top: 15px;
+#stremora-stats h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  position: relative;
+  color: #9b4dff; /* Make the heading purple too */
+  font-weight: bold;
+  text-align: center;
 }
-
-#team .member .social a {
-  transition: none;
+.services-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: black;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-#team .member .social a:hover {
-  color: #18d26e;
+.services-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #9b4dff; /* Purple heading */
 }
 
-#team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
+.services-section p {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #ccc;
 }
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.service-item {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.service-item:hover {
+  background-color: #1a0f2f;
+  transform: translateY(-5px);
+}
+
+.service-item i {
+  font-size: 36px;
+  color: #9b4dff; /* Purple icons */
+  margin-bottom: 15px;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: #ccc;
+}
+/* services start */
+/* Container and Section */
+.services-section {
+  padding: 60px 20px;
+  background-color: black;
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.services-section .section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.services-section .section-desc {
+  font-size: 16px;
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* Individual Service Item */
+.service-item {
+  background-color: black;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+  cursor: default;
+}
+
+.service-item:hover .service-title {
+  color: #a020f0; /* Purple highlight on hover */
+}
+.service-desc {
+  font-size: 14px;
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+
+.section-title {
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 32px !important;
+  color: #9b4dff !important;
+}
 
