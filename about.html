@@ -2,581 +2,343 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Streamora</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for social icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filmstrip with Frames</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="css/about.css" rel="stylesheet">
 
   <style>
-    /* Body & Background */
     body {
-      background: black; /* Deep black for contrast */
-      color: #e0e1dd;
-      font-family: "Poppins", sans-serif;
-    }
-
-    /* Navbar */
-    .logo-img {
-      height: 60px;
-      width: auto;
-      margin-right: 12px;
-      transition: transform 0.4s ease;
-    }
-    .brand-text {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 2.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-  -webkit-background-clip: text; /* For Chrome, Safari */
-  background-clip: text;         /* Standard property for other browsers */
-  -webkit-text-fill-color: transparent; /* Make gradient visible in WebKit */
-  display: inline-block;
-  transition: all 0.4s ease-in-out;
-}
-
-    .brand-hover:hover .logo-img {
-      transform: scale(1.15) rotate(-5deg);
-    }
-    .brand-hover:hover .brand-text {
-      letter-spacing: 3px;
-      transform: scale(1.1);
-      text-shadow: 0px 0px 25px rgba(255, 78, 203, 0.8);
-    }
-    .nav-link {
-      position: relative;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #fff !important;
-    }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover {
-      color: #ff4ecb !important;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .custom-navbar {
-      background: url("images/navbar-bg.jpg") no-repeat center center;
-      background-size: cover;
-      background-attachment: fixed;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      background-color: rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Gradient Buttons */
-    .btn-gradient {
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      color: #fff;
-      border: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .btn-gradient:hover {
-      background: linear-gradient(90deg, #9b4dff, #ff4ecb);
-      transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(161, 78, 255, 0.5);
-    }
-
-    /* Carousel Text Animation */
-    .carousel-item h1, .carousel-item p {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-    .carousel-item.active h1,
-    .carousel-item.active p {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-
-    /* Trust & Achievements Section */
-    .trust-section {
-      padding: 80px 0;
-      text-align: center;
-    }
-    .trust-section h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-  -webkit-background-clip: text; /* For Chrome, Safari */
-  background-clip: text;         /* Standard property for other browsers */
-  -webkit-text-fill-color: transparent; /* Make gradient visible in WebKit */
-}
-
-    .trust-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #dbe3e7;
-    }
-    .trust-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 25px rgba(255, 78, 203, 0.5);
-    }
-
-    /* Team Section */
-    .team-section {
-      padding: 80px 0;
-    }
-    .team-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-  -webkit-background-clip: text; /* For Chrome, Safari */
-  background-clip: text;         /* Standard property for other browsers */
-  -webkit-text-fill-color: transparent; /* Make gradient visible in WebKit */
-  text-align: center;
-}
-
-    .team-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 20px;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .team-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(155, 77, 255, 0.5);
-    }
-    .team-card img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ff4ecb;
-      margin-bottom: 15px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .team-card img:hover {
-      border-color: #9b4dff;
-      transform: scale(1.05);
-    }
-    .team-card h5 {
-      font-weight: 700;
-      margin-top: 10px;
-      color: #ff4ecb;
-    }
-    .team-card p {
-      color: #a8b2bd;
-    }
-
-    /* Footer */
-    .footer-jio {
-      background: black;
-      color: #c4c5ce;
-    }
-    .footer-jio a {
-      color: #c4c5ce;
-      text-decoration: none;
-    }
-    .footer-jio a:hover {
-      color: #ff4ecb;
-      text-decoration: underline;
-    }
-    .footer-social a {
-      display: inline-block;
-      margin-right: 10px;
-      font-size: 1.2rem;
-      color: #c4c5ce;
-    }
-    .footer-social a:hover {
-      color: #ff4ecb;
-    }
-    
-    /*why trust stremora  */
-  /* Gradient Heading */
-  .gradient-text {
-    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Highlight keywords */
-  .highlight {
-    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-  }
-
-  /* About Text */
-  .about-text {
-    color: #dbe3e7;
-    font-size: 1.18rem;
-    line-height: 1.8;
-    text-indent: 2rem; /* Add proper indentation at the start */
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease-out;
-  }
-
-  .fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: fadeInLeft 1s forwards;
-  }
-  .fade-in-left.delay-1 {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeInLeft {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /* Image Hover Animation */
-  .img-hover {
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-  }
-  .img-hover:hover {
-    transform: scale(1.08) rotate(-1deg);
-    box-shadow: 0 15px 30px rgba(255, 78, 203, 0.6);
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 992px) {
-    .about-text {
-      text-align: center;
-      text-indent: 0; /* Remove indent on small screens */
-    }
-    .img-wrapper {
-      margin-bottom: 30px;
-    }
-  }/* Slide-in Right Animation */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(120px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.slide-in-right {
-  opacity: 0;
-  animation: slideInRight 0.9s ease forwards;
-}
-.slide-in-right.delay-1 { animation-delay: 0.3s; }
-.slide-in-right.delay-2 { animation-delay: 0.7s; }
-.slide-in-right.delay-3 { animation-delay: 1.1s; }
-.slide-in-right.delay-4 { animation-delay: 1.5s; }
-
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Trust Box */
-.trust-box {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.trust-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
-}
-
-/* Text Style */
-.trust-section p {
-  color: #dbe3e7;
-  font-size: 1.05rem;
+  background-color: black;
+  background-size: cover;     /* ensures the image covers entire viewport */
+  background-attachment: fixed; /* ensures it stays fixed on scroll */
+  color: #fff;                /* default text color */
+  font-family: "Poppins", sans-serif;
   margin: 0;
+  padding: 0;
 }
-.about-text {
-  color: #dbe3e7;
-  font-size: 1.5rem;   /* bigger text */
-  line-height: 2;      /* more spacing */
-  font-weight: 500;
-  text-align: center;  /* center text for balance */
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.8s ease-out;
-}
-</style>
 
-  
+  </style>
+
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- navbar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
   <nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center brand-hover" href="index2.html">
-        <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
-        <span class="brand-text">Streamora</span>
-      </a> 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index2.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
-          <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
-          <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        </ul>
-        <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Banner Section -->
-  <section class="banner containers p-5" style="background: linear-gradient(135deg, #1a1a2e, #162447, #0f3460);">
-    <div id="textCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
-      <div class="carousel-inner text-center text-white">
-        <div class="carousel-item active">
-          <h1 style="font-size:3rem; font-weight:bold;">Your Ultimate Guide to Movies & TV Shows</h1>
-          <p style="font-size:1.2rem; margin-top:15px;">At Streamora, we make entertainment simple. Discover the best movies and shows across all genres with one click.</p>
-        </div>
-        <div class="carousel-item">
-          <h1 style="font-size:3rem; font-weight:bold;">Discover Top Rated Movies</h1>
-          <p style="font-size:1.2rem; margin-top:15px;">Stay updated with trending movies and series handpicked for you every week.</p>
-        </div>
-        <div class="carousel-item">
-          <h1 style="font-size:3rem; font-weight:bold;">Watch Anytime, Anywhere</h1>
-          <p style="font-size:1.2rem; margin-top:15px;">Stream your favorite shows on multiple devices with seamless experience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- About Streamora Section -->
-<section class="about-streamora py-5 position-relative" style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
   <div class="container-fluid">
-    <!-- Section Title -->
-    <h2 class="text-center display-4 fw-bold mb-5 gradient-text">About Streamora</h2>
- <div class="row align-items-center gy-5">
-      <!-- Left Image -->
-      <div class="col-lg-6 text-center">
-        <div class="img-wrapper overflow-hidden rounded shadow-lg">
-          <img src="/images/pink5.jpg"
-               alt="Streamora Website"
-               class="img-fluid rounded shadow img-hover scale-up">
-        </div>
-      </div>
+    <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
+      <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
+      <span class="brand-text">Streamora</span>
+    </a> 
 
-      <!-- Right Text -->
-      <div class="col-lg-6">
-        <h1><p class="lead about-text fade-in-left">
-          &nbsp;&nbsp;Streamora is a <span class="highlight">free, ad-free entertainment platform</span> built for movie and TV show lovers.  
-          It offers a <span class="highlight">sleek interface, high-quality streaming</span>, and <span class="highlight">personalized content recommendations</span>.  
-          Discover your favorite series, explore new genres, and enjoy an optimized experience on desktop, tablet, and mobile devices.
-        </p>
-        <p class="lead about-text fade-in-left delay-1">
-          &nbsp;&nbsp;The platform integrates data from <span class="highlight">trusted sources</span> to provide <span class="highlight">authentic information</span> on movies and shows.  
-          Streamora is <span class="highlight">community-driven</span>, constantly improving with feedback from real users, making it the ultimate guide for entertainment enthusiasts.
-        </h1>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!-- Why Trust Streamora Section -->
-<section class="trust-section py-5" style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
-  <div class="container text-center">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Genres</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="action.html">Action</a></li>
+            <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
+            <li><a class="dropdown-item" href="#">Drama</a></li>
+            <li><a class="dropdown-item" href="#">Horror</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
+        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
+         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        
+<a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
+</form>
     
-    <!-- Heading -->
-    <h2 class="gradient-text display-5 fw-bold mb-5">Why Trust Streamora?</h2>
+    </div>
+  </div>
+</nav>
 
-    <!-- Content Boxes -->
-    <div class="row justify-content-center g-4">
+  <!-- About Us Banner -->
+<section class="about-banner">
+  <div class="container text-center">
+    <h1>About Us</h1>
+    <p><a href="index2.html">Home</a> : About Us</p>
+  </div>
+</section>
+<!-- after banner section start -->
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="https://i.postimg.cc/k5HgRF9j/deadpool-wolverine.webp" alt="image1">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/fWmRk9PK/thebeekeeper.webp" alt="image2">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/SN4N9KFp/monkey-man-poster.webp" alt="image3">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/0y2ktHyW/rebel-moon.webp" alt="image4">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/x1x0Byk0/alien-romulus.webp" alt="image5">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/FKwhHrg8/despicable-me-4.webp" alt="image6">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/6qXwCMPh/furiosa-poster.webp" alt="image7">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/QNQjjrBY/quiet-place-day-one.webp" alt="image8">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/1zVZ2xhH/mayhem.webp" alt="image9">
+            </div>
+            <div class="item">
+                <img src="https://i.postimg.cc/7h9v0w0x/fall-guy.webp" alt="image10">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+           <li class="active"></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li> 
+        </ul>
+    </div>
+
+
+    <div class="card-container">
+        <!-- Top 10 Movies Card -->
+        <div class="movie-card">
+            <h2>Top: Comedy Movies</h2> <br>
+            <ol>
+                <li> Ted </li>
+                <li> Hangover </li>
+                <li> Grown-Ups</li>
+                <li> Dumb and Dumber</li>
+                <li> Due-Date </li>
+            </ol>
+        </div>
+        
+       
+        <div class="movie-card">
+            <h2>Top: Horror Movies</h2> <br>
+            <ol>
+                <li> Alien</li>
+                <li> The Witch </li>
+                <li> It </li>
+                <li> Hereditary</li>
+                <li> The Conjuring </li>
+            </ol>
+        </div>
+    
       
-      <!-- Reliable Content -->
-      <div class="col-md-6 slide-in-right delay-1">
-        <div class="trust-box p-4 shadow-sm rounded h-100">
-          <h4 class="gradient-text">Reliable Content</h4>
-          <p>&nbsp;&nbsp;We provide authentic and up-to-date movie and show information so you can trust what you watch.</p>
+        <div class="movie-card">
+            <h2>Top: Action Movies</h2> <br>
+            <ol>
+                <li> John-Wick</li>
+                <li> Sisu </li>
+                <li> London has Fallen</li>
+                <li> Hellboy 2</li>
+                <li> Deasdpool</li>
+            </ol>
         </div>
-      </div>
-
-      <!-- User Friendly -->
-      <div class="col-md-6 slide-in-right delay-2">
-        <div class="trust-box p-4 shadow-sm rounded h-100">
-          <h4 class="gradient-text">User Friendly</h4>
-          <p>&nbsp;&nbsp;Designed for everyone, our platform is smooth, fast, and easy to explore on any device.</p>
+    
+        <div class="movie-card">
+            <h2>Top: Mind-Bending Movies</h2> <br>
+            <ol>
+                <li>Lucy</li>
+                <li>Looper</li>
+                <li>The Matrix</li>
+                <li>12 Monkeys</li>
+                <li> Shutter-Island</li>
+            </ol>
         </div>
-      </div>
-
-      <!-- Community Driven -->
-      <div class="col-md-6 slide-in-right delay-3">
-        <div class="trust-box p-4 shadow-sm rounded h-100">
-          <h4 class="gradient-text">Community Driven</h4>
-          <p>&nbsp;&nbsp;Streamora grows with feedback and suggestions from real movie lovers like you.</p>
-        </div>
-      </div>
-
-      <!-- Seamless Experience -->
-      <div class="col-md-6 slide-in-right delay-4">
-        <div class="trust-box p-4 shadow-sm rounded h-100">
-          <h4 class="gradient-text">Seamless Experience</h4>
-          <p>&nbsp;&nbsp;Enjoy movies and shows with a modern, ad-free, and distraction-free streaming experience.</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- footer -->
+       <div class="page-wrapper">
+    <div id="waterdrop"></div>
+    <footer>
+      <div class="footer-top">
+        <div class="pt-exebar">
+
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+              <div class="widget footer_widget">
+                <h5 class="footer-title">Address</h5>
+                <div class="gem-contacts">
+                  <div class="gem-contacts-item gem-contacts-address">Our Studios<br> Head Office:<br>
+                  Streamora Studios, Film City Road,<br>
+                  Andheri West, Mumbai - 400053, India.
+                  </div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">‪+91-9122588799‬</a></div>
+
+                  <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Doon House, D2/3,
+                    4th Floor, Chandra Tower, IDBI Bank Building
+                    Dimna Road, Mango, Jamshedpur-831012, Jharkhand.</div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>‪+91 9122588799‬</a></div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget footer_widget">
+                    <h5 class="footer-title">Latest Updates</h5>
+                    <ul class="posts  styled">
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🎬 Avengers: Secret Wars trailer drops this week!</a>
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">March 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🍿 Streamora partners with Netflix & Prime for exclusive content.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">February 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="">🔥 Top 10 most watched movies of 2024 revealed.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call ‪+91-9122588799‬, ‪+91-9122588799‬</div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget">
+                    <h5 class="footer-title">Email Us</h5>
+                    <div class="textwidget">
+                      <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+
+                        <form method="post" class="wpcf7-form" novalidate="novalidate">
+
+                          <div class="contact-form-footer">
+                            <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
+                            <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+              <div class="widget widget_gallery gallery-grid-4">
+                <h5 class="footer-title">Our Gallery</h5>
+                <ul class="magnific-image">
+
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="footer-site-info">2020 © <a href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">Top HTML & CSS Program </a></div>
+            </div>
+
+            <div class="col-md-6">
+              <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                  <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="#">Support</a></li>
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Contact Us</a></li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Disclaimer</a></li>
+                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="#">Add more</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-md-3">
+              <div id="footer-socials">
+                <div class="socials inline-inside socials-colored">
+
+                  <a href="#" target="_blank" title="Facebook" class="socials-item">
+                    <i class="fab fa-facebook-f facebook"></i> 
+                  </a>
+                  <a href="#" target="_blank" title="Twitter" class="socials-item">
+                    <i class="fab fa-twitter twitter"></i>
+
+                  </a>
+                  <a href="#" target="_blank" title="Instagram" class="socials-item">
+                    <i class="fab fa-instagram instagram"></i>
+                  </a>
+                  <a href="#" target="_blank" title="YouTube" class="socials-item">
+                    <i class="fab fa-youtube youtube"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Telegram" class="socials-item">
+                    <i class="fab fa-telegram telegram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="footer-site-info">2025 © Streamora | All Rights Reserved</div>
+
+    </footer>
   </div>
-</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
 
-  <!-- Achievements Section -->
-  <section class="trust-section"style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
-    <div class="container">
-      <h2>Our Achievements</h2>
-      <div class="row g-4 text-center">
-        <div class="col-md-3">
-          <div class="trust-card">
-            <h4>10K+</h4>
-            <p>Movies & Shows Listed</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="trust-card">
-            <h4>500K+</h4>
-            <p>Happy Users</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="trust-card">
-            <h4>4.8/5</h4>
-            <p>User Satisfaction</p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="trust-card">
-            <h4>50+</h4>
-            <p>Awards & Recognitions</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
+</script>
+<!-- footer close -->
 
 
-  <!-- Team Section -->
-<section class="team-section" style="background: linear-gradient(120deg, #0b0b0b, #1a1a2e);">
-  <div class="container-fluid">
-    <h2>Meet Our Team</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-2 text-center">
-        <div class="team-card">
-          <img src="images/sanika.jpg" alt="Sanika" class="img-fluid rounded-circle">
-          <h5>Sanika</h5>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="team-card">
-          <img src="images/gauri.jpg" alt="Gauri" class="img-fluid rounded-circle">
-          <h5>Gauri</h5>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="team-card">
-          <img src="images/diksha.jpg" alt="Diksha" class="img-fluid rounded-circle">
-          <h5>Diksha</h5>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="team-card">
-          <img src="images/user.webp" alt="Krushna" class="img-fluid rounded-circle">
-          <h5>Krushna</h5>
-        </div>
-      </div>
-      <div class="col-md-2 text-center">
-        <div class="team-card">
-          <img src="images/user.webp" alt="Piyush" class="img-fluid rounded-circle">
-          <h5>Piyush</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Footer -->
-  <section class="footer-jio">
-    <div class="container py-5">
-      <div class="row text-center text-md-start">
-        <div class="col-md-3 mb-4">
-          <h5 class="text-white mb-3">Streamora</h5>
-          <p class="small text-muted">Your ultimate destination for movies, TV shows and entertainment.</p>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="text-white">Explore</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="#">New & Popular</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="text-white">Support</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2 mb-4">
-          <h6 class="text-white">Connect</h6>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4 text-md-end">
-          <h6 class="text-white">Get the App</h6>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" width="120" class="mb-2">
-          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" width="120">
-        </div>
-      </div>
-
-      <hr class="border-secondary my-4">
-
-      <div class="text-center small text-muted">
-        &copy; 2025 Streamora. All Rights Reserved. | 
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms of Service</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- after banner section end -->
+<!-- Bootstrap JS (needed for modal functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
