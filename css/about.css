@@ -98,6 +98,7 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
 /* Gradient Search Button */
 .btn-gradient {
   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
@@ -189,7 +190,14 @@
     top: 0;             /* Stick to the top */
     z-index: 1030;      /* Above other content */
     background-color: black;
-  
+
+  background: url("images/navbar-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5); /* transparent black */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 /* sticky navbar end */
 
