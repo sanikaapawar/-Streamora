@@ -586,12 +586,10 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
-
-
-
-   :root {
-            --primary: #e509b5;
-            --secondary: #3e0679;
+/* //body */
+  :root {
+            --primary: #f839b5;
+            --secondary: #9108b0;
             --accent: #f5f5f1;
             --bg-dark: #000000;
             --bg-darker: #141414;
@@ -610,7 +608,7 @@ footer .widget ul {
             box-sizing: border-box;
         }
         
-        .firstsection {
+        body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-primary);
@@ -683,7 +681,7 @@ footer .widget ul {
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(30, 1, 20, 0.2), transparent);
             transition: 0.5s;
             z-index: -1;
         }
@@ -699,23 +697,30 @@ footer .widget ul {
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(194, 10, 182, 0.1);
         }
-        
-        /* Navbar */
         
         
         /* Hero Section */
-        .hero {
+        .herop {
             height: 100vh;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             padding: 0 5%;
+             
         }
-        
-        .hero::before {
+        .herop {
+  background: url("images/interseteller.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* makes parallax effect */
+  min-height: 100vh; /* ensures it fills screen height */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+        .herop::before {
             content: '';
             position: absolute;
             top: 0;
@@ -726,7 +731,7 @@ footer .widget ul {
             z-index: 1;
         }
         
-        .hero-video {
+        .herop-video {
             position: absolute;
             top: 0;
             left: 0;
@@ -736,7 +741,7 @@ footer .widget ul {
             z-index: 0;
         }
         
-        .hero-content {
+        .herop-content {
             position: relative;
             z-index: 2;
             max-width: 650px;
@@ -745,7 +750,7 @@ footer .widget ul {
             animation: fadeInUp 1s forwards 0.5s;
         }
         
-        .hero-content h1 {
+        .herop-content h1 {
             font-size: 4rem;
             font-weight: 900;
             margin-bottom: 20px;
@@ -754,40 +759,46 @@ footer .widget ul {
             letter-spacing: 1px;
         }
         
-        .hero-content p {
+        .herop-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: var(--text-secondary);
             max-width: 500px;
         }
         
-        .hero-actions {
+        .herop-actions {
             display: flex;
             gap: 20px;
         }
         
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .stat-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .stat-text {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
+     
+.herop-stats {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 40px;                 /* space between items */
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-icon {
+  font-size: 24px;
+  color: #fc2efc; /* example color */
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stat-text {
+  font-size: 14px;
+  color: #ccc;
+}
         .stat-number {
             font-size: 1.4rem;
             font-weight: 700;
@@ -933,7 +944,7 @@ footer .widget ul {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.7);
+            background: #9b4dff;
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             display: flex;
@@ -1066,16 +1077,16 @@ footer .widget ul {
                 display: none;
             }
             
-            .hero-content {
+            .herop-content {
                 max-width: 100%;
                 text-align: center;
             }
             
-            .hero-actions {
+            .herop-actions {
                 justify-content: center;
             }
             
-            .hero-stats {
+            .herop-stats {
                 justify-content: center;
             }
             
@@ -1092,12 +1103,14 @@ footer .widget ul {
             }
         }
         
-        @media (max-width: 768px) {
-            .hero-content h1 {
+        @media (max-width: 768px) 
+        {
+            .herop-content h1 
+            {
                 font-size: 2.2rem;
             }
             
-            .hero-actions {
+            .herop-actions {
                 flex-direction: column;
                 gap: 15px;
             }
@@ -1113,7 +1126,301 @@ footer .widget ul {
                 height: 375px;
             }
         }
-    </style>
+
+        
+/* card css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#card {
+  width: 200px;
+  aspect-ratio: 2 / 3;
+  border-radius: 32px;
+  transform-style: preserve-3d;   /* ✅ correct */
+  flex-shrink: 0;
+  overflow: hidden;
+  transform: translateZ(50px) scale(1) rotateX(45deg) rotateZ(-30deg); /* ✅ fixed casing */
+  box-shadow: 0px 20px 50px rgba(0, 2, 7, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#card:hover {
+  transform: translateZ(160px) scale(1.1) rotateX(0deg) rotateZ(0deg);
+  box-shadow: 0px 30px 60px rgba(250, 4, 233, 0.3);
+}
+
+
+#card:nth-child(1) {
+  background: url("images/the house time.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#card:nth-child(1)::after {
+  content: "Start Watching";
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover effect */
+#card:nth-child(1):hover::after {
+  background: rgb(236, 19, 189);
+}
+#card:nth-child(2) {
+  background: url("https://i.pinimg.com/564x/89/9b/5a/899b5a1101432030e2631dc4e505a2dc.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#card:nth-child(3) {
+  background: url("https://i.pinimg.com/736x/23/88/db/2388dbe6293231ddcf1a7001301a3bea.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#card .image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  opacity: 1;
+  transition: 200ms ease;
+}
+
+#card:hover {
+  transform: translatez(50px) scale(1.3) rotatex(0deg) rotatez(0deg);
+  box-shadow: none;
+}
+#card:hover > .image {
+  opacity: 0;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;     /* wrap instead of forcing scroll */
+  margin: 2rem auto;
+  max-width: 100%;     /* prevent overflow */
+  padding: 0 15px;
+}
+
+#card {
+  width: 150px;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: translateZ(0) scale(1) rotateX(20deg) rotateZ(-10deg);
+  box-shadow: 0px 20px 50px #ffffff10;
+  transition: 400ms ease;
+  flex-shrink: 0;
+}
+/* 
+card */
+.credits-wrapper {
+      background: black;
+      color: white;
+      height: 50vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .credits-container {
+      animation: upcredits 60s linear forwards;
+      max-width: 400px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .credits-container > div + div {
+      margin-top: 1.6rem;
+    }
+
+    .credits-container strong {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: #ff4ecb;
+    }
+
+    @keyframes upcredits {
+      0% { transform: translateY(0); opacity: 1; }
+      75% { opacity: 1; }
+      100% { transform: translateY(-75vh); opacity: 0; }
+    }
+
+/* marquee start */
+ :root {
+  --step--2: clamp(3.13rem, 2.62rem + 2.51vw, 5.76rem);
+  --step--1: clamp(3.75rem, 3.09rem + 3.29vw, 7.20rem);
+  --step-0: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+}
+
+@keyframes marquee {
+	from {transform: translateX(0);}
+	to {transform: translateX(-100%);}
+}
+
+@keyframes marquee-r {
+	from {transform: translateX(-100%);}
+	to {transform: translateX(0);}
+}
+
+@keyframes rollCage {
+	from {transform: rotate(0);}
+	to {transform: rotate(5turn);}
+}
+
+.marqueebg {
+	background-color: #1A1F24;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 600;
+}
+
+.marquee {
+	border-bottom: 1px solid #efefef;
+	color: #fefefe;
+	font-size: var(--step-0);
+	height: calc(170px + 4rem);
+	overflow: hidden;
+	position: relative;
+	width: 100vw;
+	
+	& img {
+		object-fit: cover;
+		max-height: 150px;
+	}
+}
+
+.track {
+	height: 100%;
+	overflow: hidden;
+	padding: 2rem 0;
+	position: absolute;
+	transition: background-color 300ms ease, color 300ms ease;
+	white-space: nowrap;
+	
+	& .text {
+		animation: marquee 50000ms linear infinite;
+		align-items: center;
+		display: inline-flex;
+		will-change: transform;
+		
+		&.-r {
+			animation-name: marquee-r;
+		}
+		
+		&.-twox {
+			animation-duration: 25000ms;
+		}
+	}
+	
+	&:hover {
+		background-color: #efefef;
+		color: #1A1F24;
+
+		img {
+			animation: rollCage 10000ms linear infinite;
+		}
+		
+		& .-green {
+			color: #BEB9A3;
+		}
+	}
+}
+
+.-green {
+	color: #C1FF1D;
+	font-weight: 900;
+}
+/* marquee end */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.heromarquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #28a745 !important; /* replace with your green */
+  background-image: url("images/burger.jpg");
+  background-repeat: repeat;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  animation: marquee 30s infinite linear;
+}
+
+h1, p {
+  color: #fff;
+  text-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+code {
+  padding: 4px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 550px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -1190px;
+  }
+}
+
+   </style>
    <body>
 
   <!-- Navbar -->
@@ -1153,28 +1460,26 @@ footer .widget ul {
 
 
 <body>
-  <div class="firstsection">
-    <!-- Floating Elements Background -->
+  
+  <!-- Floating Elements Background -->
     <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
     <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
     <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div>
     
-    <!-- Navbar -->
-    
     
     <!-- Hero Section -->
-    <section class="hero">
-        <video autoplay muted loop class="hero-video">
+    <section class="herop">
+        <video autoplay muted loop class="herop-video">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
         </video>
-        <div class="hero-content">
+        <div class="herop-content">
             <h1>Ultimate <span class="gradient-text">4K HDR</span> Streaming</h1>
             <p>Experience cinema-quality entertainment with Dolby Vision and Atmos, personalized recommendations, and exclusive content.</p>
-            <div class="hero-actions">
+            <div class="herop-actions">
                 <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
                 <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
             </div>
-            <div class="hero-stats">
+            <div class="herop-stats">
                 <div class="stat-item">
                     <div class="stat-icon"><i class="fas fa-film"></i></div>
                     <div>
@@ -1201,11 +1506,17 @@ footer .widget ul {
     </section>
     
     <!-- Featured Content -->
-    <div class="featured-content">
-        <div class="featured-bg" style="background-image: url('https://source.unsplash.com/random/1920x1080/?movie,scifi');"></div>
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                  <div class="featured-content">
+        <div class="featured-bg" style="background-image: url('images/animal.jpg');"></div>
         <div class="featured-overlay">
             <div class="content-card glass">
-                <img src="https://source.unsplash.com/random/500x750/?movie,scifi" alt="Featured Content">
+                <img src="images/b1.webp" alt="Featured Content">
                 <div class="card-overlay">
                     <h3 class="card-title">Cyber Nexus</h3>
                     <div class="card-meta">
@@ -1220,14 +1531,55 @@ footer .widget ul {
                 <p>In a dystopian future where humanity is controlled by AI, a rogue hacker discovers a way to break the system. The most watched series this week across 90 countries.</p>
                 <div class="hero-actions">
                     <button class="btn btn-primary"><i class="fas fa-play"></i> Play Now</button>
-                    <button class="btn btn-secondary"><i class="fas fa-info-circle"></i> More Info</button>
+                   
                 </div>
             </div>
         </div>
     </div>
+                </div>
+                      <div class="col-md-4">
+                        <div class="featured-content">
+        <div class="featured-bg" style="background-image: url('images/burger3.jpg');"></div>
+        <div class="featured-overlay">
+            <div class="content-card glass">
+                <img src="images/french fries1.jpg" alt="Featured Content">
+                <div class="card-overlay">
+                    <h3 class="card-title">Cyber Nexus</h3>
+                    <div class="card-meta">
+                        <span>2023</span>
+                        <span>★ 4.8</span>
+                        <span>Sci-Fi</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="featured-info">
+                <h2>Featured: <span class="gradient-text">Cyber Nexus</span></h2>
+                <p>In a dystopian future where humanity is controlled by AI, a rogue hacker discovers a way to break the system. The most watched series this week across 90 countries.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary"><i class="fas fa-play"></i> Play Now</button>
+                   
+                </div>
+            </div> -->
+        </div>
+    </div>
+                      </div>
+                            
+            </div>
+        </div>    </section>
+
+    <!-- marquee start -->
+     <div class="marqueebg">
+<div class="marquee">
+	<div class="track">
+		<span class="text -twox">Cage.<span class="-green">Cage.</span><img src="images/bolbachan.jpg" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+	</div>
+</div>
+</div>
+
+<!-- marquee end -->
     
     <!-- Content Sections -->
-    <section class="content-section">
+    <section class="content-section ">
         <div class="section-header">
             <h2><i class="fas fa-fire gradient-text"></i> Trending Now</h2>
             <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
@@ -1237,23 +1589,42 @@ footer .widget ul {
         </div>
     </section>
     
-    <section class="content-section">
+    <!-- <section class="content-section ">
         <div class="section-header">
             <h2><i class="fas fa-crown gradient-text"></i> Top Picks For You</h2>
             <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
         </div>
-        <div class="content-carousel" id="picks-carousel">
-            <!-- Cards will be added by JavaScript -->
+        <div class="content-carousel" id="picks-carousel"
+        > -->
+<!--             
         </div>
     </section>
     
+    <section class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-clock gradient-text"></i> Recently Added</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="content-carousel" id="recent-carousel">
+          
+        </div>
+    </section>
     
-  </div>
-  
+    <section class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-star gradient-text"></i> Award Winners</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="content-carousel" id="awards-carousel">
+          
+        </div>
+    </section> -->
+    
+    
      <script>
         // Sample movie data
         const movies = [
-            { id: 1, title: "The Last Adventure", year: 2023, rating: "4.5", isNew: true, isTrending: true, genre: "Action", image: "https://source.unsplash.com/random/500x750/?movie,action" },
+            { id: 1, title: "The Last Adventure", year: 2023, rating: "4.5", isNew: true, isTrending: true, genre: "Action", image: "images/french fries1.jpg" },
             { id: 2, title: "Midnight Dreams", year: 2023, rating: "4.2", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,drama" },
             { id: 3, title: "Cosmic Journey", year: 2022, rating: "4.7", isNew: false, isTrending: true, genre: "Sci-Fi", image: "https://source.unsplash.com/random/500x750/?movie,sci-fi" },
             { id: 4, title: "Lost in Time", year: 2023, rating: "4.3", isNew: true, isTrending: false, genre: "Adventure", image: "https://source.unsplash.com/random/500x750/?movie,adventure" },
@@ -1265,6 +1636,7 @@ footer .widget ul {
             { id: 10, title: "The Detective", year: 2022, rating: "4.0", isNew: false, isTrending: false, genre: "Mystery", image: "https://source.unsplash.com/random/500x750/?movie,detective" },
             { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,oscar" },
             { id: 12, title: "Golden Globe 2023", year: 2023, rating: "4.7", isNew: true, isTrending: false, genre: "Biography", image: "https://source.unsplash.com/random/500x750/?movie,globe" },
+             { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "images/french fries1.jpg" },
         ];
         
         // Initialize the page
@@ -1352,6 +1724,67 @@ footer .widget ul {
             });
         }
     </script>
+     <!-- card section -->
+<!-- backround scrppling -->
+ <div class="heromarquee">
+  <h1>It's Alive!</h1>
+  <p>It's a <code>background-image</code>, and it's moving 😬</p>
+</div>
+
+  <section>
+    <h2><i class="fas fa-fire gradient-text"></i> Trending Now</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                   <section>
+   <div class="cards-wrapper">
+  <div id="card"><img src="images/bhoot.png" class="image">
+  <button></button></div>
+  <div id="card"><img src="images/2states.jpg" class="image"></div>
+  <div id="card"><img src="..." class="image"></div>
+  <div id="card"><img src="..." class="image"></div>
+</div>
+</section>
+                </div>
+                      <div class="col-md-4">
+                        <div class="credits-wrapper">
+    <div class="credits-container">
+      <div>
+        <strong>Executive Producer</strong>
+        Brad Pitt
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, vel error eum quisquam similique officia reiciendis facilis hic aspernatur! Nesciunt labore quod esse illum corporis ab, fugit nemo nihil vero.
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Bad Bunny
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Joey King
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Aaron Johnson
+      </div>
+      <div>
+        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, praesentium ipsam ipsum adipisci vitae fugiat? Iure vel aliquam soluta voluptatem et recusandae commodi quidem ratione corporis, rerum suscipit autem facilis.r</strong>
+        Sandra Bullock
+
+      </div>
+    </div>
+  </div>
+                      
+                            
+            </div>
+        </div>   
+       </section> 
+  
+<!-- card section end -->
+ 
+
+
+	</div>
+</div>
     <!-- footer -->
        <div class="page-wrapper">
     <div id="waterdrop"></div>
