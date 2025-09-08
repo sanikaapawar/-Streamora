@@ -8,16 +8,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* body {
-      background-color: #0b0b0b;
+      c
       color: #fff;
       font-family: "Poppins", sans-serif;
     } */
     body {
-   background: url("images/pink1.jpg") no-repeat center center fixed; 
-  background-size: cover;  /* makes the image cover the entire screen */
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;  /* only hide horizontal scroll */
+  overflow-y: auto;    /* allow vertical scroll */
+  display: block;      /* remove flex centering */
+  background-color: #000;
 }
+
 
 
 
@@ -37,6 +40,15 @@
     .cookie-bar {
       font-size: 14px;
     }
+    /* Sticky navbar */
+.custom-navbar {
+    position: sticky;   /* Makes it stick */
+    top: 0;             /* Stick to the top */
+    z-index: 1030;      /* Above other content */
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
     .navbar-brand img {
   height: 40px;
   width: auto;
@@ -196,13 +208,12 @@
 
 
 /* video properties start */
- .video-container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: black;
-    }
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;       /* full height */
+  overflow: hidden;
+}
     .video-container video {
       position: absolute;
       top: 50%;
@@ -254,6 +265,385 @@
       transform: scale(1.1);
       box-shadow: 0 0 20px rgba(255, 78, 203, 0.8);
     }
+    /* footer css */
+.page-wrapper {
+  position: static; 
+  width: 100%;
+}
+
+footer p, footer strong, footer b, footer {
+    color: #b0b0b0;
+}
+
+.footer-top {
+    background: #303030;
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 20px;
+    font-family: rubik;
+  padding-top:30px;
+  
+}
+
+.footer-top, .footer-bottom {
+    background-color: #1c1f2f;
+}
+
+.footer-bottom {
+    padding: 15px 0;
+    border-top: 1px solid #313646;
+    background-color: #6016ba !important;
+    color: #b0b0b0;
+    font-family: rubik;
+}
+
+
+.footer-site-info {
+    font-size: 92.86%;
+}
+#footer-navigation, #footer-navigation li a:hover, .custom-footer, .custom-footer li a:hover {
+    color: white;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+.footer-bottom ul {
+    margin: 0;
+}
+.inline-inside {
+    font-size: 0;
+    line-height: 0;
+}
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+}
+#footer-menu li {
+    display: inline-block;
+    padding: 0 21px;
+    position: relative;
+    line-height: 1;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+#footer-menu li+li:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    font-size: 0;
+    border-left: 1px solid #232234;
+    border-right: 1px solid #333146;
+}
+
+
+navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+#footer-socials {
+    text-align: right;
+}
+
+#footer-socials .socials {
+    text-align: right;
+    margin: 0 -7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.socials-item {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 5px;
+    line-height: 16px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #141421;
+    border: 1px solid #2e2e4c;
+    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
+}
+
+.socials-item i {
+    display: inline-block;
+    font-weight: normal;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    text-rendering: auto;
+}
+
+.facebook {
+    color: #4e64b5;
+}
+
+.twitter {
+    color: #00aced;
+}
+.instagram {
+    color: #9a8f62;
+}
+.youtube {
+    color: #c82929;
+}
+
+.telegram {
+    color: #2ca5e0;
+}
+
+
+a.socials-item:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+
+footer p, footer li {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+
+.widget {
+    margin-bottom: 50px;
+}
+
+.footer-title {
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-title:after {
+    width: 50px;
+    background: #fff;
+    opacity: 0.2;
+    height: 1px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.gem-contacts-item {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.gem-contacts-item i {
+    padding-right: 10px;
+}
+
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.posts li {
+    border-bottom: 1px solid #393d50;
+    padding-bottom: 12px;
+    padding-top: 6px;
+}
+
+footer p, footer li {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.gem-pp-posts-date {
+    color: #00bcd4;
+    font-size: 89.5%;
+}
+
+footer p {
+    line-height: 24px;
+    margin-bottom: 10px;font-size: 15px;
+}
+
+.wpcf7-form-control-wrap .wpcf7-form-control {
+    padding: 7px!important;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap input {
+    background: #1c1f2f;
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form-control-wrap input:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer textarea {
+    height: 160px;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap textarea:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7-form-control-wrap textarea {
+    background: #1c1f2f;
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer .wpcf7-submit {
+    width: 100%;
+    padding: 11px;
+    margin: 0;
+    line-height: 0;
+}
+.wpcf7-form .contact-form-footer .wpcf7-submit {
+    background-color: #394050;
+    color: #99a9b5;
+    border: none;
+    cursor: pointer;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.5s;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.5);
+    box-shadow: none;
+    text-transform: uppercase;
+    outline: none !important;
+    background-color: #1c1f2f;
+    border-radius: 5px;
+    min-width: 140px;
+    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #2e344d;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form input[type=submit] {
+    height: 40px;
+    line-height: 21px;
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.posts li a {
+    color: #99a9b5;
+}
+
+.wpcf7-form .contact-form-footer .wpcf7-submit:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+    color: white;
+}
+
+img {
+    border-style: none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.widget_gallery a {
+    display: inline-block;
+}
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+.widget_gallery ul {
+    padding-left: 0;
+    display: table;
+}
+
+.widget_gallery li {
+    display: inline-block;
+    width: 33.33%;
+    float: left;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    padding: 2px;
+
+}
+
+.widget_gallery.gallery-grid-4 li {
+    width: 30%;
+}
+
+
+#waterdrop {
+    height: 30px;
+}
+
+#waterdrop canvas {
+    bottom: -70px !important;
+}
+
+.footer-site-info
+{
+  padding-top: 10px;
+}
     /* video css end */
 /* Modal Animation */
 .modal-animate {
@@ -398,75 +788,124 @@ section .container-fluid img {
     width: 550px; /* slight grow on hover */ 
   }
 /* cartoon css end */
-/* flimstrip css start */
-/* Filmstrip Section */
-.film-strip-container {
-  position: relative;
+
+/* card css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#card {
+  width: 200px;
+  aspect-ratio: 2 / 3;
+  border-radius: 32px;
+  transform-style: preserve-3d;   /* ✅ correct */
+  flex-shrink: 0;
+  overflow: hidden;
+  transform: translateZ(50px) scale(1) rotateX(45deg) rotateZ(-30deg); /* ✅ fixed casing */
+  box-shadow: 0px 20px 50px rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#card:hover {
+  transform: translateZ(160px) scale(1.1) rotateX(0deg) rotateZ(0deg);
+  box-shadow: 0px 30px 60px rgba(250, 4, 233, 0.3);
+}
+
+
+#card:nth-child(1) {
+  background: url("https://i.pinimg.com/564x/ef/3d/16/ef3d16abaee1976589cd5b83df17f72b.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#card:nth-child(2) {
+  background: url("https://i.pinimg.com/564x/89/9b/5a/899b5a1101432030e2631dc4e505a2dc.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#card:nth-child(3) {
+  background: url("https://i.pinimg.com/736x/23/88/db/2388dbe6293231ddcf1a7001301a3bea.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#card .image {
   width: 100%;
-  overflow: hidden;
-  background: #111;
-  border: 8px solid #333;
-  border-radius: 12px;
-  padding: 20px 0;
-  margin-top: 50px;
-}
-
-/* Film holes */
-.holes {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 12px;
-  display: flex;
-  justify-content: space-around;
-  background: transparent;
-}
-.holes.top { top: -6px; }
-.holes.bottom { bottom: -6px; }
-
-.holes::before, .holes::after {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #000;
-  border-radius: 50%;
-  box-shadow: 30px 0 #000, 60px 0 #000, 90px 0 #000, 120px 0 #000, 150px 0 #000,
-              180px 0 #000, 210px 0 #000, 240px 0 #000, 270px 0 #000;
-}
-
-/* Filmstrip moving */
-.film-strip {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.film-strip-inner {
-  display: inline-flex;
-  animation: scrollFilm 25s linear infinite;
-}
-
-.frame {
-  margin: 0 8px;
-}
-.frame img {
-  width: 180px;
-  height: 120px;
-  border: 4px solid #000;
-  border-radius: 6px;
+  height: 100%;
+  border-radius: inherit;
   object-fit: cover;
-  background: #222;
-  transition: transform 0.3s;
-}
-.frame img:hover {
-  transform: scale(1.1);
+  opacity: 1;
+  transition: 200ms ease;
 }
 
-/* Animation */
-@keyframes scrollFilm {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+#card:hover {
+  transform: translatez(50px) scale(1.3) rotatex(0deg) rotatez(0deg);
+  box-shadow: none;
 }
+#card:hover > .image {
+  opacity: 0;
+}
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;     /* wrap instead of forcing scroll */
+  margin: 2rem auto;
+  max-width: 100%;     /* prevent overflow */
+  padding: 0 15px;
+}
+
+#card {
+  width: 150px;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  transform: translateZ(0) scale(1) rotateX(20deg) rotateZ(-10deg);
+  box-shadow: 0px 20px 50px #ffffff10;
+  transition: 400ms ease;
+  flex-shrink: 0;
+}
+/* 
+card */
+.credits-wrapper {
+      background: #111;
+      color: white;
+      height: 20vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .credits-container {
+      animation: upcredits 60s linear forwards;
+      max-width: 400px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .credits-container > div + div {
+      margin-top: 1.6rem;
+    }
+
+    .credits-container strong {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: #ff4ecb;
+    }
+
+    @keyframes upcredits {
+      0% { transform: translateY(0); opacity: 1; }
+      75% { opacity: 1; }
+      100% { transform: translateY(-75vh); opacity: 0; }
+    }
+
+
+
 
   </style>
 </head>
@@ -476,10 +915,10 @@ section .container-fluid img {
         <!-- Google Font for modern style -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar sticky-top">
 
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
+    <a class="navbar-brand d-flex align-items-center brand-hover " href="#">
       <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
       <span class="brand-text">Streamora</span>
     </a> 
@@ -488,7 +927,7 @@ section .container-fluid img {
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse " id="navbarNav" >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
@@ -526,36 +965,67 @@ section .container-fluid img {
     </div>
   </div>
 
+  <!-- card section -->
 
-<!-- flimstrip images   -->
- <!-- Filmstrip Section -->
-<section class="film-section">
-  <div class="film-strip-container">
-    <!-- Perforated holes -->
-    <div class="holes top"></div>
-    <div class="holes bottom"></div>
 
-    <!-- Filmstrip -->
-    <div class="film-strip">
-      <div class="film-strip-inner">
-        <!-- Frames -->
-        <div class="frame"><img src="images/tt1.jpg" alt="h1"></div>
-        <div class="frame"><img src="images/kk1.jpg" alt="h2"></div>
-        <div class="frame"><img src="images/bigboss.jpg" alt="h3"></div>
-        <div class="frame"><img src="images/cid.jpg" alt="h4"></div>
-        <div class="frame"><img src="images/balver.jpg" alt="h5"></div>
-        <div class="frame"><img src="images/chalahava.jpg" alt="h6"></div>
-        <div class="frame"><img src="images/supersing.jpg" alt="h7"></div>
-        <div class="frame"><img src="images/sisterhood.jpg" alt="h8"></div>
-        <div class="frame"><img src="images/motupatlu.jpg" alt="h9"></div>
-        <div class="frame"><img src="images/sporta.jpg" alt="h10"></div>
+  <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                   <section>
+   <div class="cards-wrapper">
+  <div id="card"><img src="images/12Th Fail.jpg" class="image"></div>
+  <div id="card"><img src="images/12Th Fail.jpg" class="image"></div>
+  <div id="card"><img src="..." class="image"></div>
+  <div id="card"><img src="..." class="image"></div>
+</div>
+</section>
+                </div>
+                      <div class="col-md-4">
+                        <div class="credits-wrapper">
+    <div class="credits-container">
+      <div>
+        <strong>Executive Producer</strong>
+        Brad Pitt
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, vel error eum quisquam similique officia reiciendis facilis hic aspernatur! Nesciunt labore quod esse illum corporis ab, fugit nemo nihil vero.
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Bad Bunny
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Joey King
+      </div>
+      <div>
+        <strong>Executive Producer</strong>
+        Aaron Johnson
+      </div>
+      <div>
+        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, praesentium ipsam ipsum adipisci vitae fugiat? Iure vel aliquam soluta voluptatem et recusandae commodi quidem ratione corporis, rerum suscipit autem facilis.r</strong>
+        Sandra Bullock
+
       </div>
     </div>
   </div>
-</section>
+                        <!-- <div class="row">
+                <div class="col-md-4">
+                  <img src="images/12Th Fail.jpg" class="image-fluid">
+                </div>
+                <div class="col-md-4">
+                  <img src="images/12Th Fail.jpg">
+                </div>
+                <div class="col-md-4">
+                  <img src="images/12Th Fail.jpg">
+                </div>
+                      </div> -->
+                            
+            </div>
+        </div>   
+       </section> 
+  
+<!-- card section end -->
 
-
- 
 <section>
   <div class="container-fluid">
     <img src="images/Ashiqui 2.jpg">
@@ -571,7 +1041,7 @@ section .container-fluid img {
 </section>
 
   <!-- Hero Section -->
-  <!-- <section class="hero text-white">
+   <!-- <section class="hero text-white">
     <div class="container">
       <h1 class="display-4 fw-bold">Your Movie Streaming Guide</h1>
       <p class="lead text-light">Find where to stream new, popular & upcoming movies and TV shows.</p>
@@ -580,7 +1050,7 @@ section .container-fluid img {
         <a href="#" class="btn btn-outline-light btn-lg">Features</a>
       </div>
     </div>
-  </section> -->
+  </section>  -->
 
   <!-- Featured Movies -->
   <section class="py-5">
@@ -923,5 +1393,171 @@ section .container-fluid img {
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <!-- Footer -->
+<!-- footer -->
+       <div class="page-wrapper">
+    <div id="waterdrop"></div>
+    <footer>
+      <div class="footer-top">
+        <div class="pt-exebar">
+
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+              <div class="widget footer_widget">
+                <h5 class="footer-title">Address</h5>
+                <div class="gem-contacts">
+                  <div class="gem-contacts-item gem-contacts-address">Our Studios<br> Head Office:<br>
+                  Streamora Studios, Film City Road,<br>
+                  Andheri West, Mumbai - 400053, India.
+                  </div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+91-9122588799</a></div>
+
+                  <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Doon House, D2/3,
+                    4th Floor, Chandra Tower, IDBI Bank Building
+                    Dimna Road, Mango, Jamshedpur-831012, Jharkhand.</div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+91 9122588799</a></div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget footer_widget">
+                    <h5 class="footer-title">Latest Updates</h5>
+                    <ul class="posts  styled">
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🎬 Avengers: Secret Wars trailer drops this week!</a>
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">March 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🍿 Streamora partners with Netflix & Prime for exclusive content.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">February 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="">🔥 Top 10 most watched movies of 2024 revealed.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget">
+                    <h5 class="footer-title">Email Us</h5>
+                    <div class="textwidget">
+                      <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+
+                        <form method="post" class="wpcf7-form" novalidate="novalidate">
+
+                          <div class="contact-form-footer">
+                            <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
+                            <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+              <div class="widget widget_gallery gallery-grid-4">
+                <h5 class="footer-title">Our Gallery</h5>
+                <ul class="magnific-image">
+
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-3">
+              <div class="footer-site-info">2020 © <a href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">Top HTML & CSS Program </a></div>
+            </div>
+
+            <div class="col-md-6">
+              <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                  <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="#">Support</a></li>
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Contact Us</a></li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Disclaimer</a></li>
+                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="#">Add more</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-md-3">
+              <div id="footer-socials">
+                <div class="socials inline-inside socials-colored">
+
+                  <a href="#" target="_blank" title="Facebook" class="socials-item">
+                    <i class="fab fa-facebook-f facebook"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Twitter" class="socials-item">
+                    <i class="fab fa-twitter twitter"></i>
+
+                  </a>
+                  <a href="#" target="_blank" title="Instagram" class="socials-item">
+                    <i class="fab fa-instagram instagram"></i>
+                  </a>
+                  <a href="#" target="_blank" title="YouTube" class="socials-item">
+                    <i class="fab fa-youtube youtube"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Telegram" class="socials-item">
+                    <i class="fab fa-telegram telegram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="footer-site-info">2025 © Streamora | All Rights Reserved</div>
+
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+
+ <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
+</script>
+<!-- footer close -->
+   </body>
+
 </html>

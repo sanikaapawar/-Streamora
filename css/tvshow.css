@@ -924,7 +924,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
 
 /* main footer */
 
-.hero {
+    .hero {
       background-image: url("images/main.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -1483,3 +1483,7 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
+
+
+
+  
