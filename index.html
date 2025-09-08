@@ -6,6 +6,8 @@
   <title>Movie Website</title>
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
   <style>
     /* body {
       c
@@ -22,7 +24,10 @@
 }
 
 
- .hero {
+
+
+
+    .hero {
       background-image: url("images/main.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -37,15 +42,6 @@
     .cookie-bar {
       font-size: 14px;
     }
-    /* Sticky navbar */
-.custom-navbar {
-    position: sticky;   /* Makes it stick */
-    top: 0;             /* Stick to the top */
-    z-index: 1030;      /* Above other content */
-    background-color: #fff;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
     .navbar-brand img {
   height: 40px;
   width: auto;
@@ -200,69 +196,18 @@
   width: 100%;
   z-index: 10;                          /* ensure it's above video */
 }
-
-
-
-
-/* video properties start */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;       /* full height */
-  overflow: hidden;
+  /* Sticky navbar */
+.custom-navbar {
+    position: sticky;   /* Makes it stick */
+    top: 0;             /* Stick to the top */
+    z-index: 1030;      /* Above other content */
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-    .video-container video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
- .video-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      max-width: 1000%;
-    }
-
-    .video-overlay h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      background-clip: text;              
-      -webkit-background-clip: text;      
-      color: transparent;                 
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 15px;
-    }
-
-    .video-overlay p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: #ddd;
-    }
-
-    .video-overlay .btn-watch {
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      border: none;
-      color: #fff;
-      transition: all 0.4s ease;
-    }
-    .video-overlay .btn-watch:hover {
-      background: linear-gradient(90deg, #9b4dff, #ff4ecb);
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 78, 203, 0.8);
-    }
-    /* footer css */
+/* CSS Document */
+/* footer css */
 .page-wrapper {
   position: static; 
   width: 100%;
@@ -641,281 +586,544 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
-    /* video css end */
-/* Modal Animation */
-.modal-animate {
-  animation: fadeSlideIn 0.8s ease;
-}
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Text Glow */
-.glowing-text {
-  color: #fff;
-  text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c, 0 0 30px #ff004c;
-  animation: glow 1.5s ease-in-out infinite alternate;
-}
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c; }
-  to   { text-shadow: 0 0 20px #ff004c, 0 0 40px #ff004c; }
-}
-
-/* Poster Hover */
-.poster-hover {
-  transition: transform 0.4s, box-shadow 0.4s;
-}
-.poster-hover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff004c;
-}
-
-/* Trailer Hover */
-.trailer-hover iframe {
-  border-radius: 15px;
-  transition: transform 0.3s;
-}
-.trailer-hover:hover iframe {
-  transform: scale(1.03);
-}
-
-/* Fade & Slide Animations */
-.animate-fadeIn {
-  animation: fadeIn 1.2s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-slideUp {
-  animation: slideUp 1s ease;
-}
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Text Animation */
-.text-animate {
-  animation: fadeIn 2s ease;
-}
-.text-animate-delay {
-  animation: fadeIn 2.5s ease;
-}
-
-/* Button Gradient + Hover */
-.btn-gradient {
-  background: linear-gradient(45deg, #ff004c, #ff6600);
-  border: none;
-  color: white;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.btn-hover:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 15px #ff004c;
-}
-
-/* Rating Badge */
-.rating-badge {
-  font-size: 1rem;
-  padding: 6px 12px;
-  border-radius: 12px;
-}
-@media (min-width: 992px) {
-  #movieInfoModal2 .modal-dialog {
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  #movieInfoModal2 .modal-content {
-    height: 100%;
-    border-radius: 0;
-  }
-
-    #movieInfoModal .modal-dialog {
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  #movieInfoModal .modal-content {
-    height: 100%;
-    border-radius: 0;
-  }
-  #movieInfoModal3 .modal-dialog {
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  #movieInfoModal3 .modal-content {
-    height: 100%;
-    border-radius: 0;
-  }
-  #movieInfoModal4 .modal-dialog {
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  #movieInfoModal4 .modal-content {
-    height: 100%;
-    border-radius: 0;
-  }
-}
-/* cartoon images css start here */
-section .container-fluid { 
-  margin: 100px auto; 
-  width: 40%; 
-  height: 400px; 
-  display: flex; 
-  
-  justify-content: center; 
-  gap: 9px; 
-} 
-section .container-fluid img { 
-  width: 200px; /* fixed instead of 200% */ 
-  height: 120%; 
-  object-fit: cover; 
-  border-radius: 10px; 
-  border: 2px solid rgba(255, 78, 203, 0.8);
-   transition: all ease-in-out 0.5s; 
-  } 
-  section .container-fluid img:hover { 
-    width: 550px; /* slight grow on hover */ 
-  }
-/* cartoon css end */
-
-/* card css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-#card {
-  width: 200px;
-  aspect-ratio: 2 / 3;
-  border-radius: 32px;
-  transform-style: preserve-3d;   /* ✅ correct */
-  flex-shrink: 0;
-  overflow: hidden;
-  transform: translateZ(50px) scale(1) rotateX(45deg) rotateZ(-30deg); /* ✅ fixed casing */
-  box-shadow: 0px 20px 50px rgba(255, 255, 255, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-#card:hover {
-  transform: translateZ(160px) scale(1.1) rotateX(0deg) rotateZ(0deg);
-  box-shadow: 0px 30px 60px rgba(250, 4, 233, 0.3);
-}
-
-
-#card:nth-child(1) {
-  background: url("https://i.pinimg.com/564x/ef/3d/16/ef3d16abaee1976589cd5b83df17f72b.jpg");
-  background-size: cover;
-  background-position: center;
-}
-#card:nth-child(2) {
-  background: url("https://i.pinimg.com/564x/89/9b/5a/899b5a1101432030e2631dc4e505a2dc.jpg");
-  background-size: cover;
-  background-position: center;
-}
-#card:nth-child(3) {
-  background: url("https://i.pinimg.com/736x/23/88/db/2388dbe6293231ddcf1a7001301a3bea.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-#card .image {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  object-fit: cover;
-  opacity: 1;
-  transition: 200ms ease;
-}
-
-#card:hover {
-  transform: translatez(50px) scale(1.3) rotatex(0deg) rotatez(0deg);
-  box-shadow: none;
-}
-#card:hover > .image {
-  opacity: 0;
-}
-.cards-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;     /* wrap instead of forcing scroll */
-  margin: 2rem auto;
-  max-width: 100%;     /* prevent overflow */
-  padding: 0 15px;
-}
-
-#card {
-  width: 150px;
-  aspect-ratio: 2 / 3;
-  border-radius: 12px;
-  overflow: hidden;
-  transform: translateZ(0) scale(1) rotateX(20deg) rotateZ(-10deg);
-  box-shadow: 0px 20px 50px #ffffff10;
-  transition: 400ms ease;
-  flex-shrink: 0;
-}
-/* 
-card */
-.credits-wrapper {
-      background: #111;
-      color: white;
-      height: 20vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-    }
-
-    .credits-container {
-      animation: upcredits 60s linear forwards;
-      max-width: 400px;
-      text-align: center;
-      font-size: 2rem;
-    }
-
-    .credits-container > div + div {
-      margin-top: 1.6rem;
-    }
-
-    .credits-container strong {
-      display: block;
-      font-size: 1.3rem;
-      font-weight: normal;
-      color: #ff4ecb;
-    }
-
-    @keyframes upcredits {
-      0% { transform: translateY(0); opacity: 1; }
-      75% { opacity: 1; }
-      100% { transform: translateY(-75vh); opacity: 0; }
-    }
 
 
 
-
-  </style>
-</head>
-<body>
+   :root {
+            --primary: #e509b5;
+            --secondary: #3e0679;
+            --accent: #f5f5f1;
+            --bg-dark: #000000;
+            --bg-darker: #141414;
+            --bg-light: #222222;
+            --text-primary: #ffffff;
+            --text-secondary: #d2d2d2;
+            --glass: rgba(20, 20, 20, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .firstsection {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-darker);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Navbar */
+        
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 1;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            max-width: 500px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stat-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        /* Content Cards */
+        .content-section {
+            padding: 100px 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .view-all {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .view-all:hover {
+            color: var(--primary);
+        }
+        
+        .content-carousel {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 5px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        
+        .content-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .content-card {
+            min-width: 280px;
+            width: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            scroll-snap-align: start;
+            position: relative;
+            aspect-ratio: 16/9;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .content-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            z-index: 10;
+        }
+        
+        .content-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .content-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+        
+        .content-card:hover .card-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .card-hover-actions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .content-card:hover .card-hover-actions {
+            opacity: 1;
+        }
+        
+        .hover-action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .hover-action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        /* Featured Content */
+        .featured-content {
+            position: relative;
+            height: 70vh;
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        
+        .featured-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            opacity: 0.4;
+        }
+        
+        .featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        
+        .featured-content .content-card {
+            min-width: 350px;
+            width: 350px;
+            height: 500px;
+            margin-right: 50px;
+            flex-shrink: 0;
+        }
+        
+        .featured-info {
+            max-width: 500px;
+        }
+        
+        .featured-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .featured-info p {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .featured-content {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .featured-overlay {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            }
+            
+            .featured-content .content-card {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content-card {
+                min-width: 200px;
+                width: 200px;
+            }
+            
+            .featured-content .content-card {
+                min-width: 250px;
+                width: 250px;
+                height: 375px;
+            }
+        }
+    </style>
+   <body>
 
   <!-- Navbar -->
         <!-- Google Font for modern style -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
 
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center brand-hover " href="#">
+    <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
       <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
       <span class="brand-text">Streamora</span>
     </a> 
@@ -924,19 +1132,11 @@ card */
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse " id="navbarNav" >
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Genres</a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="action.html">Action</a></li>
-            <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
-            <li><a class="dropdown-item" href="#">Drama</a></li>
-            <li><a class="dropdown-item" href="#">Horror</a></li>
-          </ul>
-        </li>
+        
         <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
         <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -951,447 +1151,208 @@ card */
   </div>
 </nav>
 
- <div class="video-container">
-    <video src="video/pop1 (2).mp4" autoplay muted loop></video>
 
-    <!-- Overlay Text -->
-    <div class="video-overlay">
-      <h1>All Top Rated Movies</h1>
-      <p>Streamora brings you the best handpicked top-rated movies of all time. Watch anytime, anywhere.</p>
-      <button class="btn-watch">▶ Start Watching</button>
-    </div>
-  </div>
-
-  <!-- card section -->
-
-
-  <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                   <section>
-   <div class="cards-wrapper">
-  <div id="card"><img src="images/12Th Fail.jpg" class="image"></div>
-  <div id="card"><img src="images/12Th Fail.jpg" class="image"></div>
-  <div id="card"><img src="..." class="image"></div>
-  <div id="card"><img src="..." class="image"></div>
-</div>
-</section>
-                </div>
-                      <div class="col-md-4">
-                        <div class="credits-wrapper">
-    <div class="credits-container">
-      <div>
-        <strong>Executive Producer</strong>
-        Brad Pitt
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, vel error eum quisquam similique officia reiciendis facilis hic aspernatur! Nesciunt labore quod esse illum corporis ab, fugit nemo nihil vero.
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Bad Bunny
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Joey King
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Aaron Johnson
-      </div>
-      <div>
-        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, praesentium ipsam ipsum adipisci vitae fugiat? Iure vel aliquam soluta voluptatem et recusandae commodi quidem ratione corporis, rerum suscipit autem facilis.r</strong>
-        Sandra Bullock
-
-      </div>
-    </div>
-  </div>
-                        <!-- <div class="row">
-                <div class="col-md-4">
-                  <img src="images/12Th Fail.jpg" class="image-fluid">
-                </div>
-                <div class="col-md-4">
-                  <img src="images/12Th Fail.jpg">
-                </div>
-                <div class="col-md-4">
-                  <img src="images/12Th Fail.jpg">
-                </div>
-                      </div> -->
-                            
-            </div>
-        </div>   
-       </section> 
-  
-<!-- card section end -->
-
-<section>
-  <div class="container-fluid">
-    <img src="images/Ashiqui 2.jpg">
-    <img src="images/ae dil hai mushkil.jpg">
-    <img src="images/Brahmastra.jpg">
-    <img src="images/shidhat.jpg">
-    <img src="images/saiyaara2.jpg">
+<body>
+  <div class="firstsection">
+    <!-- Floating Elements Background -->
+    <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
+    <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div>
     
-        <img src="images/lukachupi.jpg">
-         
-
+    <!-- Navbar -->
+    
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Ultimate <span class="gradient-text">4K HDR</span> Streaming</h1>
+            <p>Experience cinema-quality entertainment with Dolby Vision and Atmos, personalized recommendations, and exclusive content.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
+                <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-film"></i></div>
+                    <div>
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-text">Titles</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <div class="stat-number">190+</div>
+                        <div class="stat-text">Countries</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="stat-number">50M+</div>
+                        <div class="stat-text">Subscribers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Content -->
+    <div class="featured-content">
+        <div class="featured-bg" style="background-image: url('https://source.unsplash.com/random/1920x1080/?movie,scifi');"></div>
+        <div class="featured-overlay">
+            <div class="content-card glass">
+                <img src="https://source.unsplash.com/random/500x750/?movie,scifi" alt="Featured Content">
+                <div class="card-overlay">
+                    <h3 class="card-title">Cyber Nexus</h3>
+                    <div class="card-meta">
+                        <span>2023</span>
+                        <span>★ 4.8</span>
+                        <span>Sci-Fi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-info">
+                <h2>Featured: <span class="gradient-text">Cyber Nexus</span></h2>
+                <p>In a dystopian future where humanity is controlled by AI, a rogue hacker discovers a way to break the system. The most watched series this week across 90 countries.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary"><i class="fas fa-play"></i> Play Now</button>
+                    <button class="btn btn-secondary"><i class="fas fa-info-circle"></i> More Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-fire gradient-text"></i> Trending Now</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="content-carousel" id="trending-carousel">
+            <!-- Cards will be added by JavaScript -->
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-crown gradient-text"></i> Top Picks For You</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="content-carousel" id="picks-carousel">
+            <!-- Cards will be added by JavaScript -->
+        </div>
+    </section>
+    
+    
   </div>
-</section>
-
-  <!-- Hero Section -->
-   <!-- <section class="hero text-white">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Your Movie Streaming Guide</h1>
-      <p class="lead text-light">Find where to stream new, popular & upcoming movies and TV shows.</p>
-      <div class="mt-3">
-        <a href="#" class="btn btn-warning btn-lg me-2">Discover Movies</a>
-        <a href="#" class="btn btn-outline-light btn-lg">Features</a>
-      </div>
-    </div>
-  </section>  -->
-
-  <!-- Featured Movies -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-warning mb-4">🎥 Featured Movies</h2>
-      <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card bg-dark text-white h-100">
-            <img src="images/avtar.webp" class="card-img-top" alt="Movie 1">
-            <div class="card-body">
-              <h5 class="card-title">Avengers: Endgame</h5>
-              <p class="card-text">Earth's mightiest heroes assemble for the final battle.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal">
-  More Info
-</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card bg-dark text-white h-100">
-            <img src="images/joker.jpg" class="card-img-top" alt="Movie 2">
-            <div class="card-body">
-              <h5 class="card-title">Joker</h5>
-              <p class="card-text">The origin story of Gotham's most infamous villain.</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal2">
-  More Info
-</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card bg-dark text-white h-100">
-            <img src="images/indor ishq.jpg" class="card-img-top" alt="Movie 3">
-            <div class="card-body">
-              <h5 class="card-title">Inception</h5>
-              <p class="card-text">A mind-bending thriller about dreams within dreams.</p>
-               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal3">
-  More Info
-</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card bg-dark text-white h-100">
-            <img src="images/mirzapur.jpg" class="card-img-top" alt="Movie 4">
-            <div class="card-body">
-              <h5 class="card-title">Interstellar</h5>
-              <p class="card-text">A journey through space and time to save humanity.</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieInfoModal4">
-  More Info
-</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- model first -->
-   <!-- Movie Info Modal -->
-<!-- Modal -->
-<div class="modal fade" id="movieInfoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-white modal-animate">
-      
-      <!-- Header -->
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">🎬 Avengers: Endgame</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row g-4">
+  
+     <script>
+        // Sample movie data
+        const movies = [
+            { id: 1, title: "The Last Adventure", year: 2023, rating: "4.5", isNew: true, isTrending: true, genre: "Action", image: "https://source.unsplash.com/random/500x750/?movie,action" },
+            { id: 2, title: "Midnight Dreams", year: 2023, rating: "4.2", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,drama" },
+            { id: 3, title: "Cosmic Journey", year: 2022, rating: "4.7", isNew: false, isTrending: true, genre: "Sci-Fi", image: "https://source.unsplash.com/random/500x750/?movie,sci-fi" },
+            { id: 4, title: "Lost in Time", year: 2023, rating: "4.3", isNew: true, isTrending: false, genre: "Adventure", image: "https://source.unsplash.com/random/500x750/?movie,adventure" },
+            { id: 5, title: "Dark Secrets", year: 2022, rating: "4.1", isNew: false, isTrending: false, genre: "Thriller", image: "https://source.unsplash.com/random/500x750/?movie,thriller" },
+            { id: 6, title: "Laugh Out Loud", year: 2023, rating: "3.9", isNew: true, isTrending: true, genre: "Comedy", image: "https://source.unsplash.com/random/500x750/?movie,comedy" },
+            { id: 7, title: "The Haunting", year: 2023, rating: "4.4", isNew: true, isTrending: false, genre: "Horror", image: "https://source.unsplash.com/random/500x750/?movie,horror" },
+            { id: 8, title: "Romantic Getaway", year: 2022, rating: "3.8", isNew: false, isTrending: false, genre: "Romance", image: "https://source.unsplash.com/random/500x750/?movie,romance" },
+            { id: 9, title: "Future Wars", year: 2023, rating: "4.6", isNew: true, isTrending: true, genre: "Sci-Fi", image: "https://source.unsplash.com/random/500x750/?movie,future" },
+            { id: 10, title: "The Detective", year: 2022, rating: "4.0", isNew: false, isTrending: false, genre: "Mystery", image: "https://source.unsplash.com/random/500x750/?movie,detective" },
+            { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,oscar" },
+            { id: 12, title: "Golden Globe 2023", year: 2023, rating: "4.7", isNew: true, isTrending: false, genre: "Biography", image: "https://source.unsplash.com/random/500x750/?movie,globe" },
+        ];
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load movie cards
+            loadMovieCards();
             
-            <!-- Movie Poster -->
-            <div class="col-md-4 text-center">
-              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
-                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
-              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
-            </div>
+            // Navbar scroll effect
+            setupNavbarScroll();
             
-            <!-- Movie Details -->
-            <div class="col-md-8 animate-slideUp">
-              <h4 class="fw-bold">Overview</h4>
-              <p class="text-animate">
-                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
-                With the help of remaining allies, the Avengers assemble once more to reverse 
-                Thanos' actions and restore balance to the universe.
-              </p>
-              
-              <h5 class="fw-bold mt-3">Cast</h5>
-              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
-
-              <h5 class="fw-bold mt-3">Genre</h5>
-              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
-
-              <h5 class="fw-bold mt-3">Release Year</h5>
-              <p class="text-animate-delay">2019</p>
-            </div>
-          </div>
-
-          <!-- Video Section -->
-          <div class="row mt-4 animate-fadeIn">
-            <div class="col-12">
-              <h5 class="fw-bold">Watch Trailer</h5>
-              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
-                <iframe src="https://www.youtube.com/embed/TcMBFSGVi1c" 
-                        title="Avengers Endgame Trailer" 
-                        allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- model first end -->
-
-
-
-<!-- model second -->
-   <!-- Movie Info Modal -->
-<!-- Modal -->
-<div class="modal fade" id="movieInfoModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
- 
-
-  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
-    <div class="modal-content bg-dark text-white modal-animate">
-      
-      <!-- Header -->
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row g-4">
+            // Add hover effects to cards
+            setupCardHoverEffects();
+        });
+        
+        function loadMovieCards() {
+            const carousels = {
+                'trending-carousel': movies.filter(movie => movie.isTrending),
+                'picks-carousel': [...movies].sort(() => 0.5 - Math.random()).slice(0, 8),
+                'recent-carousel': movies.filter(movie => movie.isNew),
+                'awards-carousel': movies.filter(movie => movie.rating >= 4.5)
+            };
             
-            <!-- Movie Poster -->
-            <div class="col-md-4 text-center">
-              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
-                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
-              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
-            </div>
+            for (const [carouselId, movieList] of Object.entries(carousels)) {
+                const carousel = document.getElementById(carouselId);
+                
+                movieList.forEach(movie => {
+                    const card = document.createElement('div');
+                    card.className = 'content-card glass';
+                    card.innerHTML = `
+                        ${movie.isNew ? '<div class="card-badge">NEW</div>' : ''}
+                        ${movie.rating >= 4.5 ? '<div class="card-badge" style="left: auto; right: 15px; background: gold; color: black;">TOP</div>' : ''}
+                        <img src="${movie.image}" alt="${movie.title}" loading="lazy">
+                        <div class="card-overlay">
+                            <h3 class="card-title">${movie.title}</h3>
+                            <div class="card-meta">
+                                <span>${movie.year}</span>
+                                <span>★ ${movie.rating}</span>
+                                <span>${movie.genre}</span>
+                            </div>
+                        </div>
+                        <div class="card-hover-actions">
+                            <button class="hover-action-btn"><i class="fas fa-play"></i></button>
+                            <button class="hover-action-btn"><i class="fas fa-plus"></i></button>
+                            <button class="hover-action-btn"><i class="fas fa-info"></i></button>
+                        </div>
+                    `;
+                    
+                    carousel.appendChild(card);
+                });
+            }
+        }
+        
+        function setupNavbarScroll() {
+            const navbar = document.getElementById('navbar');
             
-            <!-- Movie Details -->
-            <div class="col-md-8 animate-slideUp">
-              <h4 class="fw-bold">Overview</h4>
-              <p class="text-animate">
-                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
-                With the help of remaining allies, the Avengers assemble once more to reverse 
-                Thanos' actions and restore balance to the universe.
-              </p>
-              
-              <h5 class="fw-bold mt-3">Cast</h5>
-              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
-
-              <h5 class="fw-bold mt-3">Genre</h5>
-              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
-
-              <h5 class="fw-bold mt-3">Release Year</h5>
-              <p class="text-animate-delay">2019</p>
-            </div>
-          </div>
-
-          <!-- Video Section -->
-          <div class="row mt-4 animate-fadeIn">
-            <div class="col-12">
-              <h5 class="fw-bold">Watch Trailer</h5>
-              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- model second end -->
-
-<!-- model third -->
-   <!-- Movie Info Modal -->
-<!-- Modal -->
-<div class="modal fade" id="movieInfoModal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
- 
-
-  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
-    <div class="modal-content bg-dark text-white modal-animate">
-      
-      <!-- Header -->
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row g-4">
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        function setupCardHoverEffects() {
+            const cards = document.querySelectorAll('.content-card');
             
-            <!-- Movie Poster -->
-            <div class="col-md-4 text-center">
-              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
-                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
-              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
-            </div>
-            
-            <!-- Movie Details -->
-            <div class="col-md-8 animate-slideUp">
-              <h4 class="fw-bold">Overview</h4>
-              <p class="text-animate">
-                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
-                With the help of remaining allies, the Avengers assemble once more to reverse 
-                Thanos' actions and restore balance to the universe.
-              </p>
-              
-              <h5 class="fw-bold mt-3">Cast</h5>
-              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
-
-              <h5 class="fw-bold mt-3">Genre</h5>
-              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
-
-              <h5 class="fw-bold mt-3">Release Year</h5>
-              <p class="text-animate-delay">2019</p>
-            </div>
-          </div>
-
-          <!-- Video Section -->
-          <div class="row mt-4 animate-fadeIn">
-            <div class="col-12">
-              <h5 class="fw-bold">Watch Trailer</h5>
-              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- model third end -->
-
-
-
-<!-- model fourth-->
-   <!-- Movie Info Modal -->
-<!-- Modal -->
-<div class="modal fade" id="movieInfoModal4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="movieInfoLabel" aria-hidden="true">
- 
-
-  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
-    <div class="modal-content bg-dark text-white modal-animate">
-      
-      <!-- Header -->
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold glowing-text" id="movieInfoLabel">Joker</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row g-4">
-            
-            <!-- Movie Poster -->
-            <div class="col-md-4 text-center">
-              <img src="images/movie1.jpg" alt="Avengers Endgame Poster" 
-                   class="img-fluid rounded shadow-lg poster-hover animate-fadeIn">
-              <p class="mt-3"><span class="badge bg-warning text-dark rating-badge">⭐ 8.4/10 IMDb</span></p>
-            </div>
-            
-            <!-- Movie Details -->
-            <div class="col-md-8 animate-slideUp">
-              <h4 class="fw-bold">Overview</h4>
-              <p class="text-animate">
-                After the devastating events of Avengers: Infinity War, the universe is in ruins. 
-                With the help of remaining allies, the Avengers assemble once more to reverse 
-                Thanos' actions and restore balance to the universe.
-              </p>
-              
-              <h5 class="fw-bold mt-3">Cast</h5>
-              <p class="text-animate-delay">Robert Downey Jr., Chris Evans, Scarlett Johansson, Chris Hemsworth, Mark Ruffalo</p>
-
-              <h5 class="fw-bold mt-3">Genre</h5>
-              <p class="text-animate-delay">Action | Adventure | Sci-Fi</p>
-
-              <h5 class="fw-bold mt-3">Release Year</h5>
-              <p class="text-animate-delay">2019</p>
-            </div>
-          </div>
-
-          <!-- Video Section -->
-          <div class="row mt-4 animate-fadeIn">
-            <div class="col-12">
-              <h5 class="fw-bold">Watch Trailer</h5>
-              <div class="ratio ratio-16x9 rounded shadow trailer-hover">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/zAGVQLHvwOY?si=4D7Om2K_ONL7bmoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary btn-hover" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-gradient btn-hover">▶ Watch Now</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- model fourth end -->
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Footer -->
-<!-- footer -->
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const x = e.clientX - card.getBoundingClientRect().left;
+                    const y = e.clientY - card.getBoundingClientRect().top;
+                    
+                    const centerX = card.offsetWidth / 2;
+                    const centerY = card.offsetHeight / 2;
+                    
+                    const angleX = (y - centerY) / 10;
+                    const angleY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                });
+            });
+        }
+    </script>
+    <!-- footer -->
        <div class="page-wrapper">
     <div id="waterdrop"></div>
     <footer>
