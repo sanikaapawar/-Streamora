@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies - MyMovies</title>
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-    <style>
-    body {
-      background-color: #0b0b0b;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Website</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* body {
+      c
       color: #fff;
       font-family: "Poppins", sans-serif;
+    } */
+    body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;  /* only hide horizontal scroll */
+  overflow-y: auto;    /* allow vertical scroll */
+  display: block;      /* remove flex centering */
+  background-color: #000;
+}
+
+
+
+
+
+    .hero {
+      background-image: url("images/main.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
-   
-    
-    .form-control {
-      background-color: #1c1c1c;
-      border: 1px solid #444;
-      color: #fff;
+    .cookie-bar {
+      font-size: 14px;
     }
-    .form-control:focus {
-      border-color: #ff4ecb;
-      
-      box-shadow: none;
-      background-color: #222;
-      color: #fff;
-    }
-    .btn-warning {
-      font-weight: bold;
-      border-radius: 10px;
-    }
-   
+    .navbar-brand img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand .brand-text {
+  font-weight: bold;
+  color: #007bff;  /* replace this with your logo’s main color */
+}
+/* Bigger, modern logo */
 .logo-img {
   height: 60px;
   width: auto;
@@ -57,7 +77,6 @@
   display: inline-block;
   transition: all 0.4s ease-in-out;
 }
-
 
 /* Hover effect for brand */
 .brand-hover:hover .logo-img {
@@ -89,312 +108,2002 @@
   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
   transition: width 0.3s ease;
 }
+
 .nav-link:hover {
   color: #ff4ecb !important;
 }
+
 .nav-link:hover::after {
   width: 100%;
 }
-
-
-/* movies cards */
-body{
-     touch-action: pan-y;
-}
- .movie-card {
-      width: 190px;   /* Fixed width */
-      height: 270px;  /* Fixed height */
-      overflow: hidden;
-      border-radius: 10px;
-      margin: 10px;
-    }
-
-    .movie-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* keeps ratio, crops extra */
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .movie-card img:hover {
-      transform: scale(1.05); /* zoom effect */
-    }
-
-    .movie-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
- .details {
-     position: absolute;
-     padding: 20px;
-     width: 100%;
-     height: 76%;
-     bottom: -200px;
-     left: 0;
-     box-sizing: border-box;
-     transition: 0.5s;
-     z-index: 2;
-}
- .movie:hover .details {
-     bottom: 45px;
-}
- .details h2 {
-     color: #fff;
-     margin: 0;
-     padding: 0;
-     font-size: 20px;
-}
- .details h2 span {
-     font-size: 14px;
-     color: orange;
-}
- .rating {
-     position: relative;
-     padding: 5px 0;
-}
- .rating .fas, .rating .far {
-     color: gold;
-     margin-right: 2px;
-     font-size: 16px;
-}
- .rating span {
-     color: #fff;
-     padding: 0 5px;
-}
- .tags {
-     position: relative;
-     margin-top: 5px;
-}
- .tags span {
-     margin-right: 2px;
-     display: inline-block;
+/* Gradient Search Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
- .info {
-     color: #fff;
-}
- .info p {
-     margin: 15px 0 10px;
-}
- .cast {
-     position: absolute;
-}
- .cast h4 {
-     margin: 0;
-     padding: 0;
-     font-size: 20px;
-     color: yellow;
-}
- .cast ul {
-     margin: 10px 0 0;
-     padding: 0;
-     display: flex;
-}
- .cast ul li {
-     list-style: none;
-     width: 35px;
-     height: 35px;
-     background: #fff;
-     border-radius: 50%;
-     overflow: hidden;
-     margin-right: 6px;
-     border: 2px solid #fff;
-     transition: all .15s ease-in-out;
-}
- .cast ul li img {
-     width: 100%;
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #9b4dff, #ff4ecb);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(155, 77, 255, 0.5);
 }
 
-.cast ul li:hover {
-    transform: scale(1.7);
+/* Navbar links with pink-purple hover */
+.nav-link {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;         /* slightly smaller text */
+  padding: 8px 14px;       /* reduce padding */
+  white-space: nowrap;     /* prevent text breaking into two lines */
+  line-height: 1.2;        /* compact height */
 }
 
-.ribbon {
+/* Keep navbar aligned properly */
+.navbar {
+  min-height: 65px;   /* uniform height */
+}
+.nav-link::after {
+  content: "";
   position: absolute;
-  right: var(--right, 10px);
-  top: var(--top, -3px);
-  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
-  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.15), 0px 50px 100px -20px rgba(50, 50, 93, 0.35), 0px 30px 60px -30px rgba(0, 0, 0, 0.35);
-}
-.ribbon > .content {
-  color: white;
-  font-size: 1.25rem;
-  text-align: center;
-  font-weight: 400;
-  background: var(--color, #2ca7d8) linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
-  padding: 5px 2px 12px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
-  width: var(--width, 32px);
-  min-height: var(--height, 36px);
-  transition: clip-path 1s, padding 1s, background 1s;
-}
-.ribbon.slant-up > .content {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), 50% calc(100% - 6px), 0 100%);
-}
-.ribbon.up > .content {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  transition: width 0.3s ease;
 }
 
-@media screen and (max-width: 576px) {
-     .movie {
-         width: 95%;
-         max-width: 95%;
-         margin: 1em;
-         display: block;
+.nav-link:hover {
+  color: #ff4ecb !important; /* text changes to pink */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* underline animation */
+}
+
+/* Transparent navbar with background image */
+.custom-navbar {
+  background: url("images/navbar-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px); /* glass effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  background-color: rgba(163, 74, 74, 0.938); /* fallback: semi-transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+}
+
+/* Transparent navbar */
+.custom-navbar {
+  background: transparent !important;   /* fully see-through */
+  border: none;                         /* remove border line */
+  box-shadow: none;                     /* remove shadow if any */
+  position: absolute;                   /* float on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;                          /* ensure it's above video */
+}
+  /* Sticky navbar */
+.custom-navbar {
+    position: sticky;   /* Makes it stick */
+    top: 0;             /* Stick to the top */
+    z-index: 1030;      /* Above other content */
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* CSS Document */
+/* footer css */
+.page-wrapper {
+  position: static; 
+  width: 100%;
+}
+
+footer p, footer strong, footer b, footer {
+    color: #b0b0b0;
+}
+
+.footer-top {
+    background: #303030;
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 20px;
+    font-family: rubik;
+  padding-top:30px;
+  
+}
+
+.footer-top, .footer-bottom {
+    background-color: #1c1f2f;
+}
+
+.footer-bottom {
+    padding: 15px 0;
+    border-top: 1px solid #313646;
+    background-color: #6016ba !important;
+    color: #b0b0b0;
+    font-family: rubik;
+}
+
+
+.footer-site-info {
+    font-size: 92.86%;
+}
+#footer-navigation, #footer-navigation li a:hover, .custom-footer, .custom-footer li a:hover {
+    color: white;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+.footer-bottom ul {
+    margin: 0;
+}
+.inline-inside {
+    font-size: 0;
+    line-height: 0;
+}
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+}
+#footer-menu li {
+    display: inline-block;
+    padding: 0 21px;
+    position: relative;
+    line-height: 1;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+#footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+#footer-menu li+li:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    font-size: 0;
+    border-left: 1px solid #232234;
+    border-right: 1px solid #333146;
+}
+
+
+navigation li a, .custom-footer, .custom-footer li a {
+    color: #99a9b5;
+    padding-top: 15px;
+}
+
+#footer-socials {
+    text-align: right;
+}
+
+#footer-socials .socials {
+    text-align: right;
+    margin: 0 -7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.socials-item {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 5px;
+    line-height: 16px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #141421;
+    border: 1px solid #2e2e4c;
+    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
+}
+
+.socials-item i {
+    display: inline-block;
+    font-weight: normal;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    text-rendering: auto;
+}
+
+.facebook {
+    color: #4e64b5;
+}
+
+.twitter {
+    color: #00aced;
+}
+.instagram {
+    color: #9a8f62;
+}
+.youtube {
+    color: #c82929;
+}
+
+.telegram {
+    color: #2ca5e0;
+}
+
+
+a.socials-item:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+
+footer p, footer li {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+
+.widget {
+    margin-bottom: 50px;
+}
+
+.footer-title {
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-title:after {
+    width: 50px;
+    background: #fff;
+    opacity: 0.2;
+    height: 1px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.gem-contacts-item {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.gem-contacts-item i {
+    padding-right: 10px;
+}
+
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.posts li {
+    border-bottom: 1px solid #393d50;
+    padding-bottom: 12px;
+    padding-top: 6px;
+}
+
+footer p, footer li {
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.gem-pp-posts-date {
+    color: #00bcd4;
+    font-size: 89.5%;
+}
+
+footer p {
+    line-height: 24px;
+    margin-bottom: 10px;font-size: 15px;
+}
+
+.wpcf7-form-control-wrap .wpcf7-form-control {
+    padding: 7px!important;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap input {
+    background: #1c1f2f;
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form-control-wrap input:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer textarea {
+    height: 160px;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap textarea:hover {
+    background-color: transparent;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.wpcf7-form-control-wrap textarea {
+    background: #1c1f2f;
+    overflow: hidden;
+    border: 1px solid #2e344d;
+    background-color: #1c1f2f;
+    box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+.wpcf7 .wpcf7-form .contact-form-footer .wpcf7-submit {
+    width: 100%;
+    padding: 11px;
+    margin: 0;
+    line-height: 0;
+}
+.wpcf7-form .contact-form-footer .wpcf7-submit {
+    background-color: #394050;
+    color: #99a9b5;
+    border: none;
+    cursor: pointer;
+    padding: 15px 40px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.5s;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.5);
+    box-shadow: none;
+    text-transform: uppercase;
+    outline: none !important;
+    background-color: #1c1f2f;
+    border-radius: 5px;
+    min-width: 140px;
+    /* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+    box-shadow: 3px 9px 16px rgb(0,0,0,0.4), -3px -3px 10px rgba(255,255,255, 0.06), inset 14px 14px 26px rgb(0,0,0,0.3), inset -3px -3px 15px rgba(255,255,255, 0.05);
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #2e344d;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.wpcf7-form input[type=submit] {
+    height: 40px;
+    line-height: 21px;
+    padding: 10px 40px;
+    font-size: 14px;
+}
+
+.posts li a {
+    color: #99a9b5;
+}
+
+.wpcf7-form .contact-form-footer .wpcf7-submit:hover {
+    box-shadow: 0 0px 20px rgba(84, 1, 74, 0.7);
+    border-color: rgba(255, 6, 224, 0.61);
+    background: linear-gradient(to right, rgba(255, 9, 9, 0.12941176470588237), #c000ffb5, rgba(255, 0, 94, 0.14));
+    color: white;
+}
+
+img {
+    border-style: none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.widget_gallery a {
+    display: inline-block;
+}
+footer .widget ul {
+    list-style: none;
+    margin-top: 5px;
+}
+.widget_gallery ul {
+    padding-left: 0;
+    display: table;
+}
+
+.widget_gallery li {
+    display: inline-block;
+    width: 33.33%;
+    float: left;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    padding: 2px;
+
+}
+
+.widget_gallery.gallery-grid-4 li {
+    width: 30%;
+}
+
+
+#waterdrop {
+    height: 30px;
+}
+
+#waterdrop canvas {
+    bottom: -70px !important;
+}
+
+.footer-site-info
+{
+  padding-top: 10px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --live-indicator-shadow: hsla(0, 79%, 63%, .5);
+    --rich-blank-fogra-30: hsl(219, 32%, 10%);
+    --rich-blank-fogra-29: hsl(222, 25%, 10%);
+    --live-indicator: hsl(0, 79%, 63%);
+    --oxford-blue-50: hsla(218, 39%, 14%, .8);
+    --oxford-blue: hsl(218, 39%, 14%);
+    --light-azure: hsl(214, 84%, 56%);
+    --off-white: hsl(0, 0%, 88%);
+    --yellow: hsl(45, 100%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --azure: hsl(211, 100%, 50%);
+
+    --font-family: "Inter", sans-serif;
+
+    --section-heading: 40px;
+    --font-size-large: 22px;
+    --font-size-medium: 17px;
+    --font-size-small: 14px;
+    --font-size-extra-small: 12px;
+
+    --fw7: 700;
+    --fw6: 600;
+    --fw5: 500;
+
+    --padding-x: 120px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: all .5s ease;
+}
+
+*, *::before, *::after {box-sizing: border-box;}
+
+html{ font-family: var(--font-family);}
+
+h1, h2, h3, h4, h5, h6 {color: var(--white);}
+
+body{
+    background: var(--rich-blank-fogra-29);
+    color: var(--off-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+input, button, select{
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button{
+    color: var(--off-white);
+    cursor: pointer;
+}
+
+li{list-style: none;}
+
+a{
+    text-decoration: none;
+    display: block;
+    color: var(--off-white);
+}
+
+::-webkit-scrollbar{
+    background: transparent;
+    border-left: 1px solid var(--oxford-blue);
+}
+
+    ::-webkit-scrollbar-thumb{
+        background: var(--light-azure);
+        border-radius: 5em;
+        border: 3px solid var(--rich-blank-fogra-29);
     }
-     .container {
-         padding: 0;
-         margin: 0;
+
+header, nav { background: var(--rich-blank-fogra-29);}
+
+
+
+.container{
+    max-width: 1920px;
+    margin: auto;
+}
+
+
+/*BANNER SECTION*/
+
+.banner{ margin-bottom: 60px;}
+
+.banner-card{
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.banner-card .card-content{
+        position: absolute;
+        right: 80px;
+        bottom: 60px;
+        left: 80px;
+    }
+
+ .banner-card .card-info{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+ .banner-card .card-info div{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+ .banner-card .card-info ion-icon{
+            font-size: 20px;
+            color: var(--azure);
+            margin-right: 5px;
+        }
+
+ .banner-card .card-info span{ font-weight: var(--fw6);}
+
+ .banner-card .card-info .quality{
+            background: var(--azure);
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-weight: var(--fw7);
+        }
+
+ .banner-card .card-title{
+        font-size: 3em;
+        color: var(--white);
+        text-shadow: 2px 0 2px #0007;
+    }
+
+.banner-card:hover .banner-img{ transform: scale(1.1);}
+
+.banner-img{ object-position: top;}
+
+/*MOVIES SECTION*/
+
+.movies{ margin-bottom: 60px;}
+
+.filter-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--oxford-blue);
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+    .filter-bar select{
+        color: var(--white);
+        font-size: var(--font-size-small);
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .filter-bar option{ background: var(--oxford-blue);}
+
+.filter-radios{
+    position: relative;
+    background: var(--rich-blank-fogra-29);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+    .filter-radios input{ display: none;}
+
+    .filter-radios label{
+        position: relative;
+        margin: 0 10px;
+        font-size: var(--font-size-small);
+        user-select: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+.filter-radios input:checked + label, .filter-radios label:hover {color: var(--light-azure);}
+
+input ~ .checked-radio-bg{
+    --width: 85px;
+    --left: 5px;
+
+    background: var(--oxford-blue);
+    position: absolute;
+    top: 5px;
+    left: var(--left);
+    bottom: 5px;
+    width: var(--width);
+    border-radius: 10px;
+}
+
+#popular:checked ~ .checked-radio-bg{ 
+        --width: 73px;
+        --left: 90px;
+    }
+
+ #newest:checked ~ .checked-radio-bg{
+        --width: 81px;
+        --left: 163px;
+    }
+
+.movies-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.movie-card{
+    --scale: .8;
+
+    cursor: pointer;
+}
+
+    .movie-card .card-head{
+        position: relative;
+        height: 250px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+     .movie-card:hover .card-img{ transform: scale(1.1);}
+
+    .movie-card .card-overlay{
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        backdrop-filter: blur(5px);
+    }
+
+        .movie-card:hover .card-overlay{ opacity: 1;}
+    
+    .movie-card .bookmark, .movie-card .rating{
+        position: absolute;
+        top: 15px;
+        padding: 6px;
+        border-radius: 10px;
+        color: var(--light-azure);
+        transform: scale(var(--scale));
+    }
+
+    .movie-card .bookmark{
+            background: var(--oxford-blue);
+            left: 15px;
+        }
+
+     .movie-card .bookmark:hover{ color: var(--yellow);}
+
+    .movie-card .rating{
+            display: flex;
+            align-items: center;
+            right: 15px;
+            background: var(--oxford-blue-50);
+        }
+
+    .movie-card .rating span{
+                color: var(--white);
+                font-size: 13px;
+                font-weight: var(--fw5);
+                margin-left: 5px;
+            }
+        
+    .movie-card ion-icon{
+        font-size: 16px;
+        display: block;
+        --ionicon-stroke-width: 50px;
+    }
+
+    .movie-card .play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(var(--scale));
+    }
+
+     .movie-card .play ion-icon{
+            font-size: 60px;
+            --ionicon-stroke-width: 20px;
+        }
+
+     .movie-card:hover :is(.bookmark, .rating, .play){ --scale: 1;}
+    
+    .movie-card .card-title{
+        font-size: var(--font-size-medium);
+        font-weight: var(--fw5);
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .movie-card:hover .card-title{ color: var(--light-azure);}
+
+    .movie-card .card-info{
+        display: flex;
+        justify-content: space-evenly;
+        font-size: var(--font-size-extra-small);
+        font-weight: var(--fw5);
+    }
+
+.load-more{
+    background: var(--oxford-blue);
+    display: block;
+    padding: 20px 50px;
+    margin: auto;
+    font-size: var(--font-size-small);
+    font-weight: var(--fw5);
+    border-radius: 15px;
+    color: var(--white);
+}
+
+    .load-more:hover{ background: var(--light-azure);}
+
+/*CATEGORY SECTION*/
+
+.category{ margin-bottom: 60px;}
+
+.category-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.category-card{
+    position: relative;
+    height: 150px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .category-card::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 20%, #000a);
+    }
+
+    .category-card .name, .category-card .total{
+        position: absolute;
+        bottom: 20px;
+        color: var(--white);
+        z-index: 20;
+    }
+
+        .category-card .name{
+            left: 20px;
+            font-size: 20px;
+        }
+
+            .category-card:hover .name{ color: var(--light-azure);}
+
+        .category-card .total{
+            right: 20px;
+            font-size: 18px;
+            background: var(--oxford-blue-50);
+            padding: 5px 8px;
+            border-radius: 8px;
+        }
+
+/*LIVE SECTION*/
+
+.live{ margin-bottom: 60px;}
+
+.live-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.live-card{ cursor: pointer;}
+
+    .live-card .card-head{
+        position: relative;
+        height: 250px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+        .live-card .card-head::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 20%, #000a);
+        }
+
+        .live-card:hover .card-img{ transform: scale(1.1);}
+
+    .live-card .live-badge, .live-card .total-viewers{
+        position: absolute;
+        left: 30px;
+        border-radius: 10px;
+        padding: 5px 10px;
+        z-index: 10;
+    }
+
+        .live-card .live-badge{
+            top: 30px;
+            font-size: var(--font-size-extra-small);
+            font-weight: var(--fw5);
+            background: var(--live-indicator);
+        }
+
+        .live-card .total-viewers{
+            bottom: 30px;
+            font-size: 15px;
+            font-weight: var(--fw6);
+            background: var(--oxford-blue-50);
+        }
+
+    .live-card .play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(.8);
+        opacity: 0;
+        z-index: 10;
+    }
+
+        .live-card:hover .play{ 
+            transform: translate(-50%, -50%) scale(1); 
+            opacity: 1;
+        }
+
+        .live-card .play ion-icon{
+            font-size: 60px;
+            --ionicon-stroke-width: 20px;
+        }
+       
+    .live-card .card-body{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+ .live-card .avatar{
+        width: 40px;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+.live-card .card-title{
+        font-size: var(--font-size-large);
+        font-weight: var(--fw5);
+    }
+
+.live-card:hover .card-title{ color: var(--light-azure);}
+
+
+
+.slogan{
+    font-size: var(--font-size-small);
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.social-link a { display: inline-block;}
+
+.social-link ion-icon{
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+ .link-heading{ margin-bottom: 20px;}
+
+ .link-item{ font-size: var(--font-size-small);}
+
+  ul .link-item:not(:last-child) { margin-bottom: 10px;}
+ .link-item:hover a{ color: var(--light-azure);}
+
+
+    
+.wrapper{ display: flex;}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1200px){
+    :root{
+        --padding-x: 80px;
+    }
+}
+        
+
+ .banner{ margin-top: 100px;}
+ .banner-card .card-title{ font-size: 2.5em;}
+ .category-grid{ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));}
+
+
+@media screen and (max-width: 1200px){
+    :root{
+        --padding-x: 60px;
+    }
+
+    .banner-card .card-content{
+        bottom: 40px;
+        left: 60px;
+        right: 60px;
     }
 }
 
-  </style>
-  </head>
-  <body>
+@media screen and (max-width: 768px){
+    :root{
+        --padding-x: 40px;
+    }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
-          <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
-          <span class="brand-text">Streamora</span>
-        </a>
+    .banner{ display: none;}
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    .movies{ margin-top: 120px;}
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active"
-                href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link "
-                href="movies.html">Movies</a></li>
-            <!-- <li class="nav-item dropdown" -->
-              
-               <li class="nav-item"><a class="nav-link active"
-               href="tvshows.html">Tv shows</a></li>
+    .filter-bar{
+        flex-direction: column;
+        align-items: center;
+    }
 
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown">Genres</a>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="action.html">Action</a></li>
-                <li><a class="dropdown-item" href="comedy.html">Comedy</a></li>
-                <li><a class="dropdown-item" href="#">Drama</a></li>
-                <li><a class="dropdown-item" href="#">Horror</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="toprated.html">Top
-                Rated</a></li>
-            <li class="nav-item"><a class="nav-link"
-                href="contact.html">Contact</a></li>
-          </ul>
-          <form class="d-flex" role="login">
-            <input class="form-control me-2 bg-dark text-light border-0"
-              type="search" placeholder="login">
-            <button class="btn btn-outline-warning"
-              type="submit">login</button>
-          </form>
+ .filter-bar select{margin-bottom: 20px;}
+
+}
+
+   </style>
+   <body>
+
+  <!-- Navbar -->
+        <!-- Google Font for modern style -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
+
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
+      <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
+      <span class="brand-text">Streamora</span>
+    </a> 
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
+        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
+         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        
+<a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
+</form>
+      </form>
+    </div>
+  </div>
+</nav>
+<body>
+
+        <main>
+            <section class="banner">
+                <div class="banner-card">
+                    <img src="images/wanna girls.jpg" alt="banner" class="banner-img">
+
+                    <div class="card-content">
+                        <div class="card-info">
+                            <div class="genre">
+                                <ion-icon name="film"></ion-icon>
+                                <span>Action/Thriller</span>
+                            </div>
+
+                            <div class="year">
+                                <ion-icon name="calendar"></ion-icon>
+                                <span>2019</span>
+                            </div>
+
+                            <div class="duration">
+                                <ion-icon name="time"></ion-icon>
+                                <span>2h 11min</span>
+                            </div>
+
+                            <div class="quality">4k</div>
+                        </div>
+                        <h2 class="card-title">John Wick: Chapter 3 - Parabellum</h2>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="movies">
+                <div class="filter-bar">
+                    <div class="filter-dropdowns">
+                        <select name="genre" class="genre">
+                            <option value="all genres">All Genres</option>
+                            <option value="action">Action</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="animal">Animal</option>
+                            <option value="animation">Animation</option>
+                            <option value="biography">Biography</option>
+                            <option value="drama">Drama</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="horror">Horror</option>
+                            <option value="scifi">Sci-fi</option>
+                            <option value="war">War</option>
+                        </select>
+
+                        <select name="year" class="year">
+                            <option value="all years">All years</option>
+                            <option value="2024">2024</option>
+                            <option value="2020-2023">2020-2023</option>
+                            <option value="2010-2019">2010-2019</option>
+                            <option value="2000-2009">2000-2009</option>
+                            <option value="1980-1999">1980-1999</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-radios">
+                        <input type="radio" name="grade" id="featured" checked>
+                        <label for="featured">Featured</label>
+
+                        <input type="radio" name="grade" id="popular">
+                        <label for="popular">Popular</label>
+
+                        <input type="radio" name="grade" id="newest">
+                        <label for="newest">Newest</label>
+
+                        <div class="checked-radio-bg"></div>
+                    </div>
+                </div>
+
+                <div class="movies-grid">
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/12Th Fail.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>6.3</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">12Th Fail</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Motivation/Drama</span>
+                                <span class="year">2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/animal.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>7.4</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Animal</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Drama</span>
+                                <span class="year">2020</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Aashiqui.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>5.6</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Ashiqui</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Drama/Action</span>
+                                <span class="year">2014</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Bhediya.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>6.3</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Bhediya</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Horror/Action</span>
+                                <span class="year">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/ae dil hai mushkil.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.0</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Ae dil hai mushkil</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Rommance/Drama</span>
+                                <span class="year">2018</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Ashiqui 2.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.2</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Ashiqui 2</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Rommance/Drama</span>
+                                <span class="year">2017</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Brahmastra.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>7.4</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Brahmastra</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Fantasy</span>
+                                <span class="year">2022</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/luky bhasker.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.0</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">luky Bhasker</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Drama/Motivation</span>
+                                <span class="year">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/munjya.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>9.0</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Munjya</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Horror</span>
+                                <span class="year">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/narsimha.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>7.3</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Narsimha</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Animation</span>
+                                <span class="year">2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Goolie.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>6.6</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Gooli</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Adventure</span>
+                                <span class="year">2018</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/sita ram.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>9.0</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">sita ram</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Rommance/War</span>
+                                <span class="year">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/shidhat.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.6</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Shidhat</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Drama/Rommance</span>
+                                <span class="year">2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/chava.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.7</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">chhaava</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Drama/Action</span>
+                                <span class="year">2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Saiyaara.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.5</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Saiyyara</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Drama/Rommance</span>
+                                <span class="year">2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Rolex.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>8.5</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Rolex</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Drama</span>
+                                <span class="year">2019</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/Salar.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>5.4</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Salar</h3>
+
+                            <div class="card-info">
+                                <span class="genre">Action/Drama</span>
+                                <span class="year">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="card-head">
+                            <img src="images/rajasaa.jpg" alt="movie" class="card-img">
+
+                            <div class="card-overlay">
+
+                                <div class="bookmark">
+                                    <ion-icon name="bookmark"></ion-icon>
+                                </div>
+
+                                <div class="rating">
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <span>5.4</span>
+                                </div>
+
+                                <div class="play">
+                                    <ion-icon name="play-circle-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title">Rajasab</h3>
+                            <div class="card-info">
+                                <span class="genre">Action/Drama</span>
+                                <span class="year">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="load-more">LOAD MORE</button>
+            </section>
+
+            <section class="category" id="category">
+                <h2 class="section-heading">Category</h2>
+
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/JzfWFmfC/action.jpg" alt="image" class="card-img">
+                        <div class="name">Action</div>
+                        <div class="total">100</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/CKpxqjL8/comedy.jpg" alt="image" class="card-img">
+                        <div class="name">Comedy</div>
+                        <div class="total">50</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/3rfrBMxY/thriller.webp" alt="image" class="card-img">
+                        <div class="name">Thriller</div>
+                        <div class="total">20</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/HkXpdV4k/horror.jpg" alt="image" class="card-img">
+                        <div class="name">Horror</div>
+                        <div class="total">80</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/qRRVhRnn/adventure.jpg" alt="image" class="card-img">
+                        <div class="name">Adventure</div>
+                        <div class="total">100</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/15pmZ8K5/animated.jpg" alt="image" class="card-img">
+                        <div class="name">Animation</div>
+                        <div class="total">50</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/XvX6Xq95/crime.jpg" alt="image" class="card-img">
+                        <div class="name">Crime</div>
+                        <div class="total">20</div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="https://i.postimg.cc/8568BYKP/sci-fi.jpg" alt="image" class="card-img">
+                        <div class="name">Sci-fi</div>
+                        <div class="total">80</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="live" id="live">
+                <h2 class="section-heading">Live TV Shows</h2>
+
+                <div class="live-grid">
+                    <div class="live-card">
+                        <div class="card-head">
+                            <img src="https://i.postimg.cc/m26wBrZJ/planet.jpg" alt="image" class="card-img">
+                            <div class="live-badge">LIVE</div>
+                            <div class="total-viewers">305K viewers</div>
+                            <div class="play">
+                                <ion-icon name="play-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <img src="https://i.postimg.cc/YCzQjqtt/bbcamerica.jpg" alt="image" class="avatar">
+                            <h3 class="card-title">Planet Earth II <br> Season 1 - Islands</h3>
+                        </div>
+                    </div>
+
+                    <div class="live-card">
+                        <div class="card-head">
+                            <img src="https://i.postimg.cc/PrY8CrdP/got.jpg" alt="image" class="card-img">
+                            <div class="live-badge">LIVE</div>
+                            <div class="total-viewers">1.7M viewers</div>
+                            <div class="play">
+                                <ion-icon name="play-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <img src="https://i.postimg.cc/ryWpJn3H/HBO-Logo-square.jpg" alt="image" class="avatar">
+                            <h3 class="card-title">Game of Thrones <br> Season 5 - Mother's Mercy</h3>
+                        </div>
+                    </div>
+
+                    <div class="live-card">
+                        <div class="card-head">
+                            <img src="https://i.postimg.cc/RVLZr3MQ/vikins.jpg" alt="image" class="card-img">
+                            <div class="live-badge">LIVE</div>
+                            <div class="total-viewers">468K viewers</div>
+                            <div class="play">
+                                <ion-icon name="play-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <img src="https://i.postimg.cc/ryWpJn3H/HBO-Logo-square.jpg" alt="image" class="avatar">
+                            <h3 class="card-title">Vikings <br> Season 4 - What Might Have Been</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    <!-- footer -->
+       <div class="page-wrapper">
+    <div id="waterdrop"></div>
+    <footer>
+      <div class="footer-top">
+        <div class="pt-exebar">
+
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+              <div class="widget footer_widget">
+                <h5 class="footer-title">Address</h5>
+                <div class="gem-contacts">
+                  <div class="gem-contacts-item gem-contacts-address">Our Studios<br> Head Office:<br>
+                  Streamora Studios, Film City Road,<br>
+                  Andheri West, Mumbai - 400053, India.
+                  </div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="">+91-9122588799</a></div>
+
+                  <div class="gem-contacts-item gem-contacts-address mt-2">Reg. Office :<br> Doon House, D2/3,
+                    4th Floor, Chandra Tower, IDBI Bank Building
+                    Dimna Road, Mango, Jamshedpur-831012, Jharkhand.</div>
+                  <div class="gem-contacts-item gem-contacts-phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a>+91 9122588799</a></div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget footer_widget">
+                    <h5 class="footer-title">Latest Updates</h5>
+                    <ul class="posts  styled">
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🎬 Avengers: Secret Wars trailer drops this week!</a>
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">March 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="#">🍿 Streamora partners with Netflix & Prime for exclusive content.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">February 2025</div>
+                        </div>
+                      </li>
+                      <li class="clearfix gem-pp-posts">
+                        <div class="gem-pp-posts-text">
+                          <div class="gem-pp-posts-item">
+                            <a href="">🔥 Top 10 most watched movies of 2024 revealed.
+                            </a>
+                          </div>
+                          <div class="gem-pp-posts-date">Call +91-9122588799, +91-9122588799</div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="widget">
+                    <h5 class="footer-title">Email Us</h5>
+                    <div class="textwidget">
+                      <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+
+                        <form method="post" class="wpcf7-form" novalidate="novalidate">
+
+                          <div class="contact-form-footer">
+                            <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
+                            <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
+                            <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+              <div class="widget widget_gallery gallery-grid-4">
+                <h5 class="footer-title">Our Gallery</h5>
+                <ul class="magnific-image">
+
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                  <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
 
-    <!-- Hero Section -->
+            <div class="col-md-3">
+              <div class="footer-site-info">2020 © <a href="https://www.youtube.com/watch?v=pdr4IzBpacI&t=34s" target="_blank">Top HTML & CSS Program </a></div>
+            </div>
 
-    <!-- <section class="hero">
-      <h1 class="text-center"> Unlimited Movies </h1>
-      <img src="images/pink2.jpg" class="img-fluid" width="1600px"
-        height="1000px">
-    </section> -->
+            <div class="col-md-6">
+              <nav id="footer-navigation" class="site-navigation footer-navigation centered-box" role="navigation">
+                <ul id="footer-menu" class="nav-menu styled clearfix inline-inside">
+                  <li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="#">Support</a></li>
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Contact Us</a></li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Disclaimer</a></li>
+                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="#">Add more</a></li>
+                </ul>
+              </nav>
+            </div>
 
-   <!-- Movies Section -->
-  <div class="container mt-5">
-    <h3>Trending Now</h3>
-    <div class="row mt-3">
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Aashiqui.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/12Th Fail.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/chava.jpg" class="img-fluid movie-poster" alt="Movie 3" width="260px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/shidhat.jpg" class="img-fluid movie-poster" alt="Movie 4" width="260px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/kalki.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/sita ram.jpg" class="img-fluid movie-poster" alt="Movie 6" width="170px">
-      </div>
-    </div>
-  </div>
-        <!-- movies section 2 -->
-    <div class="container mt-5">
-    <h3>Thriller movies</h3>
-    <div class="row mt-3">
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/joker.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Salar.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/bloodyDaady2.jpg" class="img-fluid movie-poster" alt="Movie 3" width="400px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/munjya.jpg" class="img-fluid movie-poster" alt="Movie 4" width="260px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Bhediya.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/stree.jpg" class="img-fluid movie-poster" alt="Movie 6" width="170px">
-      </div>
-    </div>
-  </div>
-      
-        <!-- movie section 3 -->
-  <div class="container mt-5">
-    <h4>Comedy movies</h4>
-    <div class="row mt-3">
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/munna bhai mbbs.jpg" class="img-fluid movie-poster" alt="Movie 1" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Andhadhun.jpg" class="img-fluid movie-poster" alt="Movie 2" width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/jagga jasoos.jpg" class="img-fluid movie-poster" alt="Movie 3" width="400px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/venky.jpg" class="img-fluid movie-poster" alt="Movie 4" width="200px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Dolly ki doli.jpg" class="img-fluid movie-poster" alt="Movie 5 " width="190px">
-      </div>
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-        <img src="images/Phir hera pheri.jpg" class="img-fluid movie-poster" alt="Movie 6" width="180px">
-      </div>
-    </div>
-  </div>
-   
+            <div class="col-md-3">
+              <div id="footer-socials">
+                <div class="socials inline-inside socials-colored">
 
-    <!-- Footer -->
+                  <a href="#" target="_blank" title="Facebook" class="socials-item">
+                    <i class="fab fa-facebook-f facebook"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Twitter" class="socials-item">
+                    <i class="fab fa-twitter twitter"></i>
 
-    <footer class="bg-dark text-center text-muted py-3 mt-5">
-      <p>&copy; 2025 Movies Page | Designed with ❤️ using Bootstrap</p>
+                  </a>
+                  <a href="#" target="_blank" title="Instagram" class="socials-item">
+                    <i class="fab fa-instagram instagram"></i>
+                  </a>
+                  <a href="#" target="_blank" title="YouTube" class="socials-item">
+                    <i class="fab fa-youtube youtube"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Telegram" class="socials-item">
+                    <i class="fab fa-telegram telegram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="footer-site-info">2025 © Streamora | All Rights Reserved</div>
+
     </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+ <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
+</script>
+<!-- footer close -->
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector('header');
+  const nav = document.querySelector('nav');
+  const navbarMenuBtn = document.querySelector('.navbar-menu-btn');
+
+  const navbarForm = document.querySelector('.navbar-form');
+  const navbarFormCloseBtn = document.querySelector('.navbar-form-close');
+  const navbarSearchBtn = document.querySelector('.navbar-search-btn');
+
+  // Toggle Navbar
+  function navIsActive() {
+    header?.classList.toggle('active');
+    nav?.classList.toggle('active');
+    navbarMenuBtn?.classList.toggle('active');
+  }
+
+  if (navbarMenuBtn) {
+    navbarMenuBtn.addEventListener('click', navIsActive);
+  }
+
+  // Toggle Search Form
+  const searchBarIsActive = () => {
+    navbarForm?.classList.toggle('active');
+  };
+
+  if (navbarSearchBtn) {
+    navbarSearchBtn.addEventListener('click', searchBarIsActive);
+  }
+
+  if (navbarFormCloseBtn) {
+    navbarFormCloseBtn.addEventListener('click', searchBarIsActive);
+  }
+});
+</script>
+
+
+
+   </body>
+
 </html>
