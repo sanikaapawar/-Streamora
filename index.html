@@ -210,6 +210,75 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* css for words */
+
+#rotate-words {
+  max-width:600px;
+  margin:auto;
+  padding:20% 0;
+  font-size:2.2em;
+  text-transform:uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+#rotate-words span {
+  display:block;
+  height:10px;
+  font-size:.7em;
+  text-transform:lowercase;
+  opacity:.8;
+  font-family: 'Rubik', sans-serif;
+  
+}
+
+#rotate-words div {
+ position:absolute;
+ opacity:0;
+ overflow:hidden;
+ left:30vw;
+ width:200vw;
+ line-height:1.2em;
+
+ animation: rotate-word 32s linear infinite 0s;
+}
+
+.roatate-img{
+  height: 250px;
+  width:550px;
+
+  
+}
+.roatate-img-span{
+  height: 1900px;
+  width:500px;
+}
+
+@keyframes rotate-word {
+    0% { opacity: 0;  transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    3% { opacity: 1;  transform: translateX(0);filter:blur(0px);transform:scale(.9)}
+    12% { opacity: 1; transform: translateX(0);filter:blur(0px);transform:scale(1)}
+    16% { opacity: 0; transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+
+#rotate-words div:nth-child(2) { animation-delay: 4s}
+#rotate-words div:nth-child(3) { animation-delay: 8s}
+#rotate-words div:nth-child(4) { animation-delay: 12s}
+#rotate-words div:nth-child(5) { animation-delay: 16s}
+#rotate-words div:nth-child(6) { animation-delay: 20s}
+#rotate-words div:nth-child(7) { animation-delay: 24s}
+#rotate-words div:nth-child(8) { animation-delay: 28s}
+
+@keyframes author {
+    0% { opacity: 0;  transform: translateY(100px);filter:blur(10px);transform: scaleY(2)}
+    20% { opacity:0; transform: translateY(200px);filter:blur(10px); transform: scaleY(2)}
+    30% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(1)}
+    90% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(.9)}
+    100% { opacity:0; transform: translateY(0);filter:blur(10px);transform: scale(2)}
+}
+/* css word end */
+
 /* CSS Document */
 /* footer css */
 .page-wrapper {
@@ -1274,89 +1343,140 @@ card */
     }
 
 /* marquee start */
- :root {
-  --step--2: clamp(3.13rem, 2.62rem + 2.51vw, 5.76rem);
-  --step--1: clamp(3.75rem, 3.09rem + 3.29vw, 7.20rem);
-  --step-0: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+:root {
+  --step--2: clamp(1.2rem, 1rem + 0.6vw, 1.8rem);
+  --step--1: clamp(1.6rem, 1.2rem + 0.8vw, 2.4rem);
+  --step-0: clamp(2rem, 1.5rem + 1vw, 3rem);
 }
 
 @keyframes marquee {
-	from {transform: translateX(0);}
-	to {transform: translateX(-100%);}
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 @keyframes marquee-r {
-	from {transform: translateX(-100%);}
-	to {transform: translateX(0);}
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 
 @keyframes rollCage {
-	from {transform: rotate(0);}
-	to {transform: rotate(5turn);}
+  from { transform: rotate(0); }
+  to { transform: rotate(5turn); }
 }
 
 .marqueebg {
-	background-color: #1A1F24;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	font-weight: 600;
+  background-color: #0b0c0f; /* deep cinematic black */
+  font-family: "Bebas Neue", "Oswald", sans-serif; /* bold movie fonts */
+  font-weight: 400;
+  overflow: hidden;
+  position: relative;
 }
 
 .marquee {
-	border-bottom: 1px solid #efefef;
-	color: #fefefe;
-	font-size: var(--step-0);
-	height: calc(170px + 4rem);
-	overflow: hidden;
-	position: relative;
-	width: 100vw;
-	
-	& img {
-		object-fit: cover;
-		max-height: 150px;
-	}
+  border-bottom: 1px solid #222;
+  color: #fefefe;
+  font-size: var(--step--1);
+  height: calc(80px + 0rem); /* taller for better balance */
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  & img {
+    object-fit: contain;
+    max-height: 60px; /* larger logo/images */
+    margin: 0 1rem;
+  }
+}
+
+/* Fade edges for cinematic effect */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #0b0c0f, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #0b0c0f, transparent);
 }
 
 .track {
-	height: 100%;
-	overflow: hidden;
-	padding: 2rem 0;
-	position: absolute;
-	transition: background-color 300ms ease, color 300ms ease;
-	white-space: nowrap;
-	
-	& .text {
-		animation: marquee 50000ms linear infinite;
-		align-items: center;
-		display: inline-flex;
-		will-change: transform;
-		
-		&.-r {
-			animation-name: marquee-r;
-		}
-		
-		&.-twox {
-			animation-duration: 25000ms;
-		}
-	}
-	
-	&:hover {
-		background-color: #efefef;
-		color: #1A1F24;
+  height: 60%;
+  overflow: hidden;
+  padding: 1rem 0;
+  position: absolute;
+  transition: background-color 300ms ease, color 300ms ease;
+  white-space: nowrap;
 
-		img {
-			animation: rollCage 10000ms linear infinite;
-		}
-		
-		& .-green {
-			color: #BEB9A3;
-		}
-	}
+  & .text {
+    animation: marquee 40000ms linear infinite; /* slower, smooth */
+    align-items: center;
+    display: inline-flex;
+    will-change: transform;
+    gap: 2rem; /* more spacing between text & images */
+
+    &.-r {
+      animation-name: marquee-r;
+    }
+
+    &.-twox {
+      animation-duration: 20000ms;
+    }
+  }
+
+  &:hover {
+    background-color: #fefefe;
+    color: #0b0c0f;
+
+    img {
+      animation: rollCage 8000ms linear infinite;
+    }
+
+    & .-green {
+      color: rgb(239, 9, 201); /* bright cinematic accent */
+    }
+  }
 }
 
 .-green {
-	color: #C1FF1D;
-	font-weight: 900;
+  color: #5c079c; /* Netflix-style red */
+  font-weight: 900;
+  letter-spacing: 1px;
 }
+:root {
+  --step--2: clamp(1.5rem, 1.2rem + 1vw, 2.5rem);
+  --step--1: clamp(2rem, 1.6rem + 1.2vw, 3.5rem);
+  --step-0: clamp(2.5rem, 2rem + 1.5vw, 5rem); /* BIG font */
+}
+
+
+.marquee {
+  border-bottom: 1px solid #222;
+  color: #fefefe;
+  font-size: var(--step-0); /* using larger step */
+  height: calc(180px + 0rem); /* taller to match big text */
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  & img {
+    object-fit: contain;
+    max-height: 80px; /* bigger images to balance text */
+    margin: 0 1.5rem;
+  }
+}
+
+
 /* marquee end */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
@@ -1372,9 +1492,9 @@ card */
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  height: 300px;
   background-color: #28a745 !important; /* replace with your green */
-  background-image: url("images/burger.jpg");
+  background-image: url("images/pink5.jpg");
   background-repeat: repeat;
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -1447,7 +1567,7 @@ code {
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="index2.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
         
         <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
@@ -1480,8 +1600,17 @@ code {
         </video>
         <div class="herop-content">
             <h1>Ultimate <span class="gradient-text">4K HDR</span> Streaming</h1>
-            <p>Experience cinema-quality entertainment with Dolby Vision and Atmos, personalized recommendations, and exclusive content.</p>
-            <div class="herop-actions">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+            
+
+
+
+
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+<div class="herop-actions">
                 <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
                 <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
             </div>
@@ -1510,8 +1639,29 @@ code {
             </div>
         </div>
     </section>
-    
-    <!-- Featured Content -->
+                </div>
+                      <div class="col-md-4">
+                         <div id="rotate-words">  
+<div>Trending movies<img src="images/12th fail2.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Popular<img src="images/welcomenewyork.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>top picks<img src="images/kashmir files.jpg" alt="Streamora Logo" class="roatate-img"><br />  <span>sanika sanika sanika</span></div>
+<div>Classy <img src="images/thedark.webp" alt="Streamora Logo" class="roatate-img"><br /><span>Everyone</span></div>
+<div>Cinematic<img src="images/munna bhai mbbs.jpg" alt="Streamora Logo" class="roatate-img"><br /></div>
+<div>Trending movies<img src="images/hero-img4.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Trending movies<img src="images/pardesiya.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Trending movies<img src="images/mo3.jpg" alt="Streamora Logo" class="roatate-img"></div>
+
+
+</div>
+                      </div>
+                            
+            </div>
+        </div>    </section> 
+
+
+
+
+          
 
 
     <section>
@@ -1519,10 +1669,10 @@ code {
             <div class="row">
                 <div class="col-md-8">
                   <div class="featured-content">
-        <div class="featured-bg" style="background-image: url('images/animal.jpg');"></div>
+        <div class="featured-bg" style="background-image: url('images/bannerimage.jpg');"></div>
         <div class="featured-overlay">
             <div class="content-card glass">
-                <img src="images/b1.webp" alt="Featured Content">
+                <img src="images/cyber.png" alt="Featured Content">
                 <div class="card-overlay">
                     <h3 class="card-title">Cyber Nexus</h3>
                     <div class="card-meta">
@@ -1548,7 +1698,7 @@ code {
         <div class="featured-bg" style="background-image: url('images/burger3.jpg');"></div>
         <div class="featured-overlay">
             <div class="content-card glass">
-                <img src="images/french fries1.jpg" alt="Featured Content">
+                <img src="images/cybernexus.png" alt="Featured Content">
                 <div class="card-overlay">
                     <h3 class="card-title">Cyber Nexus</h3>
                     <div class="card-meta">
@@ -1577,7 +1727,17 @@ code {
      <div class="marqueebg">
 <div class="marquee">
 	<div class="track">
-		<span class="text -twox">Cage.<span class="-green">Cage.</span><img src="images/bolbachan.jpg" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+		
+
+  <span class="text -twox">Stream.<span class="-green">Watch.</span><img src="images/logo.png" /></span>
+<span class="text -twox">Discover.<span class="-green">Enjoy.<img src="images/logo.png" /></span>
+<span class="text -twox">Movies.<span class="-green">Anytime.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+<span class="text -twox">Entertainment.<span class="-green">Unlimited.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+
+
+
+
+
 	</div>
 </div>
 </div>
@@ -1630,19 +1790,28 @@ code {
      <script>
         // Sample movie data
         const movies = [
-            { id: 1, title: "The Last Adventure", year: 2023, rating: "4.5", isNew: true, isTrending: true, genre: "Action", image: "images/french fries1.jpg" },
-            { id: 2, title: "Midnight Dreams", year: 2023, rating: "4.2", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,drama" },
-            { id: 3, title: "Cosmic Journey", year: 2022, rating: "4.7", isNew: false, isTrending: true, genre: "Sci-Fi", image: "https://source.unsplash.com/random/500x750/?movie,sci-fi" },
-            { id: 4, title: "Lost in Time", year: 2023, rating: "4.3", isNew: true, isTrending: false, genre: "Adventure", image: "https://source.unsplash.com/random/500x750/?movie,adventure" },
-            { id: 5, title: "Dark Secrets", year: 2022, rating: "4.1", isNew: false, isTrending: false, genre: "Thriller", image: "https://source.unsplash.com/random/500x750/?movie,thriller" },
-            { id: 6, title: "Laugh Out Loud", year: 2023, rating: "3.9", isNew: true, isTrending: true, genre: "Comedy", image: "https://source.unsplash.com/random/500x750/?movie,comedy" },
+          { 
+  id: 1,
+  title: "The Last Adventure",
+  year: 2023,
+  rating: "4.5",
+  isNew: true,
+  isTrending: true,
+  genre: "Action",
+image: "images/la.jpg" ,
+},
+          { id: 2, title: "Midnight Dreams", year: 2023, rating: "4.2", isNew: true, isTrending: true, genre: "Drama", image: "images/midnight.webp" },
+            { id: 3, title: "Cosmic Journey", year: 2022, rating: "4.7", isNew: false, isTrending: true, genre: "Sci-Fi", image: "images/cosmic.jpg" },
+            { id: 4, title: "Lost in Time", year: 2023, rating: "4.3", isNew: true, isTrending: false, genre: "Adventure", image: "images/cosmic.jpg" },
+            { id: 5, title: "Dark Secrets", year: 2022, rating: "4.1", isNew: false, isTrending: false, genre: "Thriller", image: "images/cosmic.jpg" },
+            { id: 6, title: "Laugh Out Loud", year: 2023, rating: "3.9", isNew: true, isTrending: true, genre: "Comedy", image: "images/laugh.jpg" },
             { id: 7, title: "The Haunting", year: 2023, rating: "4.4", isNew: true, isTrending: false, genre: "Horror", image: "https://source.unsplash.com/random/500x750/?movie,horror" },
             { id: 8, title: "Romantic Getaway", year: 2022, rating: "3.8", isNew: false, isTrending: false, genre: "Romance", image: "https://source.unsplash.com/random/500x750/?movie,romance" },
-            { id: 9, title: "Future Wars", year: 2023, rating: "4.6", isNew: true, isTrending: true, genre: "Sci-Fi", image: "https://source.unsplash.com/random/500x750/?movie,future" },
+            { id: 9, title: "Future Wars", year: 2023, rating: "4.6", isNew: true, isTrending: true, genre: "Sci-Fi", image: "images/future.jpeg" },
             { id: 10, title: "The Detective", year: 2022, rating: "4.0", isNew: false, isTrending: false, genre: "Mystery", image: "https://source.unsplash.com/random/500x750/?movie,detective" },
-            { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "https://source.unsplash.com/random/500x750/?movie,oscar" },
+            { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "images/oscar.jpeg"  },
             { id: 12, title: "Golden Globe 2023", year: 2023, rating: "4.7", isNew: true, isTrending: false, genre: "Biography", image: "https://source.unsplash.com/random/500x750/?movie,globe" },
-             { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "images/french fries1.jpg" },
+             { id: 11, title: "Oscar Winner 2023", year: 2023, rating: "4.9", isNew: true, isTrending: true, genre: "Drama", image: "images/os2.jpeg" },
         ];
         
         // Initialize the page
