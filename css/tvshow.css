@@ -1508,3 +1508,24 @@ footer .widget ul {
 
 /* main footer */
 
+
+
+/* For Firefox */
+/* Horizontal scrollbar only */
+::-webkit-scrollbar:horizontal {
+  height: 10px; /* scrollbar height */
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: #000; /* track background */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #ff4ecb; /* pink thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #ff66d9; /* lighter pink on hover */
+}
+
