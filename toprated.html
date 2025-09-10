@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Rated Movies - MyMovies</title>
-             
+  <title>Movie Website </title>
+  <link rel="icon" type="image/Png" href="images/logo.Png"/>
+
   <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <style>
    
-     body {
-  background: url("images/pink4.jpg") no-repeat center center fixed;
-  background-size: cover;  /* makes the image cover the entire screen */
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style>
+
+/*body*/
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;  /* only hide horizontal scroll */
+  overflow-y: auto;    /* allow vertical scroll */
+  display: block;      /* remove flex centering */
+  background-color: #000;
 }
 
-    .hero {
+.hero {
       background-image: url("images/main.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -29,11 +35,10 @@
       align-items: center;
       text-align: center;
     }
-    
     .cookie-bar {
       font-size: 14px;
     }
-   .navbar-brand img {
+    .navbar-brand img {
   height: 40px;
   width: auto;
   margin-right: 10px;
@@ -195,8 +200,50 @@
     background-color: #fff;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+} /*Navbar end*/
+
+/*slide show start*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+html, body { height: 100%; margin: 0; }
+
+.slideshow {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 3px;
+	height: 100%;
+	background: #fff;
 }
 
+.img {
+	flex: 0 0 auto;
+	position: relative;
+	height: 100%;
+	background: #000 center / cover fixed;
+	/* attr data-type doesn't work anywhere for the moment :( */
+	/* So we do it the JS way */
+	background-image: attr(data-src url); /* Keep it anyway */
+	place-content: center;
+	text-align: center;
+	font: bold 3.75rem / 1.2 'Open Sans', sans-serif;
+	color: rgb(255 255 255 / 85%);
+	text-stroke: 1.5px rgb(0 0 0 / 70%);
+	user-select: none;
+	&::before, &::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: 0;
+		cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 -960 960 960' width='32' fill='%23e3e3e3'%3E%3Cuse href='%23a' stroke='%23000b' stroke-width='100' /%3E%3Cpath id='a' d='M673.33-240v-480H740v480h-66.67ZM220-240v-480l350.67 240L220-240Zm66.67-240Zm0 113.33 166-113.33-166-113.33v226.66Z'/%3E%3C/svg%3E") 16 16, e-resize;
+	}
+	&::after {
+		cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 -960 960 960' width='32' fill='%23e3e3e3'%3E%3Cuse href='%23a' stroke='%23000b' stroke-width='100' /%3E%3Cpath id='a' d='M220-240v-480h66.67v480H220Zm520 0L389.33-480 740-720v480Zm-66.67-240Zm0 113.33v-226.66L507.33-480l166 113.33Z'/%3E%3C/svg%3E") 16 16, w-resize;
+		clip-path: polygon(0 0, 100% 0, 0 100%);
+	}
+	&:first-child::after, &:last-child::before { cursor: default; }
+}
+
+/*page card of movie */
 
   /* movies cards and rating*/
 body{
@@ -362,63 +409,6 @@ body{
 
 #one{
   color: white
-}
-
-.btn{
-  padding: 15px 40px; 
-  border: none;
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
-.btn::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color:#cf1cc3;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-.btn::before{
-  content: "";
-  background: linear-gradient(45deg,#ff0000,#ff7300,#fffb00,#48ff00,#00ffd5,#002bff,#ff00c8,#ff0000);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  filter: blur(8px);
-
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-  opacity: 0;
-}
-
-@keyframes glowing {
-  0% {background-position: 0 0 ;}
-  50% {background-position: 400% 0 ;}
-  100% {background-position: 0 0 ;}
-}
-
-.btn:hover::before{
-  opacity: 1;
-}
-
-.btn:active:after{
-  background: transparent;
-}
-
-.btn:active {
-  color: #000;
-  font-weight: bold;
 }
 
 
@@ -803,7 +793,12 @@ footer .widget ul {
   padding-top: 10px;
 }
 
+
+
+
+
   </style>
+
 </head>
 <body>
 
@@ -825,21 +820,28 @@ footer .widget ul {
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
-        <li class="nav-item"><a class="nav-link active" href="toprated.html">Top Rated</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
         <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
       <form class="d-flex" role="search">
         
- <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
+<a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
 </form>
       </form>
     </div>
   </div>
 </nav>
+<!--navbar end-->
+
+<!--slidshow effect-->
+<div class="slideshow">
+	<div class="img" data-src="images/goat-life-aavesham-maharaja-tillu-netflix-amazon-disney-hotstar-premalu.webp">Top Rated Movies,Series,Tv Shows </div>
+	
 
   <!-- Page Header -->
   <section class="page-header">
@@ -2485,5 +2487,30 @@ Bharat Kukreti</span
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+	
+</div>
+
+
+<Script>
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Inspired by https://codepen.io/dropside/pen/bxhke  //
+//  Images from https://certaine.tumblr.com/           //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+[...document.querySelectorAll('.img[data-src]')].forEach(img => {
+	img.style.backgroundImage = `url(${img.dataset.src})`;
+	img.addEventListener('click', onImageClick);
+});
+
+function onImageClick(e) {
+	let next = e.offsetX / e.target.clientWidth > 1 - e.offsetY / e.target.clientHeight;
+	e.target[next ? 'nextElementSibling' : 'previousElementSibling']?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</Script>
+
+
+
 </body>
 </html>
