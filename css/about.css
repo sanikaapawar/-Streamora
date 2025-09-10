@@ -1,5 +1,8 @@
 /* navbar section start */
-
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4ecb #000; /* thumb color | track color */
+}
    body {
   background: url("images/pink4.jpg") no-repeat center center fixed;
   background-size: cover;     /* ensures the image covers entire viewport */
