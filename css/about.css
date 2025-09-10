@@ -727,7 +727,19 @@ footer .widget ul {
 #about .about-col:hover i {
   color: #9b4dff;
 }
-
+.section-header .title a {
+    font-size: 32px;        /* similar to services-section h2 */
+    margin-bottom: 10px;    
+    color: #9b4dff;         /* purple shade */
+    letter-spacing: 2px;    /* same spacing effect */
+    text-decoration: none;  /* remove underline */
+    font-weight: bold;
+    display: inline-block;  /* helps with centering */
+}
+.section-header {
+    text-align: center;     /* center the heading */
+    margin: 20px 0;
+}
 #about .about-col h2 {
   color: #000;
   text-align: center;
@@ -770,6 +782,7 @@ footer .widget ul {
   padding: 20px;
   height: 100%; /* makes sure column fills height */
 }
+
 /* meet our team start */
 /* meet our team section start */
 .team {
@@ -1220,8 +1233,11 @@ footer .widget ul {
 #hero h2 {
   color: #fff;
   margin-bottom: 30px;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
+  font-family:"Bebas Neue", "Oswald"," sans-serif";
+  letter-spacing: 1px;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -1234,6 +1250,7 @@ footer .widget ul {
   width: 80%;
   margin: 0 auto 30px auto;
   color: #fff;
+
 }
 
 @media (min-width: 1024px) {
