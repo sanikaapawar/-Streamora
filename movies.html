@@ -673,7 +673,7 @@ a{
 
 ::-webkit-scrollbar{
     background: transparent;
-    border-left: 1px solid var(pink);
+    border-left: 1px solid var(rgb(209, 57, 196));
 }
 
 ::-webkit-scrollbar-thumb{
@@ -1126,6 +1126,73 @@ input ~ .checked-radio-bg{
  .filter-bar select{margin-bottom: 20px;}
 
 }
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ff00c3; /* Netflix style red */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 40px 0;
+  position: relative;
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* underline glowing effect */
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, #b83cf7, #885b9c, #be8bce);
+  border-radius: 5px;
+  animation: glow 2s infinite linear;
+}
+
+/* Fade-in animation */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glowing underline animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px hsl(307, 95%, 47%); }
+  50% { box-shadow: 0 0 20px #ff00bf; }
+  100% { box-shadow: 0 0 5px #ff00b3; }
+}
+ 
+  /* watch now button */
+
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #ff004f, #ff8800);
+  border-radius: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(255,0,79,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.watch-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255,0,79,0.9);
+}
 
    </style>
    <body>
@@ -1190,6 +1257,7 @@ input ~ .checked-radio-bg{
                             <div class="quality">4k</div>
                         </div>
                         <h2 class="card-title">Kalki : The last avtar</h2>
+                        <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
                     </div>
                 </div>
 
@@ -1799,53 +1867,53 @@ input ~ .checked-radio-bg{
             </section>
 
             <section class="category" id="category">
-                <h2 class="section-heading">Category</h2>
+                <h2 class="section-heading">Live Channels</h2>
 
                 <div class="category-grid">
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/JzfWFmfC/action.jpg" alt="image" class="card-img">
+                        <img src="images/warfare movie.jpg" alt="image" class="card-img">
                         <div class="name">Action</div>
                         <div class="total">100</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/CKpxqjL8/comedy.jpg" alt="image" class="card-img">
+                        <img src="images/The kapil sharma.jpg" alt="image" class="card-img">
                         <div class="name">Comedy</div>
                         <div class="total">50</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/3rfrBMxY/thriller.webp" alt="image" class="card-img">
+                        <img src="images/Wedneseday2.jpg" alt="image" class="card-img">
                         <div class="name">Thriller</div>
                         <div class="total">20</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/HkXpdV4k/horror.jpg" alt="image" class="card-img">
+                        <img src="images/Weapons.jpg" alt="image" class="card-img">
                         <div class="name">Horror</div>
                         <div class="total">80</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/qRRVhRnn/adventure.jpg" alt="image" class="card-img">
+                        <img src="images/from.jpg" alt="image" class="card-img">
                         <div class="name">Adventure</div>
                         <div class="total">100</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/15pmZ8K5/animated.jpg" alt="image" class="card-img">
+                        <img src="images/minions2.jpg" alt="image" class="card-img">
                         <div class="name">Animation</div>
                         <div class="total">50</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/XvX6Xq95/crime.jpg" alt="image" class="card-img">
+                        <img src="images/crime.jpg" alt="image" class="card-img">
                         <div class="name">Crime</div>
                         <div class="total">20</div>
                     </div>
 
                     <div class="category-card">
-                        <img src="https://i.postimg.cc/8568BYKP/sci-fi.jpg" alt="image" class="card-img">
+                        <img src="images/the Creator.jpg" alt="image" class="card-img">
                         <div class="name">Sci-fi</div>
                         <div class="total">80</div>
                     </div>
@@ -1858,7 +1926,7 @@ input ~ .checked-radio-bg{
                 <div class="live-grid">
                     <div class="live-card">
                         <div class="card-head">
-                            <img src="https://i.postimg.cc/m26wBrZJ/planet.jpg" alt="image" class="card-img">
+                            <img src="images/lost2.jpg" alt="image" class="card-img">
                             <div class="live-badge">LIVE</div>
                             <div class="total-viewers">305K viewers</div>
                             <div class="play">
@@ -1867,14 +1935,14 @@ input ~ .checked-radio-bg{
                         </div>
 
                         <div class="card-body">
-                            <img src="https://i.postimg.cc/YCzQjqtt/bbcamerica.jpg" alt="image" class="avatar">
-                            <h3 class="card-title">Planet Earth II <br> Season 1 - Islands</h3>
+                            <img src="images/icons8-tv-50.png" alt="image" class="avatar">
+                            <h3 class="card-title"> Lost <br> Season 1</h3>
                         </div>
                     </div>
 
                     <div class="live-card">
                         <div class="card-head">
-                            <img src="https://i.postimg.cc/PrY8CrdP/got.jpg" alt="image" class="card-img">
+                            <img src="images/Game of thrones2.jpg" alt="image" class="card-img">
                             <div class="live-badge">LIVE</div>
                             <div class="total-viewers">1.7M viewers</div>
                             <div class="play">
@@ -1883,14 +1951,14 @@ input ~ .checked-radio-bg{
                         </div>
 
                         <div class="card-body">
-                            <img src="https://i.postimg.cc/ryWpJn3H/HBO-Logo-square.jpg" alt="image" class="avatar">
+                            <img src="images/download.png" alt="image" class="avatar">
                             <h3 class="card-title">Game of Thrones <br> Season 5 - Mother's Mercy</h3>
                         </div>
                     </div>
 
                     <div class="live-card">
                         <div class="card-head">
-                            <img src="https://i.postimg.cc/RVLZr3MQ/vikins.jpg" alt="image" class="card-img">
+                            <img src="images/Vikings.jpg" alt="image" class="card-img">
                             <div class="live-badge">LIVE</div>
                             <div class="total-viewers">468K viewers</div>
                             <div class="play">
@@ -1899,7 +1967,7 @@ input ~ .checked-radio-bg{
                         </div>
 
                         <div class="card-body">
-                            <img src="https://i.postimg.cc/ryWpJn3H/HBO-Logo-square.jpg" alt="image" class="avatar">
+                            <img src="images/icons8-hbo-50.png" alt="image" class="avatar">
                             <h3 class="card-title">Vikings <br> Season 4 - What Might Have Been</h3>
                         </div>
                     </div>
