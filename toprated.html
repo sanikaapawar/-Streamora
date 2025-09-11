@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Website </title>
-  <link rel="icon" type="image/Png" href="images/logo.Png"/>
+  <title>Movie Website</title>
+      
+        <link rel="icon" type="image/Png" href="images/logo.Png"/>
 
   <!-- Bootstrap 5 -->
    
@@ -12,9 +13,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
   <style>
-
-/*body*/
-body {
+    /* body {
+      c
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+    } */
+    body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;  /* only hide horizontal scroll */
@@ -200,217 +204,76 @@ body {
     background-color: #fff;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-} /*Navbar end*/
-
-/*slide show start*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
-
-html, body { height: 100%; margin: 0; }
-
-.slideshow {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: 3px;
-	height: 100%;
-	background: #fff;
 }
 
-.img {
-	flex: 0 0 auto;
-	position: relative;
-	height: 100%;
-	background: #000 center / cover fixed;
-	/* attr data-type doesn't work anywhere for the moment :( */
-	/* So we do it the JS way */
-	background-image: attr(data-src url); /* Keep it anyway */
-	place-content: center;
-	text-align: center;
-	font: bold 3.75rem / 1.2 'Open Sans', sans-serif;
-	color: rgb(255 255 255 / 85%);
-	text-stroke: 1.5px rgb(0 0 0 / 70%);
-	user-select: none;
-	&::before, &::after {
-		content: '';
-		display: block;
-		position: absolute;
-		inset: 0;
-		cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 -960 960 960' width='32' fill='%23e3e3e3'%3E%3Cuse href='%23a' stroke='%23000b' stroke-width='100' /%3E%3Cpath id='a' d='M673.33-240v-480H740v480h-66.67ZM220-240v-480l350.67 240L220-240Zm66.67-240Zm0 113.33 166-113.33-166-113.33v226.66Z'/%3E%3C/svg%3E") 16 16, e-resize;
-	}
-	&::after {
-		cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='32' viewBox='0 -960 960 960' width='32' fill='%23e3e3e3'%3E%3Cuse href='%23a' stroke='%23000b' stroke-width='100' /%3E%3Cpath id='a' d='M220-240v-480h66.67v480H220Zm520 0L389.33-480 740-720v480Zm-66.67-240Zm0 113.33v-226.66L507.33-480l166 113.33Z'/%3E%3C/svg%3E") 16 16, w-resize;
-		clip-path: polygon(0 0, 100% 0, 0 100%);
-	}
-	&:first-child::after, &:last-child::before { cursor: default; }
+/* css for words */
+
+#rotate-words {
+  max-width:600px;
+  margin:auto;
+  padding:20% 0;
+  font-size:2.2em;
+  text-transform:uppercase;
+  font-family: 'Oswald', sans-serif;
 }
 
-/*page card of movie */
-
-  /* movies cards and rating*/
-body{
-     touch-action: pan-y;
-}
- .movie {
-     border-radius: 8px;
-     width: 100%;
-     max-width: 300px;
-     height: 450px;
-     position: relative;
-     background: #000;
-     overflow: hidden;
-     box-shadow: 0 1px 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.16), 0 4px 4px rgba(0,0,0,0.20), 0 8px 8px rgba(0,0,0,0.30);
-     margin-bottom: 15px;
-     margin-top: 15px;
-}
- .movie .poster:before {
-     content: '';
-     position: absolute;
-     bottom: -200px;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(0deg, #000 55%, transparent);
-     transition: 0.5s;
-     z-index: 1;
-}
- .movie:hover .poster:before {
-     bottom: 0;
-}
- .movie .poster img {
-     width: 100%;
-     transition: 0.5s;
-}
- .movie:hover .poster img {
-     filter: blur(7px);
-     transform: translateY(-50px);
-}
- .details {
-     position: absolute;
-     padding: 20px;
-     width: 100%;
-     height: 76%;
-     bottom: -200px;
-     left: 0;
-     box-sizing: border-box;
-     transition: 0.5s;
-     z-index: 2;
-}
- .movie:hover .details {
-     bottom: 45px;
-}
- .details h2 {
-     color: #fff;
-     margin: 0;
-     padding: 0;
-     font-size: 20px;
-}
- .details h2 span {
-     font-size: 14px;
-     color: orange;
-}
- .rating {
-     position: relative;
-     padding: 5px 0;
-}
- .rating .fas, .rating .far {
-     color: gold;
-     margin-right: 2px;
-     font-size: 16px;
-}
- .rating span {
-     color: #fff;
-     padding: 0 5px;
-}
- .tags {
-     position: relative;
-     margin-top: 5px;
-}
- .tags span {
-     margin-right: 2px;
-     display: inline-block;
+#rotate-words span {
+  display:block;
+  height:10px;
+  font-size:.7em;
+  text-transform:lowercase;
+  opacity:.8;
+  font-family: 'Rubik', sans-serif;
+  
 }
 
- .info {
-     color: #fff;
-}
- .info p {
-     margin: 15px 0 10px;
-}
- .cast {
-     position: absolute;
-}
- .cast h4 {
-     margin: 0;
-     padding: 0;
-     font-size: 20px;
-     color: yellow;
-}
- .cast ul {
-     margin: 10px 0 0;
-     padding: 0;
-     display: flex;
-}
- .cast ul li {
-     list-style: none;
-     width: 35px;
-     height: 35px;
-     background: #fff;
-     border-radius: 50%;
-     overflow: hidden;
-     margin-right: 6px;
-     border: 2px solid #fff;
-     transition: all .15s ease-in-out;
-}
- .cast ul li img {
-     width: 100%;
+#rotate-words div {
+ position:absolute;
+ opacity:0;
+ overflow:hidden;
+ left:30vw;
+ width:200vw;
+ line-height:1.2em;
+
+ animation: rotate-word 32s linear infinite 0s;
 }
 
-.cast ul li:hover {
-    transform: scale(1.7);
+.roatate-img{
+  height: 250px;
+  width:550px;
+
+  
+}
+.roatate-img-span{
+  height: 1900px;
+  width:500px;
 }
 
-.ribbon {
-  position: absolute;
-  right: var(--right, 10px);
-  top: var(--top, -3px);
-  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
-  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.15), 0px 50px 100px -20px rgba(50, 50, 93, 0.35), 0px 30px 60px -30px rgba(0, 0, 0, 0.35);
-}
-.ribbon > .content {
-  color: white;
-  font-size: 1.25rem;
-  text-align: center;
-  font-weight: 400;
-  background: var(--color, #2ca7d8) linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
-  padding: 5px 2px 12px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
-  width: var(--width, 32px);
-  min-height: var(--height, 36px);
-  transition: clip-path 1s, padding 1s, background 1s;
-}
-.ribbon.slant-up > .content {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), 50% calc(100% - 6px), 0 100%);
-}
-.ribbon.up > .content {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+@keyframes rotate-word {
+    0% { opacity: 0;  transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    3% { opacity: 1;  transform: translateX(0);filter:blur(0px);transform:scale(.9)}
+    12% { opacity: 1; transform: translateX(0);filter:blur(0px);transform:scale(1)}
+    16% { opacity: 0; transform: translateX(0);filter:blur(10px);transform:scale(1.2)}
+    80% { opacity: 0}
+    100% { opacity: 0}
 }
 
-@media screen and (max-width: 576px) {
-     .movie {
-         width: 95%;
-         max-width: 95%;
-         margin: 1em;
-         display: block;
-    }
-     .container {
-         padding: 0;
-         margin: 0;
-    }
-}
+#rotate-words div:nth-child(2) { animation-delay: 4s}
+#rotate-words div:nth-child(3) { animation-delay: 8s}
+#rotate-words div:nth-child(4) { animation-delay: 12s}
+#rotate-words div:nth-child(5) { animation-delay: 16s}
+#rotate-words div:nth-child(6) { animation-delay: 20s}
+#rotate-words div:nth-child(7) { animation-delay: 24s}
+#rotate-words div:nth-child(8) { animation-delay: 28s}
 
-#one{
-  color: white
+@keyframes author {
+    0% { opacity: 0;  transform: translateY(100px);filter:blur(10px);transform: scaleY(2)}
+    20% { opacity:0; transform: translateY(200px);filter:blur(10px); transform: scaleY(2)}
+    30% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(1)}
+    90% { opacity:1; transform: translateY(0);filter:blur(0px);transform: scaleY(.9)}
+    100% { opacity:0; transform: translateY(0);filter:blur(10px);transform: scale(2)}
 }
-
+/* css word end */
 
 /* CSS Document */
 /* footer css */
@@ -766,7 +629,6 @@ footer .widget ul {
 .widget_gallery li {
     display: inline-block;
     width: 33.33%;
-    float: left;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -792,15 +654,829 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
+/* //body */
+  :root {
+            --primary: #f839b5;
+            --secondary: #9108b0;
+            --accent: #f5f5f1;
+            --bg-dark: #000000;
+            --bg-darker: #141414;
+            --bg-light: #222222;
+            --text-primary: #ffffff;
+            --text-secondary: #d2d2d2;
+            --glass: rgba(20, 20, 20, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-darker);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(30, 1, 20, 0.2), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(194, 10, 182, 0.1);
+        }
+        
+        
+        
+        /* Hero Section */
+        .herop {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background-image: url("images/pink5.jpg");
+             
+        }
+        .herop {
+  background: url("images/pink5.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* makes parallax effect */
+  min-height: 100vh; /* ensures it fills screen height */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+        .herop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 1;
+        }
+        
+        .herop-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .herop-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        
+        .herop-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .herop-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            max-width: 500px;
+        }
+        
+        .herop-actions {
+            display: flex;
+            gap: 20px;
+        }
+        
+     
+.herop-stats {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 40px;                 /* space between items */
+}
 
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.stat-icon {
+  font-size: 24px;
+  color: #fc2efc; /* example color */
+}
 
+.stat-number {
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.stat-text {
+  font-size: 14px;
+  color: #ccc;
+}
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        /* Content Cards */
+        .content-section {
+            padding: 100px 5%;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .view-all {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .view-all:hover {
+            color: var(--primary);
+        }
+        
+        .content-carousel {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 5px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        
+        .content-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .content-card {
+            min-width: 280px;
+            width: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            scroll-snap-align: start;
+            position: relative;
+            aspect-ratio: 16/9;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .content-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            z-index: 10;
+        }
+        
+        .content-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .content-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+        
+        .content-card:hover .card-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .card-hover-actions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .content-card:hover .card-hover-actions {
+            opacity: 1;
+        }
+        
+        .hover-action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #9b4dff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .hover-action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        /* Featured Content */
+        .featured-content {
+            position: relative;
+            height: 70vh;
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        
+        .featured-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            opacity: 0.4;
+        }
+        
+        .featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+        
+        .featured-content .content-card {
+            min-width: 350px;
+            width: 350px;
+            height: 500px;
+            margin-right: 50px;
+            flex-shrink: 0;
+        }
+        
+        .featured-info {
+            max-width: 500px;
+        }
+        
+        .featured-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .featured-info p {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        /* text main Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* card top rated section */
+          body{
+     touch-action: pan-y;
+}
+ .movie {
+     border-radius: 8px;
+     width: 100%;
+     max-width: 300px;
+     height: 450px;
+     position: relative;
+     background: #000;
+     overflow: hidden;
+     box-shadow: 0 1px 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.16), 0 4px 4px rgba(0,0,0,0.20), 0 8px 8px rgba(0,0,0,0.30);
+     margin-bottom: 15px;
+     margin-top: 15px;
+}
+ .movie .poster:before {
+     content: '';
+     position: absolute;
+     bottom: -200px;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(0deg, #000 55%, transparent);
+     transition: 0.5s;
+     z-index: 1;
+}
+ .movie:hover .poster:before {
+     bottom: 0;
+}
+ .movie .poster img {
+     width: 100%;
+     transition: 0.5s;
+}
+ .movie:hover .poster img {
+     filter: blur(7px);
+     transform: translateY(-50px);
+}
+ .details {
+     position: absolute;
+     padding: 20px;
+     width: 100%;
+     height: 76%;
+     bottom: -200px;
+     left: 0;
+     box-sizing: border-box;
+     transition: 0.5s;
+     z-index: 2;
+}
+ .movie:hover .details {
+     bottom: 45px;
+}
+ .details h2 {
+     color: #fff;
+     margin: 0;
+     padding: 0;
+     font-size: 20px;
+}
+ .details h2 span {
+     font-size: 14px;
+     color: orange;
+}
+ .rating {
+     position: relative;
+     padding: 5px 0;
+}
+ .rating .fas, .rating .far {
+     color: gold;
+     margin-right: 2px;
+     font-size: 16px;
+}
+ .rating span {
+     color: #fff;
+     padding: 0 5px;
+}
+ .tags {
+     position: relative;
+     margin-top: 5px;
+}
+ .tags span {
+     margin-right: 2px;
+     display: inline-block;
+}
 
-  </style>
+ .info {
+     color: #fff;
+}
+ .info p {
+     margin: 15px 0 10px;
+}
+ .cast {
+     position: absolute;
+}
+ .cast h4 {
+     margin: 0;
+     padding: 0;
+     font-size: 20px;
+     color: yellow;
+}
+ .cast ul {
+     margin: 10px 0 0;
+     padding: 0;
+     display: flex;
+}
+ .cast ul li {
+     list-style: none;
+     width: 35px;
+     height: 35px;
+     background: #fff;
+     border-radius: 50%;
+     overflow: hidden;
+     margin-right: 6px;
+     border: 2px solid #fff;
+     transition: all .15s ease-in-out;
+}
+ .cast ul li img {
+     width: 100%;
+}
 
-</head>
-<body>
+.cast ul li:hover {
+    transform: scale(1.7);
+}
+
+.ribbon {
+  position: absolute;
+  right: var(--right, 10px);
+  top: var(--top, -3px);
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
+  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.15), 0px 50px 100px -20px rgba(50, 50, 93, 0.35), 0px 30px 60px -30px rgba(0, 0, 0, 0.35);
+}
+.ribbon > .content {
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 400;
+  background: var(--color, #2ca7d8) linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.25) 100%);
+  padding: 5px 2px 12px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%);
+  width: var(--width, 32px);
+  min-height: var(--height, 36px);
+  transition: clip-path 1s, padding 1s, background 1s;
+}
+.ribbon.slant-up > .content {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), 50% calc(100% - 6px), 0 100%);
+}
+.ribbon.up > .content {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+}
+
+@media screen and (max-width: 576px) {
+     .movie {
+         width: 95%;
+         max-width: 95%;
+         margin: 1em;
+         display: block;
+    }
+     .container {
+         padding: 0;
+         margin: 0;
+    }
+}
+
+/* navbar section */
+
+  .hero {
+      background-image: url("images/main.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; 
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .cookie-bar {
+      font-size: 14px;
+    }
+    .navbar-brand img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand .brand-text {
+  font-weight: bold;
+  color: #007bff;  /* replace this with your logo’s main color */
+}
+/* Bigger, modern logo */
+.logo-img {
+  height: 60px;
+  width: auto;
+  margin-right: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Brand text with pink-purple gradient */
+.brand-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Gradient Text */
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hover effect for brand */
+.brand-hover:hover .logo-img {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.brand-hover:hover .brand-text {
+  letter-spacing: 3px;
+  transform: scale(1.1);
+  text-shadow: 0px 0px 25px rgba(255, 78, 203, 0.8);
+}
+
+/* Nav links hover animation */
+.nav-link {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff4ecb !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+/* Gradient Search Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #9b4dff, #ff4ecb);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(155, 77, 255, 0.5);
+}
+
+/* Navbar links with pink-purple hover */
+.nav-link {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;         /* slightly smaller text */
+  padding: 8px 14px;       /* reduce padding */
+  white-space: nowrap;     /* prevent text breaking into two lines */
+  line-height: 1.2;        /* compact height */
+}
+
+/* Keep navbar aligned properly */
+.navbar {
+  min-height: 65px;   /* uniform height */
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff4ecb !important; /* text changes to pink */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* underline animation */
+}
+
+/* Transparent navbar with background image */
+.custom-navbar {
+  background: url("images/navbar-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(5px); /* glass effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  background-color: rgba(0, 0, 0, 0.5); /* fallback: semi-transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+}
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* Optional: sets default text color to white */
+}
+
+/* text colour */
+.brand-text1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 30px; /* updated text size */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Gradient Text */
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
+}
+     
+    </style>
+   <body>
 
   <!-- Navbar -->
         <!-- Google Font for modern style -->
@@ -836,21 +1512,85 @@ footer .widget ul {
     </div>
   </div>
 </nav>
-<!--navbar end-->
+<body>
+  
+  <!-- Floating Elements Background -->
+    <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
+    <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div>
+    
+    
+    <!-- Hero Section -->
+    <section class="herop">
+        <video autoplay muted loop class="herop-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
+        </video>
+        <div class="herop-content">
+            <h1>Ultimate <span class="gradient-text">4K HDR</span> Streaming</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+            
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+<div class="herop-actions">
+                <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
+                <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
+            </div>
+            <div class="herop-stats">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-film"></i></div>
+                    <div>
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-text">Titles</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <div class="stat-number">190+</div>
+                        <div class="stat-text">Countries</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="stat-number">50M+</div>
+                        <div class="stat-text">Subscribers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                </div>
+                      <div class="col-md-4">
+                         <div id="rotate-words">  
+<div>Trending movies<img src="images/12th fail2.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Popular<img src="images/welcomenewyork.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>top picks<img src="images/kashmir files.jpg" alt="Streamora Logo" class="roatate-img"><br />  <span>sanika sanika sanika</span></div>
+<div>Classy <img src="images/thedark.webp" alt="Streamora Logo" class="roatate-img"><br /><span>Everyone</span></div>
+<div>Cinematic<img src="images/munna bhai mbbs.jpg" alt="Streamora Logo" class="roatate-img"><br /></div>
+<div>Trending movies<img src="images/hero-img4.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Trending movies<img src="images/pardesiya.jpg" alt="Streamora Logo" class="roatate-img"></div>
+<div>Trending movies<img src="images/mo3.jpg" alt="Streamora Logo" class="roatate-img"></div>
 
-<!--slidshow effect-->
-<div class="slideshow">
-	<div class="img" data-src="images/goat-life-aavesham-maharaja-tillu-netflix-amazon-disney-hotstar-premalu.webp">Top Rated Movies,Series,Tv Shows </div>
-	
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1 class="fw-bold display-5">⭐Hindi Top Rated Movies</h1> <!--top rated text-->
-  </section>
+</div>
+    </div>
+        </div>
+        </div>   
+       </section> 
 
-<!--movies top rated -->
-  <html data-bs-theme="dark">
-  <body>
+   <!-- card top rated section -->
+
+   <!-- Page Header -->
+<section class="page-header text-center d-flex justify-content-center align-items-center gap-2">
+  <span style="color: yellow; font-size: 30px;">⭐</span>
+  <h1 class="fw-bold display-7 brand-text1 m-0 brand-text1">Hindi Top Rated Movies</h1>
+</section>
+<br>
+
+    
     <div class="container">
       <div
            class="
@@ -863,9 +1603,8 @@ footer .widget ul {
            >
         <div class="movie">
 
-          <div class="ribbon up" style="--color: black;">
+          <div class="ribbon up" style="--color: blue;">
             <div class="content">
-              <h1 id="one">1</h1>
               <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
               </svg>
@@ -874,26 +1613,25 @@ footer .widget ul {
 
           <div class="poster">
             <img
-                 src="images/chava2.jpg"
+                 src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
                  />
           </div>
           <div class="details">
             <a href="" class="text-decoration-none">
               <h2>
-              Chava (2025) <br /><span
-                                                      >Directed by Laxman Utekar
-</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
                 >
               </h2>   
             </a>
            
             <div class="rating">
               <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 95%">
-    95% Watchable
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 85%">
+    85% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -902,7 +1640,9 @@ footer .widget ul {
             </div>
             <div class="info">
               <p>
-                A historical drama based on the life of Chhatrapati Sambhaji Maharaj, the son of Chhatrapati Shivaji Maharaj.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -934,27 +1674,16 @@ footer .widget ul {
             </div>
           </div>
         </div>
-
-<!--2 movie -->
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">2</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/saiyaara.jpg"
+                 src="https://image.tmdb.org/t/p/original/9znkoQbF1KEHFLd4d6etjiywSdz.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Saiyaara (2025) <br /><span
-                                                      >Directed by 
-Mohit Suri</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -963,7 +1692,7 @@ Mohit Suri</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -972,7 +1701,9 @@ Mohit Suri</span
             </div>
             <div class="info">
               <p>
-               Vaani and Krish will have to navigate life, their problems, their insecurities to hopefully realise that only love can be the answer to everything.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1002,102 +1733,16 @@ Mohit Suri</span
             </div>
           </div>
         </div>
-
-
-      <!--3 movie--> 
-
-      <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">3</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/animal.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              Animal (2024) <br /><span
-                                                      >Directed by 
-
-Sandeep Reddy Vanga</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.6/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               The hardened son of a powerful industrialist returns home after years abroad and vows to take bloody revenge on those threatening his father's life.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-        <!--movie 4-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">4</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/munjya.jpg"
+                 src="https://image.tmdb.org/t/p/original/ptpr0kGAckfQkJeJIt8st5dglvd.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Munjya (2024) <br /><span
-                                                      >Directed by 
-
-
-Aditya Sarpotdar</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1106,7 +1751,7 @@ Aditya Sarpotdar</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1115,7 +1760,370 @@ Aditya Sarpotdar</span
             </div>
             <div class="info">
               <p>
-               A young man's visit to his native village unveils a family secret and a vengeful spirit, the Munjya, who wants to get married. Now the young man must fight to protect himself and his love from Munjya's clutches.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="ribbon up" style="--color: red;">
+            <div class="content">
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/1eh6Yv6bAU2ghHxP1zgUlMfaOR3.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/lCn1uNr4IBtu8keKV25wxRfq5ki.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/jG4o67eZKlvuL5R6WTysRkPwE75.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/raoyf7i7ns74ZpCDqOLTJrppQmS.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie ">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/rxeRwN7dxHSLE0asOEIc1Q5Mcxy.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1146,297 +2154,34 @@ Aditya Sarpotdar</span
           </div>
         </div>
 
-
-    <!-- 5 movies-->
-
-    <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">5</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/3_idiots_poster.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              3 idiots (2009) <br /><span
-                                                      >Directed by 
-Rajkumar Hirani</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.2/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them "idiots".
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      <!--6 movie-->  
-
-      <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">6</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/shidhat.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              Shiddat (2021) <br /><span
-                                                      >Directed by 
-Kunal Deshmukh</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.1/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               A passionate love story involving two couples which highlights the contrast between a regular, mature yet egoistic husband and a unique, happy go lucky, enamored, overzealous boy chasing after the love of his life.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      <!--movie 7-->
-
-      <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">7</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/Salar.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              Salaar (2023) <br /><span
-                                                      >Directed by 
-Prashanth neel</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               The fate of a violently contested kingdom hangs on the fraught bond between two friends-turned-foes in this saga of power, bloodshed and betrayal.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      <!--8 movie-->
-
-      <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">8</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/kashmir files.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              The Kashmir Files (2023) <br /><span
-                                                      >Directed by 
-Vivek Agnihotri</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⯪3.8/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               A heart-wrenching tale that captures the pain, suffering, and struggle of the Kashmiri Pandit community in 1990 and leads Krishna, a young college student, to set out on a quest to uncover the truth.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+<br><br>
 <br>
 
-      <!--hollywood top rated-->    
-<section class="container-fluid page-header">
-    <h1 class="fw-bold display-5">⭐ Hollywood Top Rated Movies</h1> <!--top rated text-->
-  </section>
+        <!-- second section -->
 
-<!-- hollywood movie 1-->
 
- <div class="movie">
+       <!-- Page Header -->
+<section class="page-header d-flex justify-content-center align-items-center mt-5" style="width: 100%;">
+  <span style="color: yellow; font-size: 30px;">⭐</span>
+  <h1 class="fw-bold display-7 brand-text1 m-0 ms-2">Hollywood Top Rated Movies</h1>
+</section>
+<br><br>
 
-          <div class="ribbon up" style="--color: black;">
+    
+    <div class="container mt-5">
+      <div
+           class="
+                  d-flex
+                  flex-row flex-md-row flex-column flex-wrap
+                  justify-content-between
+                  align-items-sm-center
+                  align-items-center
+                  "
+           >
+        <div class="movie">
+
+          <div class="ribbon up" style="--color: blue;">
             <div class="content">
-              <h1 id="one">1</h1>
               <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
               </svg>
@@ -1445,27 +2190,25 @@ Vivek Agnihotri</span
 
           <div class="poster">
             <img
-                 src="images/A beautiful mind.jpg"
+                 src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
                  />
           </div>
           <div class="details">
             <a href="" class="text-decoration-none">
               <h2>
-              A Beautiful Mind (2001) <br /><span
-                                                      >Directed by 
-Ron Howard
-</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
                 >
               </h2>   
             </a>
            
             <div class="rating">
               <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 98%">
-    98% Watchable
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 85%">
+    85% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1474,7 +2217,9 @@ Ron Howard
             </div>
             <div class="info">
               <p>
-                A mathematical genius, John Nash made an astonishing discovery early in his career and stood on the brink of international acclaim. But the handsome and arrogant Nash soon found himself on a harrowing journey of self-discovery.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1506,99 +2251,16 @@ Ron Howard
             </div>
           </div>
         </div>
-
-
-      <!--hollywood movie 2-->
-
-      <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">2</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/spider man.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              Spider-Man 3 (2007) <br /><span
-                                                      >Directed by 
-
-Sam Raimi</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-               A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he contends with new villains, temptations, and revenge.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!--hollyood movie 3-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">3</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/Leon-poster.jpg"
+                 src="https://image.tmdb.org/t/p/original/9znkoQbF1KEHFLd4d6etjiywSdz.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Léon : The Professional (1994) <br /><span
-                                                      >Directed by 
-Luc Besson</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1607,7 +2269,7 @@ Luc Besson</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1616,7 +2278,9 @@ Luc Besson</span
             </div>
             <div class="info">
               <p>
-               An Italian hit man protects a New York orphan.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1646,28 +2310,16 @@ Luc Besson</span
             </div>
           </div>
         </div>
-
-        <!--hollywood movie 4-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">4</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/warfare movie.jpg"
+                 src="https://image.tmdb.org/t/p/original/ptpr0kGAckfQkJeJIt8st5dglvd.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              WarFare (2025) <br /><span
-                                                      >Directed by 
-Alex Garland</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1676,7 +2328,7 @@ Alex Garland</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1685,7 +2337,370 @@ Alex Garland</span
             </div>
             <div class="info">
               <p>
-               A platoon of Navy SEALs embark on a dangerous mission in Ramadi, Iraq, with the chaos and brotherhood of war retold through their memories of the event.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="ribbon up" style="--color: red;">
+            <div class="content">
+              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/1eh6Yv6bAU2ghHxP1zgUlMfaOR3.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/lCn1uNr4IBtu8keKV25wxRfq5ki.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/jG4o67eZKlvuL5R6WTysRkPwE75.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/raoyf7i7ns74ZpCDqOLTJrppQmS.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/rxeRwN7dxHSLE0asOEIc1Q5Mcxy.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1717,20 +2732,30 @@ Alex Garland</span
         </div>
 
 
-        <!--top rated Series-->
+        <!-- third section -->
 
-        <section class="container-fluid page-header">
-    <h1 class="fw-bold display-5">⭐ Top Rated Series</h1> <!--top rated text-->
-  </section>
+          <!-- Page Header -->
+<section class="page-header d-flex justify-content-center align-items-center mt-5" style="width: 100%;">
+  <span style="color: yellow; font-size: 30px;">⭐</span>
+  <h1 class="fw-bold display-7 brand-text1 m-0 ms-2">Top Rated Series</h1>
+</section>
+<br><br>
 
+    
+    <div class="container mt-5">
+      <div
+           class="
+                  d-flex
+                  flex-row flex-md-row flex-column flex-wrap
+                  justify-content-between
+                  align-items-sm-center
+                  align-items-center
+                  "
+           >
+        <div class="movie">
 
-<!--series 1-->
-
- <div class="movie">
-
-          <div class="ribbon up" style="--color: black;">
+          <div class="ribbon up" style="--color: blue;">
             <div class="content">
-              <h1 id="one">1</h1>
               <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
               </svg>
@@ -1739,29 +2764,25 @@ Alex Garland</span
 
           <div class="poster">
             <img
-                 src="images/indor ishq.jpg"
+                 src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
                  />
           </div>
           <div class="details">
             <a href="" class="text-decoration-none">
               <h2>
-              Indori Ishq (2021)
- <br /><span
-                                                      >Directed by 
-
-Samit Kakkad
-</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
                 >
               </h2>   
             </a>
            
             <div class="rating">
               <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 98%">
-    98% Watchable
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 85%">
+    85% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1770,7 +2791,9 @@ Samit Kakkad
             </div>
             <div class="info">
               <p>
-                कुणाल के कॉलेज के लिए इंदौर छोड़ने के बाद, उसकी प्रेमिका तारा उसे छोड़ देती है और कुणाल एक शराबी और चेन स्मोकर बन जाता है.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1802,28 +2825,16 @@ Samit Kakkad
             </div>
           </div>
         </div>
-
-
-        <!--series 2 -->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">2</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/ek thi begum.jpg"
+                 src="https://image.tmdb.org/t/p/original/9znkoQbF1KEHFLd4d6etjiywSdz.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Ek Thi Begum (2020) <br /><span
-                                                      >Directed by Sachin Darekar</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1832,7 +2843,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1841,7 +2852,9 @@ Samit Kakkad
             </div>
             <div class="info">
               <p>
-              अशरफ ज़हीर की पत्नी है जो एक समय में अंडरवर्ल्ड डॉन मकसूद की विश्वासपात्री थी. जब एक अनबन के कारण ज़हीर की मौत हो जाती है, तब अशरफ अपनी सुंदरता, कामुकता और तीव्र बुद्धि का उपयोग करके मकसूद के अवैध साम्राज्य को नष्ट करने की कसम खाती है.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1871,28 +2884,16 @@ Samit Kakkad
             </div>
           </div>
         </div>
-
-        <!--series 3-->
-
-        
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">3</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/mundala murders.jpg"
+                 src="https://image.tmdb.org/t/p/original/ptpr0kGAckfQkJeJIt8st5dglvd.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Mundala murders (2025) <br /><span
-                                                      >Directed by Gopi Puthran</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1901,7 +2902,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1910,7 +2911,9 @@ Samit Kakkad
             </div>
             <div class="info">
               <p>
-              In a quaint mysterious town of Charandaspur, where fate, myth, and murder entwine, detectives Rea Thomas and Vikram Singh unravel a chilling conspiracy of ritualistic killings tied to a centuries-old secret society.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -1940,14 +2943,9 @@ Samit Kakkad
             </div>
           </div>
         </div>
-
-
-        <!--series 4-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
+          <div class="ribbon up" style="--color: red;">
             <div class="content">
-              <h1 id="one">4</h1>
               <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
               </svg>
@@ -1955,14 +2953,13 @@ Samit Kakkad
           </div>
           <div class="poster">
             <img
-                 src="images/mirzapur.jpg"
+                 src="https://image.tmdb.org/t/p/original/1eh6Yv6bAU2ghHxP1zgUlMfaOR3.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Mirzapur (2018)
-  <br /><span
-                                                      >Directed by Gurmeet Singh</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -1971,7 +2968,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1980,7 +2977,9 @@ Samit Kakkad
             </div>
             <div class="info">
               <p>
-              In a quaint mysterious town of Charandaspur, where fate, myth, and murder entwine, detectives Rea Thomas and Vikram Singh unravel a chilling conspiracy of ritualistic killings tied to a centuries-old secret society.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -2010,117 +3009,16 @@ Samit Kakkad
             </div>
           </div>
         </div>
-
-
-    <!--top rated tv shows-->
-
-
-    <!--tv show 1-->
-
-    <section class="container-fluid page-header">
-    <h1 class="fw-bold display-5">⭐ Top Rated Tv Shows </h1> <!--top rated text-->
-  </section>
-
-     <div class="movie">
-
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">1</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-
-          <div class="poster">
-            <img
-                 src="images/tmkoc.jpg"
-                 />
-          </div>
-          <div class="details">
-            <a href="" class="text-decoration-none">
-              <h2>
-              Taarak Mehta Ka Ooltah Chashmah (2008)
- <br /><span
-                                                      >Directed by 
-
-Asit Kumarr Modi
-</span
-                >
-              </h2>   
-            </a>
-           
-            <div class="rating">
-              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 98%">
-    98% Watchable
-                </div>
-                
-</div><br><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-                Taarak Mehta Ka Ooltah Chashmah is a SAB Comedy Show inspired from the famous humorous column, Duniya Ne Undha Chashmah written by the eminent Gujarati writer.
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <a href="">
-                    <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                        title="Actor Name" alt="Actor Name"/>
-                  </a>
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-        <!--tv show 2-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">2</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/bigboss1.jpg"
+                 src="https://image.tmdb.org/t/p/original/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              Big Boss (2006)
-  <br /><span
-                                                      >Directed by
-  Endemol Shine</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -2129,7 +3027,7 @@ Asit Kumarr Modi
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2138,7 +3036,9 @@ Asit Kumarr Modi
             </div>
             <div class="info">
               <p>
-              Bigg Boss is an Indian Hindi-language reality television show of the Bigg Boss franchise in India that airs on Colors TV. It is based on the Dutch format of Big Brother, developed by Endemol.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -2168,100 +3068,16 @@ Asit Kumarr Modi
             </div>
           </div>
         </div>
-
-
-<!--tv shows 3-->
-
-<div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">3</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="poster">
-            <img
-                 src="images/cid1.jpg"
-                 />
-          </div>
-          <div class="details">
-            <h2>
-              C.I.D (1998-2025)
-  <br /><span
-                                                     >Directed by
-B.P. Singh</span
-              >
-            </h2>
-            <div class="rating">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
-            </div>
-            <div class="tags">
-              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
-              <span class="badge rounded-pill text-bg-success">Mystery</span>
-              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
-            </div>
-            <div class="info">
-              <p>
-              CID is an Indian police procedural television series that premiered on Sony Entertainment Television on 21 January 1998. 
-              </p>
-            </div>
-            <div class="cast">
-              <h4>Cast</h4>
-              <ul>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
-                       />
-                </li>
-                <li>
-                  <img
-                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
-                       />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!--tv shows 4-->
-
         <div class="movie">
-          <div class="ribbon up" style="--color: black;">
-            <div class="content">
-              <h1 id="one">4</h1>
-              <svg width="20px" height="20px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
-              </svg>
-            </div>
-          </div>
           <div class="poster">
             <img
-                 src="images/kapil1.jpg"
+                 src="https://image.tmdb.org/t/p/original/lCn1uNr4IBtu8keKV25wxRfq5ki.jpg"
                  />
           </div>
           <div class="details">
             <h2>
-              The Kapil Sharma Show (2016)
-  <br /><span
-                                                     >Directed by
-Bharat Kukreti</span
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
               >
             </h2>
             <div class="rating">
@@ -2270,7 +3086,7 @@ Bharat Kukreti</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>4/5</span>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2279,7 +3095,9 @@ Bharat Kukreti</span
             </div>
             <div class="info">
               <p>
-             The Kapil Sharma Show, also known as TKSS, is an Indian Hindi language stand-up comedy and talk show broadcast by Sony Entertainment Television.
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
               </p>
             </div>
             <div class="cast">
@@ -2309,15 +3127,188 @@ Bharat Kukreti</span
             </div>
           </div>
         </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/jG4o67eZKlvuL5R6WTysRkPwE75.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/raoyf7i7ns74ZpCDqOLTJrppQmS.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+                 src="https://image.tmdb.org/t/p/original/rxeRwN7dxHSLE0asOEIc1Q5Mcxy.jpg"
+                 />
+          </div>
+          <div class="details">
+            <h2>
+              Star Wars: Episode V (1980) <br /><span
+                                                      >Directed by Irvin Kershner</span
+              >
+            </h2>
+            <div class="rating">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i>
+              <span>4/5</span>
+            </div>
+            <div class="tags">
+              <span class="badge rounded-pill text-bg-danger">Fantasy</span>
+              <span class="badge rounded-pill text-bg-success">Mystery</span>
+              <span class="badge rounded-pill text-bg-primary">Sci-Fi</span>
+            </div>
+            <div class="info">
+              <p>
+                After the Rebels are brutally overpowered by the Empire on the
+                ice planet Hoth, Luke Skywalker begins Jedi training with Yoda,
+                while his friends are pursued by Darth Vader...
+              </p>
+            </div>
+            <div class="cast">
+              <h4>Cast</h4>
+              <ul>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/73414/73414_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/25704/25704_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/554/554_v9_bb.jpg"
+                       />
+                </li>
+                <li>
+                  <img
+                       src="http://www.gstatic.com/tv/thumb/persons/8439/8439_v9_ba.jpg"
+                       />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+</div>
+</div>
 
-
- </div>
-    </div>
-
-<br>
-<br>
-    <!-- Footer -->
-  <!-- footer -->
+  
+<!-- footer -->
        <div class="page-wrapper">
     <div id="waterdrop"></div>
     <footer>
@@ -2481,36 +3472,6 @@ Bharat Kukreti</span
  <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
 </script>
 <!-- footer close -->
+   </body>
 
-
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-	
-</div>
-
-
-<Script>
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-//  Inspired by https://codepen.io/dropside/pen/bxhke  //
-//  Images from https://certaine.tumblr.com/           //
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-
-[...document.querySelectorAll('.img[data-src]')].forEach(img => {
-	img.style.backgroundImage = `url(${img.dataset.src})`;
-	img.addEventListener('click', onImageClick);
-});
-
-function onImageClick(e) {
-	let next = e.offsetX / e.target.clientWidth > 1 - e.offsetY / e.target.clientHeight;
-	e.target[next ? 'nextElementSibling' : 'previousElementSibling']?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-</Script>
-
-
-
-</body>
 </html>
