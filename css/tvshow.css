@@ -1,5 +1,7 @@
   body { background:white; color: #fff; }
 
+  /* film strip section */
+
     h1 {
       text-align: center;
       margin: 30px 0;
@@ -195,13 +197,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     .filmstrip::-webkit-scrollbar {
       height: 8px;
     }
-    /* .filmstrip::-webkit-scrollbar-thumb {
-      background: #555;
-      border-radius: 10px;
-    } */
-    /* .filmstrip::-webkit-scrollbar-track {
-      background: #222;
-    } */
+    
     .film-item {
       position: relative;
       flex: 0 0 auto;
@@ -230,16 +226,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
       font-size: 16px;
       opacity: 0;
       transition: opacity 0.3s ease;
-      /* text-shadow: 2px 2px 5px rgba(0,0,0,0.8); */
+      
     }
     .film-item:hover .overlay-text {
       opacity: 1;
     }
 
-
-
-
-    .slider-container {
+ .slider-container {
       position: relative;
     }
 
@@ -319,20 +312,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
 
     /* navbar section */
 
-   body {
-  background: url("images/pink4.jpg") no-repeat center center fixed;
-  background-size: cover;     /* ensures the image covers entire viewport */
-  background-attachment: fixed; /* ensures it stays fixed on scroll */
-  color: #fff;                /* default text color */
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-
-
-
-    .hero {
+  
+ .hero {
       background-image: url("images/main.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -488,7 +469,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
 .custom-navbar .nav-link,
 .custom-navbar .navbar-brand {
   color: #fff !important;
-}
+} 
+/* navbar section close */
 
 /* sliding video */
 
@@ -736,6 +718,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
   background: rgba(0,0,0,0.8);
 }
 
+/* scrolling images */
 
  .highlight-card {
       position: relative;
@@ -815,7 +798,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
       color: #ff4ecb;
     }
     
-    /*why trust stremora  */
+   
   /* Gradient Heading */
   .gradient-text {
     background: linear-gradient(90deg, #ff4ecb, #9b4dff);
@@ -830,34 +813,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
     -webkit-text-fill-color: transparent;
     font-weight: 700;
   }
-
-  /* About Text */
-  .about-text {
-    color: #dbe3e7;
-    font-size: 1.18rem;
-    line-height: 1.8;
-    text-indent: 2rem; /* Add proper indentation at the start */
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease-out;
-  }
-
-  .fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: fadeInLeft 1s forwards;
-  }
-  .fade-in-left.delay-1 {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeInLeft {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
+  
   /* Image Hover Animation */
   .img-hover {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -1511,7 +1467,13 @@ footer .widget ul {
 
 
 /* For Firefox */
-/* *{
-  scrollbar-width: thin;
+/* For Firefox */
+/* * {
+  scrollbar-width: thin;         
   scrollbar-color: #ff4ecb #000; 
 } */
+
+
+
+
+
