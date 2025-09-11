@@ -212,35 +212,157 @@
 
 /* css for words */
 
-#rotate-words {
-  max-width:600px;
-  margin:auto;
-  padding:20% 0;
-  font-size:2.2em;
-  text-transform:uppercase;
-  font-family: 'Oswald', sans-serif;
-}
 
-#rotate-words span {
-  display:block;
-  height:10px;
-  font-size:.7em;
-  text-transform:lowercase;
-  opacity:.8;
-  font-family: 'Rubik', sans-serif;
-  
-}
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
-#rotate-words div {
- position:absolute;
- opacity:0;
- overflow:hidden;
- left:30vw;
- width:200vw;
- line-height:1.2em;
+    /* body {
+      background: #000;
+      overflow: hidden;
+    } */
 
- animation: rotate-word 32s linear infinite 0s;
-}
+    /* Fullscreen container */
+    .mdj-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: #111;
+      overflow: hidden;
+    }
+
+    /* Slide wrapper */
+    .mdj-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Items */
+    .mdj-item {
+      width: 200px;
+      height: 150px;
+      position: absolute;
+      top: 70%;
+      transform: translateY(-50%);
+      border-radius: 20px;
+      box-shadow: 0 30px 50px #00000080;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s;
+    }
+
+    /* First two items fill background */
+    .mdj-item:nth-child(1),
+    .mdj-item:nth-child(2) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .mdj-item:nth-child(3) { left: 55%; }
+    .mdj-item:nth-child(4) { left: calc(55% + 220px); }
+    .mdj-item:nth-child(5) { left: calc(55% + 440px); }
+
+    .mdj-item:nth-child(n+6) {
+      left: calc(55% + 660px);
+      opacity: 0;
+    }
+
+    /* Content text */
+    .mdj-content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 400px;
+      color: #0a0909;
+      transform: translateY(-50%);
+      font-family: system-ui, sans-serif;
+      display: none;
+    }
+
+    .mdj-item:nth-child(2) .mdj-content { display: block; }
+
+    .mdj-content .name {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .mdj-content .des {
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeIn 1s 0.3s forwards;
+    }
+
+    .mdj-content button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: rgba(250, 41, 236, 0.7);
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 1s 0.6s forwards;
+    }
+
+    .mdj-content button:hover { background: #9221fc; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Controls */
+    .mdj-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      pointer-events: none;
+    }
+
+    .mdj-controls button {
+      pointer-events: all;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border: 2px solid #fff;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .mdj-controls button:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    /* Credit link */
+    .mdj-credit {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-family: monospace;
+    }
+    .mdj-credit a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    .mdj-credit a:hover { color: #fff; }
+
+
 
 .roatate-img{
   height: 250px;
@@ -681,13 +803,13 @@ footer .widget ul {
             box-sizing: border-box;
         }
         
-        body {
+        /* body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
-        }
+        } */
         
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
@@ -775,84 +897,7 @@ footer .widget ul {
         
         
         
-        /* Hero Section */
-        .herop {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            background-image: url("images/pink5.jpg");
-             
-        }
-        .herop {
-  background: url("images/pink5.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed; /* makes parallax effect */
-  min-height: 100vh; /* ensures it fills screen height */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-        .herop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-        }
-        
-        .herop-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .herop-content {
-            position: relative;
-            z-index: 2;
-            max-width: 650px;
-            transform: translateY(50px);
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.5s;
-        }
-        
-        .herop-content h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .herop-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--text-secondary);
-            max-width: 500px;
-        }
-        
-        .herop-actions {
-            display: flex;
-            gap: 20px;
-        }
-        
      
-.herop-stats {
-  display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* align vertically */
-  gap: 40px;                 /* space between items */
-}
 
 .stat-item {
   display: flex;
@@ -2061,13 +2106,13 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
 <body>
   
   <!-- Floating Elements Background -->
-    <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
+    <!-- <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
     <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
-    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div> -->
     
     
     <!-- Hero Section -->
-    <section class="herop">
+    <!-- <section class="herop">
         <video autoplay muted loop class="herop-video">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
         </video>
@@ -2129,12 +2174,60 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
                       </div>
                             
             </div>
-        </div>    </section> 
+        </div>    </section>  -->
 
 
 
 
-          
+          <div class="mdj-container">
+    <div class="mdj-slide">
+      <div class="mdj-item" style="background-image:url('images/the\ paper.avif');">
+        <div class="mdj-content">
+          <div class="name">Scotland</div>
+          <div class="des">Experience the mystical Highlands under twilight skies and misty lochs.</div>
+          <div class="heroimage-btn">
+          <a href="#"><button >Subscribe to watch</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/sport.avif');">
+        <div class="mdj-content">
+          <div class="name">Norway</div>
+          <div class="des">Chase the Northern Lights under star-lit skies along scenic fjord roads.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/bigboss.avif');">
+        <div class="mdj-content">
+          <div class="name">New Zealand</div>
+          <div class="des">Wander dramatic, mist-laden mountain paths that feel straight out of a dream.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/english.avif');">
+        <div class="mdj-content">
+          <div class="name">Japan</div>
+          <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/baipan\ bhari\ deva.webp');">
+        <div class="mdj-content">
+          <div class="name">Japan</div>
+          <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdj-controls">
+      <button class="mdj-prev">◁</button>
+      <button class="mdj-next">▷</button>
+    </div>
+  </div>
+
+  
+
 
 
     <section>
@@ -2823,6 +2916,22 @@ plan card -->
  <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
 </script>
 <!-- footer close -->
+  <script>
+    const nextBtn = document.querySelector(".mdj-next");
+    const prevBtn = document.querySelector(".mdj-prev");
+    const slide = document.querySelector(".mdj-slide");
+
+    nextBtn.addEventListener("click", () => {
+      let items = document.querySelectorAll(".mdj-item");
+      slide.appendChild(items[0]); // move first to end
+    });
+
+    prevBtn.addEventListener("click", () => {
+      let items = document.querySelectorAll(".mdj-item");
+      slide.prepend(items[items.length - 1]); // move last to start
+    });
+  </script>
+
    </body>
 
 </html>
