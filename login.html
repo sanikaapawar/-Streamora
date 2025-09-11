@@ -1,138 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Streamora</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix-style Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+/* Reset and body */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Ubuntu', sans-serif; }
+body, html {
+    height: 100%;
+    width: 100%;
+}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+/* Background */
+body {
+    background: url('images/pink5.jpg') no-repeat center center/cover;
+    position: relative;
+}
 
-  <style>
-    body {
-      background: black;
-      font-family: "Poppins", sans-serif;
-      color: #fff;
-    }
-    .login-container {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .login-card {
-      background: #1a1a2e;
-      border-radius: 20px;
-      padding: 3rem;
-      width: 100%;
-      max-width: 550px;
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.8);
-    }
-    .login-card h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.2rem;
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .form-control {
-      background: #0f3460;
-      border: none;
-      color: #fff;
-      font-size: 1.1rem;
-      padding: 14px;
-      border-radius: 10px;
-    }
-    .form-control:focus {
-      border: 2px solid #9b4dff;
-      background: #162447;
-      box-shadow: none;
-      color: #fff;
-    }
-    .btn-gradient {
-      background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-      color: #fff;
-      border: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-    .btn-gradient:hover {
-      background: linear-gradient(90deg, #9b4dff, #ff4ecb);
-      transform: scale(1.05);
-      box-shadow: 0px 6px 18px rgba(161, 78, 255, 0.6);
-    }
-    .extra-links {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 1rem;
-    }
-    .extra-links a {
-      color: #9b4dff;
-      text-decoration: none;
-    }
-    .extra-links a:hover {
-      text-decoration: underline;
-    }
-    .back-btn {
-      display: block;
-      margin: 2rem auto 0;
-      background: transparent;
-      border: 2px solid #9b4dff;
-      color: #9b4dff;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      text-align: center;
-      width: fit-content;
-    }
-    .back-btn:hover {
-      background: #9b4dff;
-      color: #fff;
-      transform: scale(1.05);
-    }
-  </style>
+/* Dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+}
+
+/* Centered login box */
+#wrapper {
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 80px 50px;        /* more padding */
+    min-height: 600px;         /* taller box */
+    background: rgba(0,0,0,0.75);
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Header */
+#wrapper h1 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #bbb;
+}
+
+/* Sign In Button */
+input[type="submit"] {
+    width: 100%;
+   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+input[type="submit"]:hover {
+   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+}
+
+/* Checkbox & links */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.checkbox-container input {
+    width: 16px;
+    height: 16px;
+}
+
+#forget-pass {
+    display: block;
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+#forget-pass:hover {
+    text-decoration: underline;
+}
+
+/* Sign up notice */
+.signup {
+    font-size: 14px;
+    color: #bbb;
+}
+.signup a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup a:hover {
+    text-decoration: underline;
+}
+</style>
 </head>
 <body>
-
-  <!-- Login Form -->
-  <div class="login-container">
-    <div class="login-card">
-      <h2>Login</h2>
-      <form>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+<div id="wrapper">
+    <h1>Sign In</h1>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Email or mobile number" required>
+        <input type="password" id="pass" placeholder="Password" required>
+        <input type="submit" value="Sign In">
+        <div class="checkbox-container">
+            <input type="checkbox" id="remember" checked>
+            <label for="remember">Remember me</label>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+        <a href="#" id="forget-pass">Forgot password?</a>
+        <div class="signup">
+            New to Netflix? <a href="#">Sign up now.</a>
         </div>
-        <button type="submit" class="btn-gradient">Login</button>
-      </form>
-      <div class="extra-links">
-        <p><a href="#">Forgot Password?</a></p>
-        <p>Don’t have an account? <a href="#">Register</a></p>
-      </div>
+    </form>
+</div>
 
-      <!-- Back Button -->
-      <a href="index2.html" class="back-btn">⬅ Back to Home</a>
-    </div>
-  </div>
+<script>
+$(document).ready(function() {
+    $("#loginForm").on("submit", function(e){
+        e.preventDefault();
+        const username = $("#username").val().trim();
+        const password = $("#pass").val().trim();
+        if(!username || !password) { alert("⚠️ Enter both fields"); return; }
+        alert("✅ Login successful! Redirecting...");
+        setTimeout(()=>{ window.location.href="index.html"; }, 1200);
+    });
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    $("#forget-pass").on("click", function(e){
+        e.preventDefault();
+        const username = prompt("Enter your email to reset password:");
+        if(!username){ alert("⚠️ Email required."); return; }
+        alert(`✅ Password reset link sent to ${username}`);
+    });
+});
+</script>
 </body>
 </html>
