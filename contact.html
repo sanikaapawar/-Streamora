@@ -10,18 +10,10 @@
   <link href="css/contact.css" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    .contact{
-  position: relative;
-  min-height: 100vh;
-  padding: 50px 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-image: url("images/contactusimage.jpg");
-}
- </style>
+     <!-- Ractive.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ractive/ractive.min.js"></script>
+
+  
    <body>
 
   <!-- Navbar -->
@@ -61,69 +53,72 @@
 
 
 <body>
-  
-     
 
-  
+  <!-- animated section -->
 
-
-         <section class="contact">
-      <div class="content">
-        <h2>Contact Us</h2>
-        </div>
+    <div id="container"></div>
       <div class="container">
-        <div class="contactInfo">
-          <div class="box">
-            <div class="icon"><ion-icon name="location-outline"></ion-icon></div>
-            <div class="text">
-              <h3>Address</h3>
-              <p>402671 Sugar Camp Road,<br>Owatonna, Minnesota,<br>55025060</p>
-            </div>
+        <div class="row">
+         <div class="col-12">
+         <!-- Template -->
+  <script id="template" type="text/ractive">
+    <div class="flip-card" on-click="@this.toggle('flipCard')">
+      {{ flipCard ? 'Reset' : 'Animate' }}
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="envelope {{ flipCard ? 'active' : '' }}">
+        <div class="back paper"></div>
+        <div class="content">
+          <div class="form-wrapper">
+            <form>
+              <div class="top-wrapper">
+                <div class="input">
+                  <label>Name</label>
+                  <input type="text" name="name"/>
+                </div>
+                <div class="input">
+                  <label>Phone</label>
+                  <input type="text" name="phone"/>
+                </div>
+                <div class="input">
+                  <label>Email</label>
+                  <input type="email" name="_replyto"/>
+                </div>
+              </div>
+
+              <div class="bottom-wrapper">
+                <div class="input">
+                  <label>Subject</label>
+                  <input type="text" name="_subject"/>
+                </div>
+                <div class="input">
+                  <label>Message</label>
+                  <textarea rows="5" name="message"></textarea>
+                </div>
+                <div class="submit">
+                  <div class="submit-card" on-click="@this.toggle('flipCard')">Send Mail</div>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="box">
-            <div class="icon"><ion-icon name="call-outline"></ion-icon></div>
-            <div class="text">
-              <h3>Phone</h3>
-              <p>9552624515</p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
-            <div class="text">
-              <h3>Email</h3>
-              <p>Streamora05@gmail.com</p>
-            </div>
-          </div>
-          <h2 class="txt">Connect with us</h2>
-          <ul class="sci">
-            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-          </ul>
         </div>
-        <div class="contactForm">
-          <form>
-            <h2>Send Message</h2>
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span>Full Name</span>
-            </div>
-            <div class="inputBox">
-              <input type="text" name="" required="required">
-              <span>Email</span>
-            </div>
-            <div class="inputBox">
-              <textarea required="required"></textarea>
-              <span>Type your message...</span>
-            </div>
-            <div class="inputBox">
-              <input type="submit" value="Send">
-            </div>
-          </form>
+        <div class="front paper"></div>
+      </div>
+    </div>
+  </script>
+  
+     <!-- end animated -->
+      </div>
         </div>
       </div>
-    </section>
+    
+
+
+
+  
+
+
     
 
   <h1>What do you need help with today?</h1>
@@ -323,6 +318,16 @@
  <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
 </script>
 <!-- footer close -->
+ <!-- Ractive Init -->
+  <script>
+    var ractive = new Ractive({
+      el: '#container',
+      template: '#template',
+      data: {
+        flipCard: false
+      }
+    });
+  </script>
    </body>
 
 </html>
