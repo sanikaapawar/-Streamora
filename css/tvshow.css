@@ -1318,7 +1318,7 @@ footer .widget ul {
 }
 
 .posts li {
-    border-bottom: 1px solid #393d50;
+    border-bottom: 1px solid #4f3950;
     padding-bottom: 12px;
     padding-top: 6px;
 }
@@ -1511,7 +1511,7 @@ footer .widget ul {
 
 
 /* For Firefox */
-*{
-  scrollbar-width: initial;
-  scrollbar-color: #ff4ecb #000; /* thumb color | track color */
-}
+/* *{
+  scrollbar-width: thin;
+  scrollbar-color: #ff4ecb #000; 
+} */
