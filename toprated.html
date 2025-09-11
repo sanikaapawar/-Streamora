@@ -227,7 +227,6 @@ html, body { height: 100%; margin: 0; }
 	text-align: center;
 	font: bold 3.75rem / 1.2 'Open Sans', sans-serif;
 	color: rgb(255 255 255 / 85%);
-	text-stroke: 1.5px rgb(0 0 0 / 70%);
 	user-select: none;
 	&::before, &::after {
 		content: '';
@@ -766,7 +765,6 @@ footer .widget ul {
 .widget_gallery li {
     display: inline-block;
     width: 33.33%;
-    float: left;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -792,6 +790,48 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
+
+.btn1{
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  background: linear-gradient(90deg, #9b4dff, #ff4ecb);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(155, 77, 255, 0.5);
+  
+}
+
+.fw-bold {
+  align-items: center;
+}
+
+/* text colour */
+.brand-text1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 40px; /* updated text size */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Gradient Text */
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  transition: all 0.4s ease-in-out;
+}
+
+.p1{
+  
+background: linear-gradient(90deg,#ff4ecb,#9b4dff);
+}
+
+
 
 
 
@@ -840,13 +880,17 @@ footer .widget ul {
 
 <!--slidshow effect-->
 <div class="slideshow">
-	<div class="img" data-src="images/goat-life-aavesham-maharaja-tillu-netflix-amazon-disney-hotstar-premalu.webp">Top Rated Movies,Series,Tv Shows </div>
+	<div class="img" data-src="images/poster1.webp"><p class="p1">⭐Top Rated Movies,Series,Tv Shows⭐ </p></div>
 	
-
+<br>
   <!-- Page Header -->
-  <section class="page-header">
-    <h1 class="fw-bold display-5">⭐Hindi Top Rated Movies</h1> <!--top rated text-->
-  </section>
+  <!-- Page Header -->
+<section class="page-header text-center d-flex justify-content-center align-items-center gap-2">
+  <span style="color: yellow; font-size: 30px;">⭐</span>
+  <h1 class="fw-bold display-7 brand-text1 m-0 brand-text1">Hindi Top Rated Movies</h1>
+</section>
+<br>
+
 
 <!--movies top rated -->
   <html data-bs-theme="dark">
@@ -893,7 +937,7 @@ footer .widget ul {
     95% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div><br><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -963,7 +1007,7 @@ Mohit Suri</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1034,7 +1078,7 @@ Sandeep Reddy Vanga</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.6/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⯪ 4.6/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1106,7 +1150,7 @@ Aditya Sarpotdar</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1176,7 +1220,7 @@ Rajkumar Hirani</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.2/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐ 4.2/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1245,7 +1289,7 @@ Kunal Deshmukh</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.1/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐ 4.1/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1314,7 +1358,7 @@ Prashanth neel</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1383,7 +1427,7 @@ Vivek Agnihotri</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⯪3.8/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⯪3.8/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1427,8 +1471,9 @@ Vivek Agnihotri</span
 
       <!--hollywood top rated-->    
 <section class="container-fluid page-header">
-    <h1 class="fw-bold display-5">⭐ Hollywood Top Rated Movies</h1> <!--top rated text-->
+    <h1 class="fw-bold display-5">⭐ Hollywood Top Rated Movies </h1> <!--top rated text-->
   </section>
+
 
 <!-- hollywood movie 1-->
 
@@ -1465,7 +1510,7 @@ Ron Howard
     98% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div><br><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1538,7 +1583,7 @@ Sam Raimi</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1607,7 +1652,7 @@ Luc Besson</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⯪ 4.3/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1676,7 +1721,7 @@ Alex Garland</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐ 4.0/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1720,7 +1765,7 @@ Alex Garland</span
         <!--top rated Series-->
 
         <section class="container-fluid page-header">
-    <h1 class="fw-bold display-5">⭐ Top Rated Series</h1> <!--top rated text-->
+    <h1 class="fw-bold display-5">⭐ Top Rated Series </h1> <!--top rated text-->
   </section>
 
 
@@ -1761,7 +1806,7 @@ Samit Kakkad
     98% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div><br><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1832,7 +1877,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1901,7 +1946,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -1971,7 +2016,7 @@ Samit Kakkad
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⯪ 4.5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⯪ 4.5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2021,6 +2066,7 @@ Samit Kakkad
     <h1 class="fw-bold display-5">⭐ Top Rated Tv Shows </h1> <!--top rated text-->
   </section>
 
+
      <div class="movie">
 
           <div class="ribbon up" style="--color: black;">
@@ -2056,7 +2102,7 @@ Asit Kumarr Modi
     98% Watchable
                 </div>
                 
-</div><br><button class="btn">Watch Now</button>
+</div><br><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2129,7 +2175,7 @@ Asit Kumarr Modi
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2200,7 +2246,7 @@ B.P. Singh</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
@@ -2270,7 +2316,7 @@ Bharat Kukreti</span
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="fas fa-star" aria-hidden="true"></i>
               <i class="far fa-star" aria-hidden="true"></i>
-              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn">Watch Now</button>
+              <span>⭐⭐⭐⭐⭐ 5/5</span><button class="btn1">Watch Now</button>
             </div>
             <div class="tags">
               <span class="badge rounded-pill text-bg-danger">Fantasy</span>
