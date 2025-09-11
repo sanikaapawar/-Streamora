@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Website</title>
-       <link rel="icon" type="image/Png" href="images/logo.Png"/>
+         <link rel="icon" type="image/Png" href="images/logo.Png"/>
        
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> 
        
@@ -19,7 +19,7 @@
   overflow-x: hidden;  /* only hide horizontal scroll */
   overflow-y: auto;    /* allow vertical scroll */
   display: block;      /* remove flex centering */
-  background-color: #000;
+  background-color: #000000;
 }
 
  .hero {
@@ -34,10 +34,10 @@
       align-items: center;
       text-align: center;
     }
-   .cookie-bar {
+  .cookie-bar {
       font-size: 14px;
     }
-    .navbar-brand img {
+  .navbar-brand img {
   height: 40px;
   width: auto;
   margin-right: 10px;
@@ -47,6 +47,7 @@
   font-weight: bold;
   color: #007bff;  /* replace this with your logo’s main color */
 }
+
 /* Bigger, modern logo */
 
 .logo-img {
@@ -209,10 +210,9 @@
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
+  
 
 /* footer css */
-
 .page-wrapper {
   position: static; 
   width: 100%;
@@ -249,11 +249,11 @@ footer p, footer strong, footer b, footer {
     font-size: 92.86%;
 }
 #footer-navigation, #footer-navigation li a:hover, .custom-footer, .custom-footer li a:hover {
-    color: white;
+    color: rgba(255, 255, 255, 0.996);
 }
 
 #footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
+    color: #eef2f5;
     padding-top: 15px;
 }
 
@@ -276,12 +276,12 @@ footer p, footer strong, footer b, footer {
 }
 
 #footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
+    color: rgba(255, 255, 255, 0.986);
     padding-top: 15px;
-}
+} 
 
 #footer-navigation, #footer-navigation li a, .custom-footer, .custom-footer li a {
-    color: #99a9b5;
+    color: #eaeff2;
     padding-top: 15px;
 }
 #footer-menu li+li:before {
@@ -292,12 +292,12 @@ footer p, footer strong, footer b, footer {
     left: -1px;
     top: 0;
     font-size: 0;
-    border-left: 1px solid #232234;
+     border-left: 1px solid #232234; 
     border-right: 1px solid #333146;
 }
 
 
-navigation li a, .custom-footer, .custom-footer li a {
+.navigation li a, .custom-footer, .custom-footer li a {
     color: #99a9b5;
     padding-top: 15px;
 }
@@ -467,12 +467,10 @@ footer p {
     border-color: rgba(255, 255, 255, 0.2);
     color: white;
 }
-
 .wpcf7 .wpcf7-form .contact-form-footer textarea {
     height: 160px;
     width: 100%;
 }
-
 .wpcf7-form-control-wrap textarea:hover {
     background-color: transparent;
     box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04);
@@ -565,7 +563,6 @@ footer .widget ul {
 .widget_gallery li {
     display: inline-block;
     width: 33.33%;
-    float: left;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -591,6 +588,7 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
@@ -603,7 +601,7 @@ footer .widget ul {
     --light-azure: hsl(310, 84%, 56%);
     --off-white: hsl(0, 0%, 88%);
     --yellow: hsl(45, 100%, 54%);
-    --white: hsl(0, 0%, 100%);
+    --white: hsl(310, 14%, 91%);
     --azure: hsl(211, 100%, 50%);
 
     --font-family: "Inter", sans-serif;
@@ -721,14 +719,14 @@ header, nav { background: var(--rich-blank-fogra-29);}
 
  .banner-card .card-info ion-icon{
             font-size: 20px;
-            color: var(--azure);
+            color: var(black);
             margin-right: 5px;
         }
 
  .banner-card .card-info span{ font-weight: var(--fw6);}
 
  .banner-card .card-info .quality{
-            background: var(--azure);
+            background: var(black);
             padding: 2px 5px;
             border-radius: 5px;
             font-weight: var(--fw7);
@@ -822,7 +820,6 @@ input ~ .checked-radio-bg{
 
     cursor: pointer;
 }
-
  .movie-card .card-head{
         position: relative;
         height: 250px;
@@ -830,7 +827,6 @@ input ~ .checked-radio-bg{
         margin-bottom: 15px;
         overflow: hidden;
     }
-
    .movie-card:hover .card-img{ transform: scale(1.1);}
 
    .movie-card .card-overlay{
@@ -907,7 +903,7 @@ input ~ .checked-radio-bg{
         font-size: var(--font-size-extra-small);
         font-weight: var(--fw5);
     }
-
+/* 
 .load-more{
     background: var(--oxford-blue);
     display: block;
@@ -917,9 +913,9 @@ input ~ .checked-radio-bg{
     font-weight: var(--fw5);
     border-radius: 15px;
     color: var(--white);
-}
+} */
 
-.load-more:hover{ background: var(--light-azure);}
+/* .load-more:hover{ background: var(--light-azure);} */
 
 /*CATEGORY SECTION*/
 
@@ -1153,8 +1149,10 @@ input ~ .checked-radio-bg{
  
   /* watch now button */
 
+  
+
  .watch-btn {
-      background: #970f6e;
+      background:  rgb(188, 29, 175);
       border: none;
       font-size: 18px;
       font-weight: bold;
@@ -1164,7 +1162,7 @@ input ~ .checked-radio-bg{
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
       position: relative;
       overflow: hidden;
     }
@@ -1175,8 +1173,8 @@ input ~ .checked-radio-bg{
 
     /* Hover effect */
     .watch-btn:hover {
-      background: #e906c7;
-      box-shadow: 0 0 15px rgba(145, 51, 113, 0.8);
+      background: #602487;
+      box-shadow: 0 0 15px rgba(112, 56, 243, 0.8);
       transform: scale(1.05);
     }
 
@@ -1217,8 +1215,6 @@ input ~ .checked-radio-bg{
   display: inline-block;
   transition: all 0.4s ease-in-out;
 }
-
-   
 
    </style>
    <body>
@@ -1263,8 +1259,7 @@ input ~ .checked-radio-bg{
         <main>
             <section class="banner">
                 <div class="banner-card">
-                    <img src="images/kalki2.jpg" alt="banner" class="banner-img">
-
+                    <img src="images/dilbechara.webp" alt="banner" class="banner-img">
                     <div class="card-content">
                         <div class="card-info">
                             <div class="genre">
@@ -1282,13 +1277,14 @@ input ~ .checked-radio-bg{
                             </div>
                             <div class="quality">4k</div>
                         </div>
-                        <h2 class="card-title">Kalki : The last avtar</h2>
+                        <div class="genres">Crime | Thriller | Mystery | Psychological</div>
+                        <h2 class="card-title"> MAARGAN </h2>
 
                          <button class="watch-btn">
-                         <i class="fas fa-play"></i> Watch Now
+                         <i class="fas fa-play"></i> Watch Now <br>
                          </button>
                          
-                       
+                         
                     </div>
                 </div>
 
@@ -1896,7 +1892,7 @@ input ~ .checked-radio-bg{
                   <!-- Page Header -->
                    
               <section class="page-header text-center d-flex justify-content-center align-items-center gap-2">
-              <h1 class="fw-bold display-7 brand-text1 m-0 brand-text1">Live tv chaneel</h1>
+              <h1 class="fw-bold display-7 brand-text1 m-0 brand-text1">Live tv channel</h1>
              </section>
              <br>
 
