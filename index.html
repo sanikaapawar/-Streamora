@@ -212,35 +212,157 @@
 
 /* css for words */
 
-#rotate-words {
-  max-width:600px;
-  margin:auto;
-  padding:20% 0;
-  font-size:2.2em;
-  text-transform:uppercase;
-  font-family: 'Oswald', sans-serif;
-}
 
-#rotate-words span {
-  display:block;
-  height:10px;
-  font-size:.7em;
-  text-transform:lowercase;
-  opacity:.8;
-  font-family: 'Rubik', sans-serif;
-  
-}
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
-#rotate-words div {
- position:absolute;
- opacity:0;
- overflow:hidden;
- left:30vw;
- width:200vw;
- line-height:1.2em;
+    /* body {
+      background: #000;
+      overflow: hidden;
+    } */
 
- animation: rotate-word 32s linear infinite 0s;
-}
+    /* Fullscreen container */
+    .mdj-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: #111;
+      overflow: hidden;
+    }
+
+    /* Slide wrapper */
+    .mdj-slide {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Items */
+    .mdj-item {
+      width: 200px;
+      height: 150px;
+      position: absolute;
+      top: 70%;
+      transform: translateY(-50%);
+      border-radius: 20px;
+      box-shadow: 0 30px 50px #00000080;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s;
+    }
+
+    /* First two items fill background */
+    .mdj-item:nth-child(1),
+    .mdj-item:nth-child(2) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .mdj-item:nth-child(3) { left: 55%; }
+    .mdj-item:nth-child(4) { left: calc(55% + 220px); }
+    .mdj-item:nth-child(5) { left: calc(55% + 440px); }
+
+    .mdj-item:nth-child(n+6) {
+      left: calc(55% + 660px);
+      opacity: 0;
+    }
+
+    /* Content text */
+    .mdj-content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 400px;
+      color: #0a0909;
+      transform: translateY(-50%);
+      font-family: system-ui, sans-serif;
+      display: none;
+    }
+
+    .mdj-item:nth-child(2) .mdj-content { display: block; }
+
+    .mdj-content .name {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .mdj-content .des {
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeIn 1s 0.3s forwards;
+    }
+
+    .mdj-content button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: rgba(250, 41, 236, 0.7);
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 1s 0.6s forwards;
+    }
+
+    .mdj-content button:hover { background: #9221fc; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Controls */
+    .mdj-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      pointer-events: none;
+    }
+
+    .mdj-controls button {
+      pointer-events: all;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      border: 2px solid #fff;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .mdj-controls button:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    /* Credit link */
+    .mdj-credit {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-family: monospace;
+    }
+    .mdj-credit a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    .mdj-credit a:hover { color: #fff; }
+
+
 
 .roatate-img{
   height: 250px;
@@ -681,13 +803,13 @@ footer .widget ul {
             box-sizing: border-box;
         }
         
-        body {
+        /* body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
-        }
+        } */
         
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
@@ -775,84 +897,7 @@ footer .widget ul {
         
         
         
-        /* Hero Section */
-        .herop {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            background-image: url("images/pink5.jpg");
-             
-        }
-        .herop {
-  background: url("images/pink5.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed; /* makes parallax effect */
-  min-height: 100vh; /* ensures it fills screen height */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-        .herop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-        }
-        
-        .herop-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-        
-        .herop-content {
-            position: relative;
-            z-index: 2;
-            max-width: 650px;
-            transform: translateY(50px);
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.5s;
-        }
-        
-        .herop-content h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .herop-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--text-secondary);
-            max-width: 500px;
-        }
-        
-        .herop-actions {
-            display: flex;
-            gap: 20px;
-        }
-        
      
-.herop-stats {
-  display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* align vertically */
-  gap: 40px;                 /* space between items */
-}
 
 .stat-item {
   display: flex;
@@ -1342,6 +1387,389 @@ card */
       100% { transform: translateY(-75vh); opacity: 0; }
     }
 
+/* card css 3cards plan */
+:root {
+	--tariff-color-black: #09090c;
+	--tariff-color-blue: #8f1b93;
+	--tariff-color-green: #370c86;
+}
+
+.base-template__wrapper {
+	max-width: 1490px;
+}
+.base-template__title {
+  font-family: "Oswald", sans-serif; /* matches your slider */
+  font-size: 3.5rem;                 /* big and bold */
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  margin: 50px 0 30px;
+
+  /* Gradient text */
+  background: linear-gradient(90deg, #06ffff, #a11998, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Subtle shadow for contrast */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+
+  /* Smooth animation effect */
+  background-size: 200% auto;
+  animation: gradientMove 6s linear infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@media (max-width: 768px) {
+  .base-template__title {
+    font-size: 2rem; /* smaller on mobile */
+    margin: 30px 0 20px;
+  }
+}
+
+
+p {
+	margin: 0;
+}
+
+.tariffs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 80px;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+}
+
+.tariff {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	padding: 40px;
+	background-color: rgba(41, 41, 46, 0.6);
+	border-radius: 40px;
+	border: transparent;
+	transition: background-color 0.6s ease-in-out;
+}
+
+.tariff:has(.tariff__button.active) {
+	background-color: var(--tariff-color-black);
+}
+
+.tariff::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	border-radius: 40px;
+	border: 1px solid transparent;
+	background: linear-gradient(
+			120deg,
+			rgba(255, 255, 255, 0.6),
+			rgba(102, 102, 102, 0.6)
+		)
+		border-box;
+	mask: linear-gradient(#fff 0, #fff 100%) padding-box,
+		linear-gradient(#fff 0, #fff 100%);
+	mask-composite: exclude;
+	mix-blend-mode: color-dodge;
+	transition: background-color 0.6s ease-in-out;
+}
+
+.tariff:has(.tariff__button.active)::before {
+	background-color: var(--tariff-color-blue);
+}
+
+.tariff.second-tariff:has(.tariff__button.active)::before {
+	background-color: var(--tariff-color-green);
+}
+
+@keyframes move-gradient {
+	0% {
+		transform: rotate(-52deg) translate(-300px, -500px);
+	}
+
+	100% {
+		transform: rotate(-52deg) translate(-300px, 500px);
+	}
+}
+
+.tariff__gradient {
+	position: absolute;
+	z-index: -1;
+	width: 720px;
+	height: 1px;
+	border: 10px solid rgba(255, 255, 255, 0.8);
+	filter: blur(49px);
+	transform: rotate(-52deg) translate(-300px, -500px);
+}
+
+.tariff__content {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.tariff__info {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.tariff__info-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.tariff__type {
+	font-size: 1.5rem;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.tariff__tag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	background-color: transparent;
+	color: rgb(249, 15, 234);
+	padding: 6px 16px;
+	border-radius: 40px;
+	font-size: 0.75rem;
+	line-height: 1.4;
+	font-weight: 400;
+}
+
+.tariff__tag::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	border-radius: 40px;
+	border: 1px solid transparent;
+	background: linear-gradient(
+			120deg,
+			rgba(255, 255, 255, 0.6),
+			rgba(102, 102, 102, 0.6)
+		)
+		border-box;
+	mask: linear-gradient(#fff 0, #fff 100%) padding-box,
+		linear-gradient(#fff 0, #fff 100%);
+	mask-composite: exclude;
+	mix-blend-mode: color-dodge;
+}
+
+.tariff__price {
+	font-size: 1.5rem;
+	line-height: 1.4;
+	font-weight: 400;
+	color: white;
+}
+
+.tariff__free,
+.tariff__number {
+	font-size: 40px;
+	line-height: 1.1;
+	font-weight: 400;
+	font-family: "Oswald", sans-serif;
+	color: white;
+	text-transform: uppercase;
+}
+
+.tariff__description {
+	font-size: 0.875rem;
+	line-height: 1.4;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.tariff__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 122px;
+	border: 1px solid;
+	border-radius: 20px;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.4;
+	font-family: "Poppins", sans-serif;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	transition: 0.4s all ease-in-out;
+}
+
+.tariff__list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 12px;
+}
+
+.tariff__item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.tariff__checkbox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	border-radius: 50%;
+}
+
+.tariff__item-text {
+	font-size: 1rem;
+	line-height: 1.4;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.first__tariff-type {
+  background: linear-gradient(265deg, #ffffff, rgba(153, 153, 153, 1));
+  -webkit-background-clip: text;       /* Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* Chrome, Safari */
+  background-clip: text;               /* Firefox */
+  color: transparent;                  /* fallback */
+  mix-blend-mode: difference;
+}
+
+.first__tariff-button {
+	color: white;
+	border-color: white;
+}
+
+.first__tariff-button:active {
+	background-color: rgba(169, 52, 187, 0.2);
+}
+
+.first__tariff-checkbox-list .tariff__checkbox {
+	border: 1px solid rgba(33, 1, 39, 0.4);
+}
+
+.second__tariff-type {
+  background: linear-gradient(
+    90deg,
+    var(--tariff-color-green),
+    var(--tariff-color-blue)
+  );
+  -webkit-background-clip: text;   /* Safari/Chrome */
+  -webkit-text-fill-color: transparent; /* Safari/Chrome */
+  background-clip: text;           /* Firefox */
+  color: transparent;              /* Fallback */
+}
+
+.second__tariff-button {
+	color: var(--tariff-color-black);
+	background: linear-gradient(
+		90deg,
+		var(--tariff-color-green),
+		var(--tariff-color-blue),
+		var(--tariff-color-blue)
+	);
+	background-size: 300% 100%;
+	background-position: left center;
+}
+
+.second__tariff-button:active {
+	background: linear-gradient(
+		90deg,
+		var(--tariff-color-blue),
+		var(--tariff-color-blue)
+	);
+}
+
+.second__tariff-checkbox-list .tariff__checkbox {
+	border: 1px solid rgba(142, 4, 173, 0.6);
+}
+
+.third__tariff-type {
+	color: var(--tariff-color-blue);
+}
+
+.third__tariff-button {
+	color: var(--tariff-color-blue);
+	border-color: var(--tariff-color-blue);
+}
+
+.third__tariff-button:active {
+	background-color: rgba(26, 2, 110, 0.2);
+}
+
+.third__tariff-checkbox-list .tariff__checkbox {
+	border: 1px solid rgba(230, 57, 187, 0.6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.tariff:hover .tariff__gradient {
+		animation: move-gradient 0.6s linear;
+	}
+
+	.first__tariff-button:hover {
+		color: var(--tariff-color-blue);
+		border-color: var(--tariff-color-blue);
+	}
+
+	.second__tariff-button:hover {
+		background-position: right center;
+	}
+
+	.third__tariff-button:hover {
+		color: var(--tariff-color-green);
+		border-color: var(--tariff-color-green);
+	}
+}
+
+@media (max-width: 575px) {
+	.tariffs {
+		gap: 40px;
+	}
+
+	.tariff {
+		padding: 60px;
+		border-radius: 20px;
+	}
+
+	.tariff.second-tariff {
+		order: -1;
+	}
+
+	.tariff::before {
+		border-radius: 20px;
+	}
+
+	.tariff__button {
+		padding: 10px 40px;
+		width: 100%;
+	}
+
+	.tariff__item-text {
+		font-size: 0.875rem;
+	}
+
+	.tariff__checkbox {
+		width: 24px;
+		height: 24px;
+	}
+
+	.tariff__checkbox img {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+/* card css plan end */
 /* marquee start */
 :root {
   --step--2: clamp(1.2rem, 1rem + 0.6vw, 1.8rem);
@@ -1545,6 +1973,96 @@ code {
     background-position: -1190px;
   }
 }
+/* marquee image animation css */
+.heroimage {
+  position: relative;
+  height: 100vh;
+  background: url("images/your-movie-bg.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.heroimage::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+.heroimage-content {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  animation: fadeUp 1.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroimage-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
+
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s infinite linear, glow 2s infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(102, 34, 158, 0.6); }
+  to { text-shadow: 0 0 25px rgba(148, 47, 134, 0.9); }
+}
+
+.heroimage-tagline {
+  font-size: 1.3rem;
+  color: #eaeaea;
+  margin-top: 15px;
+  animation: fadeIn 2.5s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.heroimage-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #b44df9;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+.heroimage-btn:hover {
+  background: #fa05e1;
+  transform: scale(1.05);
+}
+
 
    </style>
    <body>
@@ -1588,13 +2106,13 @@ code {
 <body>
   
   <!-- Floating Elements Background -->
-    <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
+    <!-- <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
     <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
-    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div>
+    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div> -->
     
     
     <!-- Hero Section -->
-    <section class="herop">
+    <!-- <section class="herop">
         <video autoplay muted loop class="herop-video">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
         </video>
@@ -1611,7 +2129,7 @@ code {
             <div class="row">
                 <div class="col-md-8">
 <div class="herop-actions">
-                <button class="btn btn-primary"><i class="fas fa-play"></i> Watch Now</button>
+                <button class="btn btn-primary"><i class="fas fa-play"></i><a class="nav-link" href="tvshows.html">Watch Now</a></li> </button>
                 <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
             </div>
             <div class="herop-stats">
@@ -1656,12 +2174,60 @@ code {
                       </div>
                             
             </div>
-        </div>    </section> 
+        </div>    </section>  -->
 
 
 
 
-          
+          <div class="mdj-container">
+    <div class="mdj-slide">
+      <div class="mdj-item" style="background-image:url('images/the\ paper.avif');">
+        <div class="mdj-content">
+          <div class="name">Scotland</div>
+          <div class="des">Experience the mystical Highlands under twilight skies and misty lochs.</div>
+          <div class="heroimage-btn">
+          <a href="#"><button >Subscribe to watch</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/sport.avif');">
+        <div class="mdj-content">
+          <div class="name">Norway</div>
+          <div class="des">Chase the Northern Lights under star-lit skies along scenic fjord roads.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/bigboss.avif');">
+        <div class="mdj-content">
+          <div class="name">New Zealand</div>
+          <div class="des">Wander dramatic, mist-laden mountain paths that feel straight out of a dream.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/english.avif');">
+        <div class="mdj-content">
+          <div class="name">Japan</div>
+          <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/baipan\ bhari\ deva.webp');">
+        <div class="mdj-content">
+          <div class="name">Japan</div>
+          <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdj-controls">
+      <button class="mdj-prev">◁</button>
+      <button class="mdj-next">▷</button>
+    </div>
+  </div>
+
+  
+
 
 
     <section>
@@ -1686,7 +2252,7 @@ code {
                 <h2>Featured: <span class="gradient-text">Cyber Nexus</span></h2>
                 <p>In a dystopian future where humanity is controlled by AI, a rogue hacker discovers a way to break the system. The most watched series this week across 90 countries.</p>
                 <div class="hero-actions">
-                    <button class="btn btn-primary"><i class="fas fa-play"></i> Play Now</button>
+                    <button class="btn btn-primary"><i class="fas fa-play"></i> <a class="nav-link" href="movies.html">Movies</a></li>Play Now</button>
                    
                 </div>
             </div>
@@ -1722,9 +2288,27 @@ code {
                             
             </div>
         </div>    </section>
+<!-- backround scrppling -->
+ 
+  <div class="heromarquee" style="margin-top: 45px; margin-bottom: 45px; ">
+
+
+  <section class="heroimage">
+  <div class="heroimage-content">
+    <h1 class="heroimage-title">Unlimited Movies, Anytime</h1>
+    <p class="heroimage-tagline">Stream blockbusters, timeless classics, and trending hits in HD 🎬</p>
+    <a href="#" class="heroimage-btn">Watch Now</a>
+  </div>
+</section>
+
+</div>
+<!-- backround scrppling  end -->
+
+
+
 
     <!-- marquee start -->
-     <div class="marqueebg">
+     <!-- <div class="marqueebg">
 <div class="marquee">
 	<div class="track">
 		
@@ -1733,14 +2317,9 @@ code {
 <span class="text -twox">Discover.<span class="-green">Enjoy.<img src="images/logo.png" /></span>
 <span class="text -twox">Movies.<span class="-green">Anytime.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
 <span class="text -twox">Entertainment.<span class="-green">Unlimited.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
-
-
-
-
-
-	</div>
 </div>
 </div>
+</div> -->
 
 <!-- marquee end -->
     
@@ -1900,11 +2479,224 @@ image: "images/la.jpg" ,
         }
     </script>
      <!-- card section -->
-<!-- backround scrppling -->
- <div class="heromarquee">
-  <h1>It's Alive!</h1>
-  <p>It's a <code>background-image</code>, and it's moving 😬</p>
-</div>
+      <!-- 
+plan card -->
+<!-- <section class="base-template mg-top"> -->
+<!-- <section class="base-template" style="margin-bottom: 3px;"> -->
+  <section class="base-template section-spacing">
+
+
+	<div class="wrapper base-template__wrapper">
+		<h1 class="base-template__title">
+			Choose the Plan That Fits Your Vision
+		</h1>
+		<!-- <div class="base-template__text">
+			Discover a set of elegantly designed pricing cards — selectable with a single click.
+			<br>
+			Each plan balances clarity and style, ready to integrate seamlessly into any modern project.
+		</div> -->
+
+		<div class="base-template__content">
+			<div class="tariffs">
+
+				<!-- First Tariff-->
+
+				<div class="tariff first-tariff">
+					<div class="tariff__gradient"></div>
+
+					<div class="tariff__content">
+						<div class="tariff__info">
+							<span class="tariff__type first__tariff-type">Basic</span>
+							<div class="tariff__price tariff__free">Free</div>
+							<p class="tariff__description">For casual use & one-on-one meetings</p>
+						</div>
+
+						<button class="tariff__button first__tariff-button">Select plan</button>
+
+						<div class="tariff__list first__tariff-checkbox-list">
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Up to 2 participants</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">40-minute meeting limit</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Standard video quality</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Screen sharing</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Email support</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Second Tariff-->
+
+				<div class="tariff second-tariff">
+					<div class="tariff__gradient"></div>
+
+					<div class="tariff__content">
+						<div class="tariff__info">
+							<div class="tariff__info-top"><span class="tariff__type second__tariff-type">Corporate</span><span class="tariff__tag">Most Popular</span></div>
+							<div class="tariff__price"><span class="tariff__number">60</span>/month</div>
+							<p class="tariff__description">Ideal for small teams & regular meetings</p>
+						</div>
+
+						<button class="tariff__button second__tariff-button">Select plan</button>
+
+						<div class="tariff__list second__tariff-checkbox-list">
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Up to 25 participants</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Unlimited meeting duration</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">HD video quality</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Screen sharing & file sharing</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Meeting recording (limited storage)</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Custom meeting links</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Priority email support</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Third Tariff-->
+
+				<div class="tariff third-tariff">
+					<div class="tariff__gradient"></div>
+
+					<div class="tariff__content">
+						<div class="tariff__info">
+							<span class="tariff__type third__tariff-type">Premium</span>
+							<div class="tariff__price"><span class="tariff__number">90</span>/month</div>
+							<p class="tariff__description">Built for businesses & corporations</p>
+						</div>
+
+						<button class="tariff__button third__tariff-button">Select plan</button>
+
+						<div class="tariff__list third__tariff-checkbox-list">
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">All features from Corporate Plan</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Cloud recording with storage</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Branding & custom backgrounds</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">Dedicated account manager</p>
+							</div>
+							<div class="tariff__item">
+								<div class="tariff__checkbox">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4.40009 10.7996L7.60009 13.9996L15.6001 5.99963" stroke="white" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</div>
+								<p class="tariff__item-text">24/7 priority support</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
 
   <section>
     <h2><i class="fas fa-fire gradient-text"></i> Trending Now</h2>
@@ -2124,6 +2916,22 @@ image: "images/la.jpg" ,
  <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
 </script>
 <!-- footer close -->
+  <script>
+    const nextBtn = document.querySelector(".mdj-next");
+    const prevBtn = document.querySelector(".mdj-prev");
+    const slide = document.querySelector(".mdj-slide");
+
+    nextBtn.addEventListener("click", () => {
+      let items = document.querySelectorAll(".mdj-item");
+      slide.appendChild(items[0]); // move first to end
+    });
+
+    prevBtn.addEventListener("click", () => {
+      let items = document.querySelectorAll(".mdj-item");
+      slide.prepend(items[items.length - 1]); // move last to start
+    });
+  </script>
+
    </body>
 
 </html>

@@ -154,9 +154,6 @@
 .nav-link:hover::after {
   width: 100%; /* underline animation */
 }
-
-
-
 .custom-navbar .nav-link,
 .custom-navbar .navbar-brand {
   color: #fff !important;
@@ -958,7 +955,7 @@ footer .widget ul {
 }
 
 .text-purple {
-  color: #9b4dff !important;
+  color: #ff4d6b !important;
 }
 
 
@@ -1095,8 +1092,13 @@ footer .widget ul {
   text-align: center !important;
   font-weight: bold !important;
   font-size: 32px !important;
-  color: #9b4dff !important;
+  background: linear-gradient(90deg, #ff4ecb,#9b4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;    /* fallback */
 }
+
 /* portfolio start */
 .feedback-slider {
   width: 100%;
