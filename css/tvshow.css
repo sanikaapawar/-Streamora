@@ -286,33 +286,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
       opacity: 1;
     }
 
-    /* Arrows */
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      border-radius: 50%;
-      width: 20px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 24px;
-      z-index: 6;
-    }
-    .arrow.left {
-      left: 0;
-    }
-    .arrow.right {
-      right: 0;
-    }
+    
 
     /* navbar section */
-
-  
  .hero {
       background-image: url("images/main.jpg");
       background-size: cover;
@@ -1530,3 +1506,14 @@ footer .widget ul {
   color: #ff4ecb;  /* change to your brand color */
 }
 
+.fas {
+  margin-right: 10px;  /* space between icons */
+  font-size: 15px;     /* adjust size */
+  color:White;         /* default color */
+  transition: color 0.3s, transform 0.2s; /* smooth hover effect */
+}
+
+.fas:hover {
+  color: #ff4ecb;   /* change color on hover */
+  transform: scale(1.2); /* zoom effect */
+}
