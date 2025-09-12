@@ -733,79 +733,123 @@ h2.section-title {
 }
 
 /* Team section start */
-#team {
-  background: #fff;
-  padding: 60px 0;
-}
 
-#team .member {
+/* meet our team section start */
+.team {
   text-align: center;
-  margin-bottom: 20px;
-  background: #000;
-  position: relative;
+  padding: 80px 20px;
+  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
 }
 
-#team .member .member-info {
-  opacity: 0;
+.team h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #171717;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Team member card */
+.team-member {
+  position: relative;
+  width: 240px;     /* smaller width */
+  height: 320px;    /* smaller height */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay effect */
+.team-member .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(106, 13, 173, 0.9); /* purple overlay */
+  color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: 0.2s;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  text-align: center;
+  padding: 15px;
 }
 
-#team .member .member-info-content {
-  margin-top: -50px;
-  transition: margin 0.2s;
-}
-
-#team .member:hover .member-info {
-  background: rgba(0, 0, 0, 0.7);
+.team-member:hover .overlay {
   opacity: 1;
-  transition: 0.4s;
 }
 
-#team .member:hover .member-info-content {
-  margin-top: 0;
-  transition: margin 0.4s;
+/* Social icons */
+.social-icons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
-#team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
+.social-icons a {
+  font-size: 18px; /* slightly smaller icons */
   color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-#team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
-  color: #fff;
+.team-member:hover .social-icons a {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#team .member .social {
-  margin-top: 15px;
+.social-icons a:hover {
+  color: palevioletred; /* golden hover */
+}
+/* Team section container */
+.team-grid-container {
+  background-color: #000; /* black background */
+  padding: 50px 20px;     /* add some padding around grid */
+}
+.team {
+  background-color: #000; /* black background */
+  padding: 50px 20px;     /* add some space around the cards */
+  color: #fff;            /* white text for contrast */
+  text-align: center;     /* center the heading */
 }
 
-#team .member .social a {
-  transition: none;
-  color: #fff;
+.team h2 {
+  
+  margin-bottom: 40px;
+  color: #9b4dff; /* Purple color */
+  text-align: center; /* optional: center the heading */
+  font-size: 32px; /* optional: adjust size */
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
-#team .member .social a:hover {
-  color: #18d26e;
-}
-
-#team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
+/* meet our team section end */
 
 /* footer css */
 .page-wrapper {
@@ -1186,131 +1230,4 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
-
-/* meet our team section start */
-.team {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #f8f8f8;
-  font-family: 'Poppins', sans-serif;
-}
-
-.team h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  font-weight: 700;
-  color: #171717;
-}
-
-/* Team grid */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-/* Team member card */
-.team-member {
-  position: relative;
-  width: 240px;     /* smaller width */
-  height: 320px;    /* smaller height */
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-}
-
-.team-member img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Overlay effect */
-.team-member .overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(106, 13, 173, 0.9); /* purple overlay */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  text-align: center;
-  padding: 15px;
-}
-
-.team-member:hover .overlay {
-  opacity: 1;
-}
-
-/* Social icons */
-.social-icons {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.social-icons a {
-  font-size: 18px; /* slightly smaller icons */
-  color: #fff;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.team-member:hover .social-icons a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.social-icons a:hover {
-  color: palevioletred; /* golden hover */
-}
-/* Team section container */
-.team-grid-container {
-  background-color: #000; /* black background */
-  padding: 50px 20px;     /* add some padding around grid */
-}
-.team {
-  background-color: #000; /* black background */
-  padding: 50px 20px;     /* add some space around the cards */
-  color: #fff;            /* white text for contrast */
-  text-align: center;     /* center the heading */
-}
-
-.team h2 {
-  
-  margin-bottom: 40px;
-  color: #9b4dff; /* Purple color */
-  text-align: center; /* optional: center the heading */
-  font-size: 32px; /* optional: adjust size */
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-
-/* meet our team section end */
-
-
-
-
-
-
-
-
-
-
 
