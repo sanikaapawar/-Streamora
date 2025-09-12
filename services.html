@@ -1,88 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fullscreen Animated Image</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body, html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .image-con {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .image-con img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    object-fit: cover;
-    transform: translate(-50%, -50%) scale(1);
-    animation: kenburns 15s ease-in-out infinite alternate;
-  }
-
-  /* Ken Burns zoom effect */
-  @keyframes kenburns {
-    0%   { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-    50%  { transform: translate(-50%, -52%) scale(1.08) rotate(0.5deg); }
-    100% { transform: translate(-50%, -50%) scale(1.15) rotate(-0.5deg); }
-  }
-
-  /* Optional overlay for text readability */
-  .overlaycon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
-    pointer-events: none;
-  }
-
-  /* Example text if you want to add */
-  .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 3rem;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    letter-spacing: 2px;
-    animation: fadeInUp 1.5s ease forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translate(-50%, -40%); }
-    to   { opacity: 1; transform: translate(-50%, -50%); }
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Top Rated — Streamora</title>
+  <style>
+    :root{
+      --bg:#06060a; --card:#0f1220; --muted:#bfc3c9; --accent:#ff004f;
+      --glass: rgba(255,255,255,0.03);
+    }
+    body{margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial; background:var(--bg); color:#fff;}
+    header{padding:28px 36px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.03);}
+    .brand{font-weight:700; letter-spacing:0.6px;}
+    .container{max-width:1200px; margin:30px auto; padding:0 20px;}
+    .page-title{font-size:28px; margin:6px 0 8px;}
+    .subtitle{color:var(--muted); margin:0 0 22px;}
+    .featured{
+      display:grid; grid-template-columns: 320px 1fr; gap:18px; align-items:start; margin-bottom:28px;
+    }
+    .featured-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border-radius:12px; overflow:hidden; width:320px; height:460px; position:relative;
+    }
+    .featured-poster{background:linear-gradient(120deg,#120114,#2b001f); height:100%; display:flex; align-items:flex-end; padding:18px;}
+    .featured-meta{padding:4px 2px 6px; color:var(--muted); font-size:13px;}
+    .featured-content h2{margin:0 0 8px;}
+    .featured-content p{color:var(--muted); line-height:1.5;}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:14px;}
+    .card{background:var(--card); border-radius:10px; padding:12px; box-shadow:0 6px 20px rgba(0,0,0,0.5); transition:transform .15s; display:flex; gap:12px; align-items:flex-start;}
+    .card:hover{transform:translateY(-6px);}
+    .poster{width:86px; height:126px; border-radius:6px; background:linear-gradient(180deg,#2b2b36,#111); flex:0 0 86px; display:flex; align-items:flex-end; justify-content:center; padding:8px; color:#fff; font-weight:700;}
+    .card-body{flex:1;}
+    .title{font-size:15px; margin:0 0 6px;}
+    .meta{font-size:13px; color:var(--muted); margin-bottom:8px;}
+    .desc{font-size:13px; color:#d0d4d8; line-height:1.45;}
+    .rating{display:inline-flex; gap:6px; align-items:center; margin-top:8px;}
+    .star{background:linear-gradient(90deg,#ffd54a,#ffb300); padding:4px 7px; border-radius:6px; color:#111; font-weight:700; font-size:13px;}
+    footer{padding:28px 36px; color:var(--muted); font-size:13px; text-align:center; border-top:1px solid rgba(255,255,255,0.02); margin-top:40px;}
+    @media (max-width:820px){ .featured{grid-template-columns:1fr; } .featured-card{width:100%; height:380px;} }
+  </style>
 </head>
 <body>
-  <div class="image-con">
-    <!-- Replace with your own background image -->
-    <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=1920" alt="Fullscreen Animated Image">
-    <div class="overlaycon"></div>
+  <header>
+    <div class="brand">Streamora</div>
+    <nav style="color:var(--muted); font-size:14px;">Top Rated • Horror • New Releases</nav>
+  </header>
 
-    <!-- Optional text -->
-    <div class="center-text">Contact Us</div>
-  </div>
+  <main class="container">
+    <h1 class="page-title">Top Rated This Week</h1>
+    <p class="subtitle">A curated list of the highest-rated titles viewers can't stop talking about. Handpicked for edge-of-your-seat thrills and unforgettable scares.</p>
+
+    <!-- Featured horror entry -->
+    <section class="featured">
+      <div class="featured-card">
+        <div class="featured-poster">
+          <!-- simple poster area; replace with actual img if available -->
+          <div style="text-align:left;">
+            <div style="font-size:20px; font-weight:800; letter-spacing:0.6px;">HORROR</div>
+            <div style="margin-top:8px; color:rgba(255,255,255,0.85); font-weight:600;">Night of the Machine</div>
+            <div style="margin-top:12px; color:rgba(255,255,255,0.9); font-size:13px; max-width:260px;">
+              A rogue coder unlocks a buried program that breathes life into an ancient evil. The city’s last lights fail and the hunt begins.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-content">
+        <h2>Featured: Horror — Night of the Machine</h2>
+        <div class="featured-meta">2025 • Horror / Sci-Fi • 8.9/10 (Audience)</div>
+        <p class="featured-desc">
+          In a bleak future controlled by an all-seeing network, a desperate hacker finds a dormant code that awakens a primal terror. Flesh, metal, and memory collide as survivors race to stop a predator that knows their every move. Raw, relentless and disturbingly plausible — this series has terrified viewers across 90+ countries.
+        </p>
+
+        <div style="margin-top:18px;">
+          <a href="#" style="text-decoration:none; background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; font-weight:700;">Play Trailer</a>
+          <span style="margin-left:12px; color:var(--muted); font-size:14px;">S1 • 8 episodes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid of top rated -->
+    <section>
+      <div class="grid">
+        <article class="card">
+          <div class="poster">ECHO</div>
+          <div class="card-body">
+            <h3 class="title">Echoes of Midnight</h3>
+            <div class="meta">2024 • Psychological Horror • 9.2/10</div>
+            <div class="desc">A small town’s whispered secrets return when an abandoned radio begins playing messages from the past. Obsession and dread build to a shocking reveal.</div>
+            <div class="rating"><span class="star">9.2</span><span style="color:var(--muted); font-size:13px;">• 1.4M viewers</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="poster">VOID</div>
+          <div class="card-body">
+            <h3 class="title">The Last Broadcast</h3>
+            <div class="meta">2025 • Supernatural • 8.9/10</div>
+            <div class="desc">A late-night program opens a gateway. Viewers who tune in report impossible phenomena. One reporter goes looking — and doesn't return.</div>
+            <div class="rating"><span class="star">8.9</span><span style="color:var(--muted); font-size:13px;">• 980K viewers</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="poster">FANG</div>
+          <div class="card-body">
+            <h3 class="title">Wired to Howl</h3>
+            <div class="meta">2023 • Tech-Horror • 8.7/10</div>
+            <div class="desc">When biotech companies merge DNA with firmware, the predators evolve. Survival becomes a hunt with no safe places left.</div>
+            <div class="rating"><span class="star">8.7</span><span style="color:var(--muted); font-size:13px;">• 1.1M viewers</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="poster">SHDW</div>
+          <div class="card-body">
+            <h3 class="title">Shadowline</h3>
+            <div class="meta">2022 • Horror Anthology • 8.6/10</div>
+            <div class="desc">Five chilling tales tied together by a single street where reality frays after sunset.</div>
+            <div class="rating"><span class="star">8.6</span><span style="color:var(--muted); font-size:13px;">• 720K viewers</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="poster">BRN</div>
+          <div class="card-body">
+            <h3 class="title">Burn Notice</h3>
+            <div class="meta">2024 • Survival Horror • 8.5/10</div>
+            <div class="desc">A group trapped in a remote research facility faces escalating hallucinations and a presence that feeds on fear.</div>
+            <div class="rating"><span class="star">8.5</span><span style="color:var(--muted); font-size:13px;">• 640K viewers</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="poster">MNDR</div>
+          <div class="card-body">
+            <h3 class="title">Mender</h3>
+            <div class="meta">2025 • Sci-Fi Horror • 8.4/10</div>
+            <div class="desc">A medical AI that promises cures begins rewriting patient memories. The healed don't remember they were ever alive.</div>
+            <div class="rating"><span class="star">8.4</span><span style="color:var(--muted); font-size:13px;">• 520K viewers</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Streamora — Handpicked picks for horror fans. Want these cards to link to detail pages? Replace the card titles or posters with links.
+  </footer>
 </body>
 </html>
