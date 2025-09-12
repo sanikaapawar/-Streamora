@@ -1404,5 +1404,70 @@ h2.section-title {
 
 
 
+/* navbar section */
+/* Navbar Custom Styling */
+.custom-navbar {
+  background: #111; /* dark background */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #ddd;
+  font-weight: 600;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spacing between icon and text */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link i {
+  font-size: 16px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #03A9F5; /* highlight color */
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-gradient:hover {
+  opacity: 0.85;
+  color: #fff;
+}
+
+/* Navbar icon hover effect */
+.navbar .nav-link i {
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover i {
+  color: #ff4ecb;  /* change to your brand color */
+}
+
 
 
