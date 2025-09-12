@@ -1506,3 +1506,14 @@ footer .widget ul {
   color: #ff4ecb;  /* change to your brand color */
 }
 
+.fas {
+  margin-right: 10px;  /* space between icons */
+  font-size: 15px;     /* adjust size */
+  color:White;         /* default color */
+  transition: color 0.3s, transform 0.2s; /* smooth hover effect */
+}
+
+.fas:hover {
+  color: #ff4ecb;   /* change color on hover */
+  transform: scale(1.2); /* zoom effect */
+}
