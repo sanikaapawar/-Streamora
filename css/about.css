@@ -182,8 +182,6 @@
   font-weight: 500;
 }
 /* About Us Banner Styling end */
-
-/* after banner section start */
 /* Sticky navbar */
 .custom-navbar {
     position: sticky;   /* Makes it stick */
@@ -897,6 +895,12 @@ footer .widget ul {
   margin-bottom: 30px;
   font-weight: bold;
 }
+@media (min-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 
 /* meet our team section end */
 /* progress bar */
@@ -1097,7 +1101,7 @@ footer .widget ul {
   color: transparent;    /* fallback */
 }
 
-/* portfolio start */
+/* Footer start */
 .feedback-slider {
   width: 100%;
   overflow: hidden; /* hide scrollbars */
