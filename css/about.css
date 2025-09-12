@@ -862,8 +862,8 @@ footer .widget ul {
 /* Team member card */
 .team-member {
   position: relative;
-  width: 200px;     /* smaller width */
-  height: 280px;    /* smaller height */
+  width: 180px;     /* smaller width */
+  height: 270px;    /* smaller height */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
