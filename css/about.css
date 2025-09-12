@@ -1206,6 +1206,7 @@ footer .widget ul {
   right: 0;
   left: 0;
   bottom: 0;
+ 
 }
 
 #hero .carousel-item {
@@ -1386,6 +1387,22 @@ footer .widget ul {
   content: "";
   background-color: rgba(0, 0, 0, 0.3); /* lighter overlay */
 }
+h2.section-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 32px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  background: linear-gradient(90deg, #ff4ecb, #9b4dff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+
 
 
 
