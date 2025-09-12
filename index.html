@@ -11,7 +11,7 @@
    
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <style>
     /* body {
       c
@@ -337,14 +337,14 @@
       border: none;
       cursor: pointer;
       font-size: 24px;
-      border: 2px solid #fff;
+      border: 2px solid #f44df2;
       background: rgba(0,0,0,0.5);
       color: #fff;
       transition: 0.3s;
     }
 
     .mdj-controls button:hover {
-      background: #fff;
+      background: #8c0ae9;
       color: #000;
       transform: scale(1.1);
     }
@@ -1256,7 +1256,7 @@ footer .widget ul {
 }
 
 #card {
-  width: 200px;
+  width: 150px;
   aspect-ratio: 2 / 3;
   border-radius: 32px;
   transform-style: preserve-3d;   /* ✅ correct */
@@ -1274,7 +1274,7 @@ footer .widget ul {
 
 
 #card:nth-child(1) {
-  background: url("images/the house time.jpg");
+  background: url("images/army.jpg");
   background-size: cover;
   background-position: center;
   width: 250px;
@@ -1290,8 +1290,8 @@ footer .widget ul {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0,0,0,0.7);
-  color: #fff;
-  padding: 10px 16px;
+  color: #dc08ce;
+  padding: 8px 14px;
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
@@ -1302,11 +1302,38 @@ footer .widget ul {
 #card:nth-child(1):hover::after {
   background: rgb(236, 19, 189);
 }
+
+
 #card:nth-child(2) {
-  background: url("https://i.pinimg.com/564x/89/9b/5a/899b5a1101432030e2631dc4e505a2dc.jpg");
+  background: url("images/.jpg");
   background-size: cover;
   background-position: center;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
+#card:nth-child(2)::after {
+  content: "Start Watching";
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #dc08ce;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover effect */
+#card:nth-child(2):hover::after {
+  background: rgb(236, 19, 189);
+}
+
 #card:nth-child(3) {
   background: url("https://i.pinimg.com/736x/23/88/db/2388dbe6293231ddcf1a7001301a3bea.jpg");
   background-size: cover;
@@ -2064,6 +2091,7 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
 }
 
 
+
    </style>
    <body>
 
@@ -2104,84 +2132,14 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
 
 
 <body>
-  
-  <!-- Floating Elements Background -->
-    <!-- <div class="floating-element" style="width: 300px; height: 300px; background: var(--primary); top: 20%; left: 10%; animation: float 8s ease-in-out infinite;"></div>
-    <div class="floating-element" style="width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: 5%; animation: float 10s ease-in-out infinite 2s;"></div>
-    <div class="floating-element" style="width: 200px; height: 200px; background: var(--accent); top: 50%; right: 15%; animation: float 7s ease-in-out infinite 1s;"></div> -->
-    
-    
-    <!-- Hero Section -->
-    <!-- <section class="herop">
-        <video autoplay muted loop class="herop-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" type="video/mp4">
-        </video>
-        <div class="herop-content">
-            <h1>Ultimate <span class="gradient-text">4K HDR</span> Streaming</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-            
-
-
-
-
-<section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-<div class="herop-actions">
-                <button class="btn btn-primary"><i class="fas fa-play"></i><a class="nav-link" href="tvshows.html">Watch Now</a></li> </button>
-                <button class="btn btn-secondary"><i class="fas fa-plus"></i> My List</button>
-            </div>
-            <div class="herop-stats">
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-film"></i></div>
-                    <div>
-                        <div class="stat-number">10,000+</div>
-                        <div class="stat-text">Titles</div>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-globe"></i></div>
-                    <div>
-                        <div class="stat-number">190+</div>
-                        <div class="stat-text">Countries</div>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div>
-                        <div class="stat-number">50M+</div>
-                        <div class="stat-text">Subscribers</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                </div>
-                      <div class="col-md-4">
-                         <div id="rotate-words">  
-<div>Trending movies<img src="images/12th fail2.jpg" alt="Streamora Logo" class="roatate-img"></div>
-<div>Popular<img src="images/welcomenewyork.jpg" alt="Streamora Logo" class="roatate-img"></div>
-<div>top picks<img src="images/kashmir files.jpg" alt="Streamora Logo" class="roatate-img"><br />  <span>sanika sanika sanika</span></div>
-<div>Classy <img src="images/thedark.webp" alt="Streamora Logo" class="roatate-img"><br /><span>Everyone</span></div>
-<div>Cinematic<img src="images/munna bhai mbbs.jpg" alt="Streamora Logo" class="roatate-img"><br /></div>
-<div>Trending movies<img src="images/hero-img4.jpg" alt="Streamora Logo" class="roatate-img"></div>
-<div>Trending movies<img src="images/pardesiya.jpg" alt="Streamora Logo" class="roatate-img"></div>
-<div>Trending movies<img src="images/mo3.jpg" alt="Streamora Logo" class="roatate-img"></div>
-
-
-</div>
-                      </div>
-                            
-            </div>
-        </div>    </section>  -->
+ 
 
 
 
 
           <div class="mdj-container">
     <div class="mdj-slide">
-      <div class="mdj-item" style="background-image:url('images/the\ paper.avif');">
+      <div class="mdj-item" style="background-image:url('images/food.avif');">
         <div class="mdj-content">
           <div class="name">Scotland</div>
           <div class="des">Experience the mystical Highlands under twilight skies and misty lochs.</div>
@@ -2190,12 +2148,20 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
           </div>
         </div>
       </div>
-      <div class="mdj-item" style="background-image:url('images/sport.avif');">
+      <div class="mdj-item" style="background-image:url('images/cricket.avif');">
         <div class="mdj-content">
           <div class="name">Norway</div>
           <div class="des">Chase the Northern Lights under star-lit skies along scenic fjord roads.</div>
           <a href="#"><button>See More</button></a>
         </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/laughter.avif');">
+        <div class="mdj-content">
+          <div class="name">Norway</div>
+          <div class="des">Chase the Northern Lights under star-lit skies along scenic fjord roads.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+        
       </div>
       <div class="mdj-item" style="background-image:url('images/bigboss.avif');">
         <div class="mdj-content">
@@ -2204,14 +2170,28 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
           <a href="#"><button>See More</button></a>
         </div>
       </div>
-      <div class="mdj-item" style="background-image:url('images/english.avif');">
+      <div class="mdj-item" style="background-image:url('images/ttdhamal.webp');">
+        <div class="mdj-content">
+          <div class="name">New Zealand</div>
+          <div class="des">Wander dramatic, mist-laden mountain paths that feel straight out of a dream.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/shiddat.webp');">
+        <div class="mdj-content">
+          <div class="name">New Zealand</div>
+          <div class="des">Wander dramatic, mist-laden mountain paths that feel straight out of a dream.</div>
+          <a href="#"><button>See More</button></a>
+        </div>
+      </div>
+      <div class="mdj-item" style="background-image:url('images/munjya.webp');">
         <div class="mdj-content">
           <div class="name">Japan</div>
           <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
           <a href="#"><button>See More</button></a>
         </div>
       </div>
-      <div class="mdj-item" style="background-image:url('images/baipan\ bhari\ deva.webp');">
+      <div class="mdj-item" style="background-image:url('images/anupma.avif');">
         <div class="mdj-content">
           <div class="name">Japan</div>
           <div class="des">Discover serene mountain temples shrouded in dusk and ancient forest trails.</div>
@@ -2238,7 +2218,7 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
         <div class="featured-bg" style="background-image: url('images/bannerimage.jpg');"></div>
         <div class="featured-overlay">
             <div class="content-card glass">
-                <img src="images/cyber.png" alt="Featured Content">
+                <img src="images/trade up.avif" alt="Featured Content">
                 <div class="card-overlay">
                     <h3 class="card-title">Cyber Nexus</h3>
                     <div class="card-meta">
@@ -2264,7 +2244,7 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
         <div class="featured-bg" style="background-image: url('images/burger3.jpg');"></div>
         <div class="featured-overlay">
             <div class="content-card glass">
-                <img src="images/cybernexus.png" alt="Featured Content">
+                <img src="images/food.avif" alt="Featured Content">
                 <div class="card-overlay">
                     <h3 class="card-title">Cyber Nexus</h3>
                     <div class="card-meta">
@@ -2274,14 +2254,7 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
                     </div>
                 </div>
             </div>
-            <!-- <div class="featured-info">
-                <h2>Featured: <span class="gradient-text">Cyber Nexus</span></h2>
-                <p>In a dystopian future where humanity is controlled by AI, a rogue hacker discovers a way to break the system. The most watched series this week across 90 countries.</p>
-                <div class="hero-actions">
-                    <button class="btn btn-primary"><i class="fas fa-play"></i> Play Now</button>
-                   
-                </div>
-            </div> -->
+            
         </div>
     </div>
                       </div>
@@ -2333,37 +2306,6 @@ background: linear-gradient(90deg, #ff0066, #d633ff, #6e1fed,#ff8c00);
             <!-- Cards will be added by JavaScript -->
         </div>
     </section>
-    
-    <!-- <section class="content-section ">
-        <div class="section-header">
-            <h2><i class="fas fa-crown gradient-text"></i> Top Picks For You</h2>
-            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div class="content-carousel" id="picks-carousel"
-        > -->
-<!--             
-        </div>
-    </section>
-    
-    <section class="content-section">
-        <div class="section-header">
-            <h2><i class="fas fa-clock gradient-text"></i> Recently Added</h2>
-            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div class="content-carousel" id="recent-carousel">
-          
-        </div>
-    </section>
-    
-    <section class="content-section">
-        <div class="section-header">
-            <h2><i class="fas fa-star gradient-text"></i> Award Winners</h2>
-            <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
-        </div>
-        <div class="content-carousel" id="awards-carousel">
-          
-        </div>
-    </section> -->
     
     
      <script>
@@ -2700,46 +2642,28 @@ plan card -->
 
   <section>
     <h2><i class="fas fa-fire gradient-text"></i> Trending Now</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
+        
                    <section>
    <div class="cards-wrapper">
   <div id="card"><img src="images/bhoot.png" class="image">
   <button></button></div>
-  <div id="card"><img src="images/2states.jpg" class="image"></div>
+  <div id="card"><img src="images/mirzapur.jpg" class="image">
+  <button></button></div>
+  <div id="card"><img src="images/stree.jpg" class="image">
+  <button></button></div>
+  <div id="card"><img src="images/Singham again img.jpg" class="image">
+  <button></button></div>
+  <div id="card"><img src="images/Andhadhun.jpg" class="image">
+  <button></button></div>
+  <div id="card"><img src="images/bajrangi.jpg" class="image">
+  <button></button></div>
+  <!-- <div id="card"><img src="images/2states.jpg" class="image"></div>
   <div id="card"><img src="..." class="image"></div>
-  <div id="card"><img src="..." class="image"></div>
+  <div id="card"><img src="..." class="image"></div> -->
 </div>
 </section>
                 </div>
-                      <div class="col-md-4">
-                        <div class="credits-wrapper">
-    <div class="credits-container">
-      <div>
-        <strong>Executive Producer</strong>
-        Brad Pitt
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, vel error eum quisquam similique officia reiciendis facilis hic aspernatur! Nesciunt labore quod esse illum corporis ab, fugit nemo nihil vero.
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Bad Bunny
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Joey King
-      </div>
-      <div>
-        <strong>Executive Producer</strong>
-        Aaron Johnson
-      </div>
-      <div>
-        <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, praesentium ipsam ipsum adipisci vitae fugiat? Iure vel aliquam soluta voluptatem et recusandae commodi quidem ratione corporis, rerum suscipit autem facilis.r</strong>
-        Sandra Bullock
 
-      </div>
-    </div>
-  </div>
                       
                             
             </div>
@@ -2932,6 +2856,10 @@ plan card -->
     });
   </script>
 
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
    </body>
 
 </html>
