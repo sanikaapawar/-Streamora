@@ -807,8 +807,8 @@ footer .widget ul {
 /* Team member card */
 .team-member {
   position: relative;
-  width: 240px;     /* smaller width */
-  height: 320px;    /* smaller height */
+  width: 200px;     /* smaller width */
+  height: 280px;    /* smaller height */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -895,13 +895,11 @@ footer .widget ul {
   margin-bottom: 30px;
   font-weight: bold;
 }
-@media (min-width: 500px) {
+@media (min-width: 1200px) {
   .team-grid {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-
-
 /* meet our team section end */
 /* progress bar */
 #stremora-stats {
@@ -960,7 +958,6 @@ footer .widget ul {
 .text-purple {
   color: #ff4d6b !important;
 }
-
 
 #stremora-stats h2 {
   font-size: 32px;
