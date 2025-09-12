@@ -18,7 +18,7 @@
 
     <h1>Sign In</h1>
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Email or mobile number" required>
+      <input type="text" id="username" placeholder="Username" required>
       <input type="password" id="pass" placeholder="Password" required minlength="8">
       <input type="submit" value="Sign In">
       <div class="checkbox-container">
@@ -26,9 +26,6 @@
         <label for="remember">Remember me</label>
       </div>
       <a href="#" id="forget-pass">Forgot password?</a>
-      <div class="signup">
-        New to Stremora? <a href="#">Sign up now.</a>
-      </div>
     </form>
   </div>
 
@@ -48,12 +45,12 @@
   </div>
 
   <div class="movie-card">
-    <img src="images/animal.jpg" alt="Head">
+    <img src="images/animal.jpg" alt="Animal">
     <div class="number">3</div>
   </div>
 
   <div class="movie-card">
-    <img src="images/Leon-poster.jpg" alt="Animal">
+    <img src="images/Leon-poster.jpg" alt="Poster">
     <div class="number">4</div>
   </div>
 
@@ -63,21 +60,21 @@
   </div>
 
   <div class="movie-card">
-    <img src="images/ae dil hai mushkil.jpg" alt="Taarak Mehta Ka Ooltah Chashmah">
+    <img src="images/Rolex.jpg"alt="Rolex">
     <div class="number">6</div>
   </div>
 
   <div class="movie-card">
-    <img src="images/saiyaara2.jpg" alt="Movie 7">
+    <img src="images/october.jpg" alt="Octomer">
     <div class="number">7</div>
   </div>
 
   <div class="movie-card">
-    <img src="images/munjya.jpg" alt="Movie 8">
+    <img src="images/munjya.jpg" alt="munjya">
     <div class="number">8</div>
   </div>
    <div class="movie-card">
-    <img src="images/ae dil hai mushkil.jpg" alt="Movie 9">
+    <img src="images/ae dil hai mushkil.jpg" alt="ae dil hai mushkil">
     <div class="number">9</div>
   </div>
 
@@ -140,7 +137,7 @@
 
       $("#forget-pass").on("click", function(e){
         e.preventDefault();
-        const username = prompt("Enter your email to reset password:");
+        const username = prompt("Enter your Username to reset password:");
         if(!username){ alert("⚠️ Email required."); return; }
         alert(`✅ Password reset link sent to ${username}`);
       });
