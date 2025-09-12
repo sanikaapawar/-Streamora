@@ -15,37 +15,46 @@
 
   
    <body>
-
-  <!-- Navbar -->
-        <!-- Google Font for modern style -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
-
   <div class="container-fluid">
+    <!-- Logo + Brand -->
     <a class="navbar-brand d-flex align-items-center brand-hover" href="#">
       <img src="images/logo.png" alt="Streamora Logo" class="logo-img">
       <span class="brand-text">Streamora</span>
     </a> 
 
+    <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
-        
-        <li class="nav-item"><a class="nav-link" href="toprated.html">Top Rated</a></li>
-        <li class="nav-item"><a class="nav-link" href="tvshows.html">Tv Shows </a></li>
-         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-      </ul>
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="movies.html"><i class="fas fa-film"></i> Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="toprated.html"><i class="fas fa-star"></i> Top Rated</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tvshows.html"><i class="fas fa-tv"></i> TV Shows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fas fa-user"></i> About Us</a>
+        </li>
+       <li class="nav-item">
+  <a class="nav-link" href="contact.html">  <i class="fas fa-envelope"></i> Contact Us  </a>
+</li>
+ </ul>
+
+      <!-- Login Button -->
       <form class="d-flex" role="search">
-        
-<a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
-</form>
+        <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
       </form>
     </div>
   </div>
