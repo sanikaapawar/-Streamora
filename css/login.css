@@ -1,197 +1,137 @@
-* {
-	box-sizing: border-box;
+/* Reset and body */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Ubuntu', sans-serif; }
+body, html {
+    height: 100%;
+    width: 100%;
 }
 
+/* Background */
 body {
-	padding: 0;
-	margin: 0;
-	background: #C9C9C9;
-	color: #fff;
-	font-family: 'Ubuntu', sans-serif;
-}
-a{
-	text-decoration: none;
-}
-#wrapper {
-	width: 600px;
-	background: url(https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/RGOP31CS3I.jpg);
-	margin: 25px auto;
-	padding: 64px;
-	background-size: cover;
-	position: relative;
-	z-index: 1;
-	box-shadow: 0px 15px 20px 0px rgba(128, 128, 128, 0.76);
+    background: url('../images/pink5.jpg') no-repeat center center/cover;
+    position: relative;
 }
 
-#wrapper:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, .64);
-	z-index: -1;
-}
-
-#table {
-	margin-bottom: 6em;
-}
-
-#table a {
-	text-transform: uppercase;
-	margin-right: 40px;
-	padding: 11px 4px;
-	color: #bbb;
-	cursor: pointer
-}
-
-#table a.active {
-	border-bottom: 1.5px solid #1061EE;
-	color: #fff;
-}
-
-label {
-	display: block
-}
-
-form {
-	margin-bottom: 3.3em;
-}
-
-.form-group {
-	position: relative;
-	margin-bottom: 16px;
-}
-
-.form-group label {
-	display: block;
-	margin-bottom: 6px;
-	font-size: 14px;
-	margin-left: 14px;
-	color: #bbb;
-}
-
-input {
-	width: 100%;
-	background: rgba(0, 0, 0, 0.42);
-	outline: none;
-	padding: 10px 14px;
-	color: #fff;
-	border: none;
-	border-radius: 36px;
-	font-family: 'Ubuntu', sans-serif;
-	font-size: 16px;
-	transition: background 0.5s ease-in-out;
-}
-span#showpwd {
+/* Dark overlay */
+body::before {
+    content: "";
     position: absolute;
-    top: 32px;
-    right: 16px;
-    cursor: pointer;
-}
-input:focus {
-	background: rgba(0, 0, 0, 0.6);
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
 }
 
+/* Centered login box */
+#wrapper {
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 80px 50px;
+    min-height: 600px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Brand logo + name */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand h2 {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Header */
+#wrapper h1 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #bbb;
+}
+
+/* Sign In Button */
 input[type="submit"] {
-	background: #1061EE;
-	margin-top: 14px;
-	cursor: pointer;
+    width: 100%;
+    background: linear-gradient(90deg, #ff4ecb, #9b4dff);
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+input[type="submit"]:hover {
+   background: linear-gradient(90deg, #9b4dff, #ff4ecb);
 }
 
-#checkbox {
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px
+/* Checkbox & links */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.checkbox-container input {
+    width: 16px;
+    height: 16px;
 }
 
-#checkbox input+.text:before {
-	content: "\f096";
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	margin-right: 6px;
-	width: 1em;
+#forget-pass {
+    display: block;
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+#forget-pass:hover {
+    text-decoration: underline;
 }
 
-#checkbox input:checked+.text:before {
-	content: "\f14a";
-	color: #1061ee;
-	animation: scalecheck 0.1s
+/* Sign up notice */
+.signup {
+    font-size: 14px;
+    color: #bbb;
 }
-
-#checkbox input {
-	display: none;
+.signup a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
-
-@-webkit-keyframes scalecheck {
-	0% {
-		transform: scale(0);
-	}
-	90% {
-		transform: scale(1.4);
-	}
-	100% {
-		transform: scale(1);
-	}
+.signup a:hover {
+    text-decoration: underline;
 }
-
-.hr {
-	height: 1.4px;
-	background: rgba(128, 128, 128, 0.51);
-	border-radius: 17px;
-	margin-bottom: 33px;
-}
-
-#froget-pass {
-	text-align: center;
-	color: #bbb;
-	margin: 0;
-	display: block;
-}
-
-@media screen and (max-width :490px) {
-	body {
-		display: table;
-		width: 100%;
-	}
-	#wrapper {
-		width: auto;
-		height: 100vh;
-		margin: 0;
-		display: table-cell;
-		vertical-align: middle;
-	}
-}
-
-@media screen and (max-width :490px) {
-	#wrapper {
-		padding: 28px;
-	}
-}
-/* Make checkbox and text align horizontally */
-#checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between checkbox and text */
-  cursor: pointer; /* optional, makes whole label clickable */
-}
-
-#checkbox input[type="checkbox"] {
-  width: 17px;
-  height: 17px;
-}
-#signin {
-  transform: translateY(-20px);
-  animation: fadeIn 0.6s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to { transform: translateY(0); opacity: 1; }
-}
-

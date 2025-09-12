@@ -1,165 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Netflix-style Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<style>
-/* Reset and body */
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Ubuntu', sans-serif; }
-body, html {
-    height: 100%;
-    width: 100%;
-}
-
-/* Background */
-body {
-    background: url('images/pink5.jpg') no-repeat center center/cover;
-    position: relative;
-}
-
-/* Dark overlay */
-body::before {
-    content: "";
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.6);
-    z-index: 0;
-}
-
-/* Centered login box */
-#wrapper {
-    position: relative;
-    z-index: 1;
-    width: 500px;
-    max-width: 90%;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 80px 50px;        /* more padding */
-    min-height: 600px;         /* taller box */
-    background: rgba(0,0,0,0.75);
-    border-radius: 10px;
-    color: #fff;
-}
-
-/* Header */
-#wrapper h1 {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: 28px;
-}
-
-/* Inputs */
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-}
-
-input[type="text"]::placeholder,
-input[type="password"]::placeholder {
-    color: #bbb;
-}
-
-/* Sign In Button */
-input[type="submit"] {
-    width: 100%;
-   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-    color: #fff;
-    font-size: 18px;
-    padding: 15px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-input[type="submit"]:hover {
-   background: linear-gradient(90deg, #ff4ecb, #9b4dff);
-}
-
-/* Checkbox & links */
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-.checkbox-container input {
-    width: 16px;
-    height: 16px;
-}
-
-#forget-pass {
-    display: block;
-    color: #bbb;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-decoration: none;
-}
-#forget-pass:hover {
-    text-decoration: underline;
-}
-
-/* Sign up notice */
-.signup {
-    font-size: 14px;
-    color: #bbb;
-}
-.signup a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-.signup a:hover {
-    text-decoration: underline;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" type="image/Png" href="images/logo.Png"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/login.css"> <!-- external CSS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<div id="wrapper">
+  <div id="wrapper">
+    <!-- Stremora logo + name -->
+    <div class="brand">
+      <img src="images/logo.png" alt="Stremora Logo">
+      <h2>Stremora</h2>
+    </div>
+
     <h1>Sign In</h1>
     <form id="loginForm">
-        <input type="text" id="username" placeholder="Email or mobile number" required>
-        <input type="password" id="pass" placeholder="Password" required>
-        <input type="submit" value="Sign In">
-        <div class="checkbox-container">
-            <input type="checkbox" id="remember" checked>
-            <label for="remember">Remember me</label>
-        </div>
-        <a href="#" id="forget-pass">Forgot password?</a>
-        <div class="signup">
-            New to Netflix? <a href="#">Sign up now.</a>
-        </div>
+      <input type="text" id="username" placeholder="Enter Username" required>
+      <input type="password" id="pass" placeholder="Password"  minlength="8" required>
+      <input type="submit" value="Sign In">
+      <div class="checkbox-container">
+        <input type="checkbox" id="remember" checked>
+        <label for="remember">Remember me</label>
+      </div>
+      <a href="#" id="forget-pass">Forgot password?</a>
+      <div class="signup">
+        New to Stremora? <a href="#">Sign up now.</a>
+      </div>
     </form>
-</div>
+  </div>
 
-<script>
-$(document).ready(function() {
-    $("#loginForm").on("submit", function(e){
+  <script>
+    $(document).ready(function() {
+      $("#loginForm").on("submit", function(e){
         e.preventDefault();
         const username = $("#username").val().trim();
         const password = $("#pass").val().trim();
         if(!username || !password) { alert("⚠️ Enter both fields"); return; }
         alert("✅ Login successful! Redirecting...");
         setTimeout(()=>{ window.location.href="index.html"; }, 1200);
-    });
+      });
 
-    $("#forget-pass").on("click", function(e){
+      $("#forget-pass").on("click", function(e){
         e.preventDefault();
-        const username = prompt("Enter your email to reset password:");
-        if(!username){ alert("⚠️ Email required."); return; }
+        const username = prompt("Enter your Username to reset password:");
+        if(!username){ alert("⚠️ Username Required."); return; }
         alert(`✅ Password reset link sent to ${username}`);
+      });
     });
-});
-</script>
+  </script>
 </body>
 </html>
