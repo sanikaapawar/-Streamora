@@ -850,9 +850,16 @@ footer .widget ul {
   font-weight: 700;
   color: #171717;
 }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* exactly 5 columns */
+  gap: 20px;                              /* space between cards */
+  justify-items: center;                   /* center each card horizontally */
+  align-items: start;                      /* align cards to top */
+}
 
 /* Team grid */
-.team-grid {
+/* .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
@@ -862,14 +869,14 @@ footer .widget ul {
 /* Team member card */
 .team-member {
   position: relative;
-  width: 180px;     /* smaller width */
-  height: 270px;    /* smaller height */
+  width: 200px;     /* smaller width */
+  height: 280px;    /* smaller height */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} 
 
 .team-member:hover {
   transform: translateY(-8px);
