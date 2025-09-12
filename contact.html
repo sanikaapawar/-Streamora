@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Website</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Contact Page</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="css/contact.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-     <!-- Ractive.js -->
-  <script src="https://cdn.jsdelivr.net/npm/ractive/ractive.min.js"></script>
+</head>
+<body>
 
+<<<<<<< HEAD
   
    <body>
 <!-- navbar -->
+=======
+  <!-- navbar -->
+
+>>>>>>> c5178220f86d5a42345e21bc7a5dfd7a63ce885c
 <nav class="navbar navbar-expand-lg navbar-dark px-4 custom-navbar">
   <div class="container-fluid">
     <!-- Logo + Brand -->
@@ -59,116 +65,101 @@
     </div>
   </div>
 </nav>
-
-
-<body>
-
-  <!-- animated section -->
-
-    <div id="container"></div>
-      <div class="container">
-  <div class="row">
-    <!-- Column 1 -->
-    <div class="col-md-12">
-      <!-- Template -->
-  <script id="template" type="text/ractive">
-    <div class="flip-card" on-click="@this.toggle('flipCard')">
-      {{ flipCard ? 'Reset' : 'Animate' }}
-    </div>
-
-    <div class="contact-wrapper">
-      <div class="envelope {{ flipCard ? 'active' : '' }}">
-        <div class="back paper"></div>
-        <div class="content">
-          <div class="form-wrapper">
-            <form>
-              <div class="top-wrapper">
-                <div class="input">
-                  <label>Name</label>
-                  <input type="text" name="name"/>
-                </div>
-                <div class="input">
-                  <label>Phone</label>
-                  <input type="text" name="phone"/>
-                </div>
-                <div class="input">
-                  <label>Email</label>
-                  <input type="email" name="_replyto"/>
-                </div>
-              </div>
-
-              <div class="bottom-wrapper">
-                <div class="input">
-                  <label>Subject</label>
-                  <input type="text" name="_subject"/>
-                </div>
-                <div class="input">
-                  <label>Message</label>
-                  <textarea rows="5" name="message"></textarea>
-                </div>
-                <div class="submit">
-                  <div class="submit-card" on-click="@this.toggle('flipCard')">Send Mail</div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="front paper"></div>
-      </div>
-    </div>
-  </script>
-  
-    
-   </div>
-        </div>
-       </div>
-     <!-- end animated -->
-
-    <!-- Column 2 -->
-     <div class="row">
-    <div class="col-md-12">
+  <section class="contact-section">
+    <div class="container">
+      <!-- Info boxes -->
+      <!-- Contact Info Section -->
+<section class="contact-section py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
       
-  <div class="help-section">
-    <div class="card" onclick="location.href='#';">
-      <div class="card-icon">
-        <img src="https://img.icons8.com/ios-filled/50/000000/technical-support.png" alt="Technical Support Icon">
+      <!-- Office -->
+      <div class="col-md-3">
+        <div class="info-box">
+          <i class="fas fa-map-marker-alt gradient-icon"></i>
+          <h6>Streamora</h6>
+          <p>SoHo 94 Broadway St<br>New York, NY 1001</p>
+        </div>
       </div>
-      <h2>Technical Support</h2>
-      <p>I need technical help.I have a question about an unemployment case </p>
-      <button class="card-btn">Contact Support</button>
-    </div>
-    <div class="card" onclick="location.href='#';">
-      <div class="card-icon">
-        <img src="https://img.icons8.com/ios-filled/50/000000/clipboard.png" alt="Claims Assistance Icon">
+
+      <!-- Phone -->
+      <div class="col-md-3">
+        <div class="info-box">
+          <i class="fas fa-phone gradient-icon"></i>
+          <h6>PHONE NUMBER</h6>
+          <p>9552624515<br>888-0123-4567 (Toll Free)</p>
+        </div>
       </div>
-      <h2>Claims Assistance</h2>
-      <p>I have a question about an unemployment case.</p>
-      <button class="card-btn">Ask a Question</button>
-    </div>
-    <div class="card" onclick="location.href='#';">
-      <div class="card-icon">
-        <img src="https://img.icons8.com/ios-filled/50/000000/password.png" alt="Password Reset Icon">
+
+      <!-- Fax -->
+      <div class="col-md-3">
+        <div class="info-box">
+          <i class="fas fa-fax gradient-icon"></i>
+          <h6>FAX</h6>
+          <p>1-234-567-8900</p>
+        </div>
       </div>
-      <h2>Password Reset</h2>
-      <p>Having trouble logging in? I have a question about </p>
-      <button class="card-btn">Reset Password</button>
+
+      <!-- Email -->
+      <div class="col-md-3">
+        <div class="info-box">
+          <i class="fas fa-envelope gradient-icon"></i>
+          <h6>EMAIL</h6>
+          <p><a href="mailto:streamora05@gmail.com">streamora05@gmail.com</a></p>
+
+        </div>
+      </div>
+
     </div>
   </div>
-</main> 
-</form>
+</section>
+
+<!-- FontAwesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <!-- Contact Row -->
+<div class="row mt-5">
+  <!-- Contact Form -->
+  <div class="col-md-6">
+    <div class="form-container">
+      <h3 class="mb-4">Contact Us</h3>
+      <form>
+       <div class="mb-3">
+  <input type="text" class="form-control" placeholder="Enter your Name" required>
+</div>
+<div class="mb-3">
+  <input type="email" class="form-control" placeholder="Enter a valid email address" required>
+</div>
+<div class="mb-3">
+  <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+</div>
+        <button type="submit" class="btn btn-submit">SUBMIT</button>
+      </form>
     </div>
-    </div>
+  </div>
 
+  <!-- Google Map -->
+   
+  <div class="col-md-6">
+    <div class="map-container h-100">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.891273943601!2d-74.002684284593!3d40.72454597933012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25990c3d40c77%3A0xc80b8f06e177fe62!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1694532768056!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0; min-height: 350px;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    
+  </div>
+</div>
+</div>
+</div>
+</section>
 
-         
-
-
-
-  
-
-
-    <!-- footer -->
-       <div class="page-wrapper">
+<!-- Footer -->
+  <div class="page-wrapper">
     <div id="waterdrop"></div>
     <footer>
       <div class="footer-top">
@@ -269,6 +260,9 @@
                   <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
                   <li><a class="magnific-anchor"><img src="https://images.unsplash.com/photo-1477239439998-839196943351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=414&q=80" alt=""></a></li>
                 </ul>
+
+
+
               </div>
             </div>
           </div>
@@ -316,34 +310,14 @@
                 </div>
               </div>
             </div>
-
-          </div>
+           </div>
         </div>
       </div>
-      <div class="footer-site-info">2025 © Streamora | All Rights Reserved</div>
+      <div class="footer-site-info text-center">2025 © Streamora | All Rights Reserved</div>
 
     </footer>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
- <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
-</script>
-<!-- footer close -->
- <!-- Ractive Init -->
-  <script>
-    var ractive = new Ractive({
-      el: '#container',
-      template: '#template',
-      data: {
-        flipCard: false
-      }
-    });
-  </script>
-   </body>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
