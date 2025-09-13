@@ -27,7 +27,7 @@ body::before {
     width: 500px;
     max-width: 90%;
     margin: 0 auto;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     padding: 80px 50px;
     min-height: 600px;
@@ -134,4 +134,119 @@ input[type="submit"]:hover {
 }
 .signup a:hover {
     text-decoration: underline;
+}
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .trending-container {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .movie-card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.08);
+    }
+
+    /* Hide scrollbar but keep scroll functionality */
+    .trending-container::-webkit-scrollbar {
+      display: none;
+    }
+    .trending-container {
+      -ms-overflow-style: none;  
+      scrollbar-width: none; 
+    }
+    .number {
+  position: absolute;
+  bottom: -20px; /* overlap outside the card */
+  left: 10px;
+  font-size: 100px;       /* big Netflix-style number */
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+  z-index: 2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.faq {
+  background: #000;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.faq-question {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  text-align: left;
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #333;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #111;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer p {
+  padding: 15px 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* When active */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 15px;
 }
