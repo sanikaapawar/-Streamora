@@ -496,30 +496,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
   overflow: hidden;
 }
 
-/* Arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: #000;
-  text-decoration: none;
-  background: rgba(255,255,255,0.7);
-  padding: 5px 10px;
-  border-radius: 50%;
-  z-index: 5;
-  transition: background 0.3s;
-}
-.arrow:hover {
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-}
-.arrow.left {
-  left: 10px;
-}
-.arrow.right {
-  right: 10px;
-}
+
 
 /* Filmstrip row */
 .filmstrip {
@@ -694,7 +671,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#400a6f",endCo
   background: rgba(0,0,0,0.8);
 }
 
-/* scrolling images */
+/* scrolling images  text*/
 
  .highlight-card {
       position: relative;
