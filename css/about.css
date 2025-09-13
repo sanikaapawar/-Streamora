@@ -158,6 +158,27 @@
 .custom-navbar .navbar-brand {
   color: #fff !important;
 }
+
+/* Navbar icon hover effect */
+.navbar .nav-link i {
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover i {
+  color: #ff4ecb;  /* change to your brand color */
+}
+
+.fas {
+  margin-right: 10px;  /* space between icons */
+  font-size: 15px;     /* adjust size */
+  color:White;         /* default color */
+  transition: color 0.3s, transform 0.2s; /* smooth hover effect */
+}
+
+.fas:hover {
+  color: #ff4ecb;   /* change color on hover */
+  transform: scale(1.2); /* zoom effect */
+} 
 /* navbar section end */
 /* About Us Banner Styling */
 .about-banner {
@@ -653,6 +674,40 @@ footer .widget ul {
 {
   padding-top: 10px;
 }
+/* Fullscreen background overlay */
+#successPopup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+#successPopup .popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#successPopup h2 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px
+}
 
 /* About Us Section
 --------------------------------*/
@@ -795,9 +850,16 @@ footer .widget ul {
   font-weight: 700;
   color: #171717;
 }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* exactly 5 columns */
+  gap: 20px;                              /* space between cards */
+  justify-items: center;                   /* center each card horizontally */
+  align-items: start;                      /* align cards to top */
+}
 
 /* Team grid */
-.team-grid {
+/* .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
@@ -814,7 +876,7 @@ footer .widget ul {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} 
 
 .team-member:hover {
   transform: translateY(-8px);
@@ -895,11 +957,7 @@ footer .widget ul {
   margin-bottom: 30px;
   font-weight: bold;
 }
-@media (min-width: 1200px) {
-  .team-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
+
 /* meet our team section end */
 /* progress bar */
 #stremora-stats {
@@ -1459,15 +1517,5 @@ h2.section-title {
   opacity: 0.85;
   color: #fff;
 }
-
-/* Navbar icon hover effect */
-.navbar .nav-link i {
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-link:hover i {
-  color: #ff4ecb;  /* change to your brand color */
-}
-
 
 
