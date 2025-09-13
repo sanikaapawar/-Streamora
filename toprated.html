@@ -2082,6 +2082,18 @@ body{
   color: yellow;
 }
 
+.fas {
+  margin-right: 10px;  /* space between icons */
+  font-size: 15px;     /* adjust size */
+  color:White;         /* default color */
+  transition: color 0.3s, transform 0.2s; /* smooth hover effect */
+}
+
+.fas:hover {
+  color: #ff4ecb;   /* change color on hover */
+  transform: scale(1.2); /* zoom effect */
+} 
+
  </style>
 
 </head>
@@ -2123,9 +2135,10 @@ body{
  </ul>
 
       <!-- Login Button -->
-    <form class="d-flex" role="search">
-  <a href="login.html" class="btn btn-gradient ms-sm-2 rounded-pill small py-2 px-3"><h5 style="text-transform: none;";>Login</h5></a>
-</form>
+    <i class="fas fa-bell"></i>
+      <form class="d-flex" role="search">
+        <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
+      </form>
     </div>
   </div>
 </nav>
@@ -3204,6 +3217,7 @@ Sachin Darekar</span
                             <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
                             <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
                             <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                            
                           </div>
                         </form>
                       </div>
