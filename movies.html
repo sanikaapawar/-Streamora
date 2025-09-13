@@ -54,6 +54,7 @@
 
       <!-- Login Button -->
 
+      <i class="fas fa-bell"></i>
       <form class="d-flex" role="search">
         <a href="login.html" class="btn btn-gradient ms-lg-3">Login</a>
       </form>
@@ -691,6 +692,7 @@
                         </div>
                     </div> -->
                 </div>
+
                   <!-- Page Header -->
                    
               <section class="page-header text-center d-flex justify-content-center align-items-center gap-2">
@@ -746,6 +748,16 @@
                         <div class="name">Sci-fi</div>
                         <div class="total">80</div>
                     </div>
+                    <div class="category-card">
+                        <img src="images/Tarakmehta.jpg" alt="image" class="card-img">
+                        <div class="name">Hindi</div>
+                        <div class="total">50</div>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/marathi.jpg" alt="image" class="card-img">
+                        <div class="name">Marathi</div>
+                        <div class="total">60</div>
+                    </div>
                 </div>
             </section>
 
@@ -797,7 +809,7 @@
                         </div>
 
                         <div class="card-body">
-                            <img src="images/icons8-hbo-50.png" alt="image" class="avatar">
+                            <img src="images/icons8-hbo-50.png" alt="image" class="Vikings">
                             <h3 class="card-title">Vikings <br> Season 4 - What Might Have Been</h3>
                         </div>
                     </div>
@@ -880,10 +892,18 @@
                             <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
                             <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
                             <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                            <!-- Success Popup
+                          <div id="successPopup">
+                             <div class="popup-content">
+                                 <h2 class="brand-text1"> Message Sent Successfully!</h2>
+                                     <p>Thank you for contacting us.</p>
+                                      <a href="index.html" class="back-home-btn">⬅ Back to Home</a>
+                                    </div>
+                                    </div> -->
                           </div>
                         </form>
                       </div>
-                    </div>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -961,7 +981,13 @@
 
 
   <script>
-  
+  // Show popup on send button click
+
+  document.querySelector(".wpcf7-submit").addEventListener("click", function(e) {
+    e.preventDefault(); // stop form submit for demo
+    document.getElementById("successPopup").style.display = "flex"; // show popup
+  });
+
   document.getElementById("movie-container")?.appendChild(card);
   document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('header');
