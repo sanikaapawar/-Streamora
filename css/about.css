@@ -895,11 +895,7 @@ footer .widget ul {
   margin-bottom: 30px;
   font-weight: bold;
 }
-@media (min-width: 1200px) {
-  .team-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
+
 /* meet our team section end */
 /* progress bar */
 #stremora-stats {
