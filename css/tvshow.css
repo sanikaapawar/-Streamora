@@ -1517,3 +1517,54 @@ footer .widget ul {
   color: #ff4ecb;   /* change color on hover */
   transform: scale(1.2); /* zoom effect */
 }
+
+
+/* Popup background */
+#successPopup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup box */
+#successPopup .popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+#successPopup h2 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff00b3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.back-home-btn:hover {
+  background: #0056b3;
+}
+
+/* Smooth animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
